@@ -1,0 +1,26 @@
+<div class="container">
+<footer id="library-footer">
+<a href="https://calvin.edu/">Calvin University</a> | <a href="http://www.calvinseminary.edu/">Calvin Theological Seminary</a>
+</footer>
+</div>
+
+<!-- Footer CSS-->
+<style>
+#library-footer {
+background-color: #8c2131;
+color: white;
+padding: 1vh 1vw;
+}
+#library-footer > a {
+color: white;
+}
+#library-footer > a:hover {
+color: rgba(255, 255, 255, 0.9)
+}
+</style>
+
+<!-- LibAnswers JavaScript -->
+<script>
+//removes 2nd column (this is to make the 1st column skinnier, so we add an FAQ form in the 2nd column, then hide it, and thus the first column is skinnier)
+document.querySelector(`#s-la-page-column-2.col-md-4`).classList.add("hide");
+</script>
