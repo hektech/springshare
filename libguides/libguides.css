@@ -100,7 +100,7 @@ section.utility-links > button.btn {
 .utility-links-login {
   background-color: #e8d3d6;
 }
-.utility-links-login:hover,
+.utility-links .utility-links-login:hover,
 .utility-links-site-search {
   background-color: white;
 }
