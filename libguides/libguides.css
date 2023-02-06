@@ -99,13 +99,12 @@ section.utility-links > button.btn {
 }
 .utility-links-login {
   background-color: #e8d3d6;
-  border-color: #8c2131;
-  color: #8c2131;
 }
+.utility-links-login:hover,
 .utility-links-site-search {
-  border-color: black;
-  color: black;
+  background-color: white;
 }
+
 /* END top, utility links */
 
 #s-lg-guide-header {
