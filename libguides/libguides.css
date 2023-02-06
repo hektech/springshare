@@ -89,6 +89,29 @@ h1>a>img {
   margin-right: 1.5rem;
 }
 
+/* BEGIN top, utility links */
+section.utility-links {
+  margin-top: 1rem;
+}
+section.utility-links > button.btn {
+  text-transform: uppercase;
+  text-align: right; 
+}
+.utility-links-login {
+  background-color: #e8d3d6;
+  border-color: #8c2131;
+  color: #8c2131;
+}
+.utility-links-site-search {
+  border-color: black;
+  color: black;
+}
+/* END top, utility links */
+
+#s-lg-guide-header {
+  margin-top: 1rem;
+}
+
 #s-lg-guide-header-info {
   background-color: #fff;
   padding-bottom: 3rem;
