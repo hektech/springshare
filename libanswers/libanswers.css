@@ -91,29 +91,36 @@ h1 > a > img {
 margin-right: 1.5rem;
 }
 
+h2.s-la-faq-answer-header {
+  display:none;
+}
+
 h2,
-h2 > a {
-font-size: 2.25rem;
+h2 > a,
+.s-la-box-position-1 .s-la-box-title.s-la-box-title-simple h2 {
+font-size: 3.25rem;
 }
 
 h3, 
-h3 > a {
-font-size: 2.125rem;
+h3 > a,
+.s-la-faq-answer-body h3 {
+font-size: 2.75rem;
 }
 
 h4,
 h4 > a {
-font-size: 2rem;
+font-size: 2.5rem;
 }
 
 h5,
 h5 > a {
-font-size: 1.875rem;
+font-size: 2.25rem;
 }
 
 h6,
-h6 > a {
-font-size: 1.75rem;
+h6 > a,
+.s-la-box-position-2 .s-la-box-title.s-la-box-title-simple h2 {
+font-size: 2rem;
 }
 
 /*remove header for search box*/
