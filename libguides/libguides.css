@@ -42,14 +42,19 @@ a {
 }
 
 a[target="_blank"]::after {
-    content: "\f08e";
-    margin: 0 5px;
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
+  content: "\f08e";
+  margin: 0 5px;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+/* remove all manual entries of external-link icon since we are now auto-generating them */
+a>i.fa-external-link {
+  display: none;
 }
 
 #s-lib-footer-login-link>a,
@@ -93,16 +98,17 @@ h1>a>img {
 section.utility-links {
   margin-top: 1rem;
 }
-section.utility-links > a.btn-link {
+
+section.utility-links>a.btn-link {
   text-transform: uppercase;
-  text-align: right; 
+  text-align: right;
 }
 
 .utility-links .utility-links-login,
 .utility-links .utility-links-login:hover {
   background-color: #e8d3d6;
   border-color: #8c2131;
-    color: #8c2131;
+  color: #8c2131;
 }
 
 .utility-links .utility-links-site-search,
