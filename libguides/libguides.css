@@ -24,6 +24,7 @@ body {
   background: #5b798c url(https://libapps.s3.amazonaws.com/customers/726/images/blue-background.png);
   font-size: 18px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
 div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
@@ -182,6 +183,10 @@ h5>a {
 h6,
 h6>a {
   font-size: 1.75rem;
+}
+
+p {
+  line-height: 1.
 }
 
 div#s-lib-public-header-desc,
