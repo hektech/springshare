@@ -187,6 +187,9 @@ h6>a {
 
 p {
   line-height: 1.5;
+}
+
+p, li {
   word-break: break-word;
 }
 
