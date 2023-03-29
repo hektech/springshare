@@ -193,6 +193,10 @@ p, li {
   word-break: break-word;
 }
 
+.alert {
+  margin-top: 10px;
+}
+
 div#s-lib-public-header-desc,
 #s-lg-guide-desc-container {
   background-color: #fff;
