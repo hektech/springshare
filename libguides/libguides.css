@@ -186,7 +186,8 @@ h6>a {
 }
 
 p {
-  line-height: 1.
+  line-height: 1.5;
+  word-break: break-word;
 }
 
 div#s-lib-public-header-desc,
