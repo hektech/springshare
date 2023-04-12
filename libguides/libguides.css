@@ -53,6 +53,10 @@ a[target="_blank"]::after {
   -moz-osx-font-smoothing: grayscale
 }
 
+a>img:hover {
+  filter: drop-shadow(2px 4px 6px black);
+}
+
 /* remove all manual entries of external-link icon since we are now auto-generating them */
 a>i.fa-external-link {
   display: none;
@@ -189,7 +193,8 @@ p {
   line-height: 1.5;
 }
 
-p, li {
+p,
+li {
   word-break: break-word;
 }
 
@@ -340,6 +345,16 @@ select {
   font-size: 15px;
 }
 
+#s-lg-tabs-container .nav-pills>li>a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills>li>a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-tabs>li>a,
+#s-lg-tabs-container .nav-tabs>li>button,
+#s-lg-tabs-container .nav-pills>li>a,
+#s-lg-tabs-container .nav-pills>li>button {
+  font-weight: normal;
+}
 
 /* END Side Navigation */
 
