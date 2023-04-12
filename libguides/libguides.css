@@ -370,6 +370,10 @@ div#s-lib-public-main {
   padding: 2rem;
 }
 
+.s-lib-box-container .s-lib-floating-box {
+  padding: 0;
+}
+
 #s-lg-side-nav-content {
   background: white;
   padding: 3rem;
