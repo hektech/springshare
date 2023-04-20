@@ -169,6 +169,11 @@ h2>a {
   padding-left: 0;
 }
 
+/*for Database A-Z page*/
+.s-lib-box-std .s-lib-box-title {
+  background-image: none;
+}
+
 h3,
 h3>a {
   font-size: 2.125rem;
@@ -356,6 +361,12 @@ select {
   font-weight: normal;
 }
 
+#s-lg-tabs-container .nav-pills>li>a.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills>li>a.s-lg-tab-top-link:hover,
+#s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link,
+#s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link:hover {
+  padding: 1rem; 
+}
 /* END Side Navigation */
 
 /* BEGIN Main Section */
