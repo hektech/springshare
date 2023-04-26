@@ -281,11 +281,19 @@ form#s-lg-guide-search-form::before {
 
 .form-control {
   border-color: #8c2131;
+  border-radius: 0;
+  height: 3em;
+  font-size: 1em;
+  max-width: 40rem;
 }
 
 .form-control:focus {
   border-color: #8c2131;
   box-shadow: 0 0px 5px #8c2131, 0 0 8px rgb(102 175 233 / 60%);
+}
+
+.form-control::placeholder {
+  color: #555;
 }
 
 .btn-default,
@@ -369,6 +377,55 @@ select {
 }
 
 /* END Side Navigation */
+
+/*BEGIN tabbed box*/
+.s-lib-jqtabs div.tab-content {
+  border: 1px solid #8c2131;
+  border-top: none;
+  background: linear-gradient(to top, #e8d3d6, #fff 5%, #fff);
+}
+
+@media (max-width: 991px) {
+  .nav-tabs>li {
+    float: none;
+  }
+}
+
+.nav-tabs>li>a {
+  text-decoration: none;
+  border: 1px solid #333;
+  border-bottom: none;
+  color: #333;
+}
+
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:focus {
+  background: linear-gradient(#e8d3d6, #fff);
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #8c2131;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+  border: 1px solid #8c2131;
+  border-bottom: none;
+  color: #000;
+  background: linear-gradient(#e8d3d6, #fff);
+}
+
+/*END tabbed box*/
+
+/*BEGIN photo gallery */
+/*to align photo gallery at top*/
+.slick-slide>div>div {
+  vertical-align: top;
+}
+
+/*END photo gallery */
+
 
 /* BEGIN Main Section */
 
