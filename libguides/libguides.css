@@ -365,8 +365,9 @@ select {
 #s-lg-tabs-container .nav-pills>li>a.s-lg-tab-top-link:hover,
 #s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link,
 #s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link:hover {
-  padding: 1rem; 
+  padding: 1rem;
 }
+
 /* END Side Navigation */
 
 /* BEGIN Main Section */
@@ -399,8 +400,10 @@ body>#s-lg-tabs-container {
   padding: 3rem;
 }
 
-#s-lg-guide-tabs-title-bar+#s-lg-guide-main {
-  padding: 3rem;
+@media (min-width: 992px) {
+  #s-lg-guide-tabs-title-bar+#s-lg-guide-main {
+    padding: 3rem;
+  }
 }
 
 #s-lg-col-1>.s-lg-col-boxes>div {
