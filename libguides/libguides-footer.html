@@ -19,7 +19,7 @@
                 <li><span class="badge">109K+</span> <a
                         href="https://sfxhosted.exlibrisgroup.com/calvin/journalsearch?lang=eng">Journals By Title</a>
                 </li>
-                <li><span class="badge">90+</span> <a href="/srch.php" class="link-heading">Research Guides</a></li>
+                <li><span class="badge">90+</span> <a href="/research-guides" class="link-heading">Research Guides</a></li>
                 <li><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <a href="/researchprocess">Research
                         Strategies</a></li>
             </ul>
@@ -131,28 +131,37 @@
 </style>
 
 <script>
-    //add tooltip
-    $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
 
-    //hide menu on mobile
-    (function () {
-        //add menu btn
-        $("#s-lg-tabs-container").prepend(`<button data-toggle="collapse" data-target="#s-lg-guide-tabs" class="btn btn-default btn-block hidden-md hidden-lg" id="guide-menu-btn" style="font-size:inherit; margin-top: -3rem;">Menu</button>`);
 
-        //hide menu only on smaller screens
-        $("div#s-lg-guide-tabs").addClass("hidden-xs hidden-sm");
 
-        //when the button is first clicked, remove the classes that make the menu and button hidden
-        $("button#guide-menu-btn").click(function () {
-            if ($("div#s-lg-guide-tabs").hasClass("hidden-xs hidden-sm")) {
-                $("div#s-lg-guide-tabs").removeClass("hidden-xs hidden-sm");
-            }
-            if ($("button#guide-menu-btn").hasClass("hidden-md hidden-lg")) {
-                $("button#guide-menu-btn").removeClass("hidden-md hidden-lg");
-            }
-        });
-    })();
+        (function () {
+
+            //FUNCTION 1: HIDE MENU ON MOBILE
+            //add menu btn
+            $("#s-lg-tabs-container").prepend(`<button data-toggle="collapse" data-target="#s-lg-guide-tabs" class="btn btn-default btn-block hidden-md hidden-lg" id="guide-menu-btn" style="font-size:inherit; margin-top: -3rem;">Menu</button>`);
+
+            //hide menu only on smaller screens
+            $("div#s-lg-guide-tabs").addClass("hidden-xs hidden-sm");
+
+            //when the button is first clicked, remove the classes that make the menu and button hidden
+            $("button#guide-menu-btn").click(function () {
+                if ($("div#s-lg-guide-tabs").hasClass("hidden-xs hidden-sm")) {
+                    $("div#s-lg-guide-tabs").removeClass("hidden-xs hidden-sm");
+                }
+                if ($("button#guide-menu-btn").hasClass("hidden-md hidden-lg")) {
+                    $("button#guide-menu-btn").removeClass("hidden-md hidden-lg");
+                }
+            });
+
+            //FUNCTION 2: ADD TOOLTIP
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+
+            //FUNCTION 3: DYNAMICALLY GENERATE TOTALS
+            //add total subjects
+            $(".total-number-of-subjects").load("/sb.php #s-lg-sb-count");
+
+        })();
 
 </script>
