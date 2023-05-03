@@ -42,6 +42,10 @@ a {
   text-decoration: underline;
 }
 
+details > summary {
+  cursor: pointer;
+}
+
 a[target="_blank"]::after {
   content: "\f08e";
   margin: 0 5px;
