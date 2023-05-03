@@ -99,32 +99,38 @@ h1>a>img {
   margin-right: 1.5rem;
 }
 
-/* BEGIN top, utility links */
-section.utility-links {
-  margin-top: 1rem;
+/* BEGIN libguides header */
+
+#navUtility>li {
+  display: inline-block;
 }
 
-section.utility-links>a.btn-link {
-  text-transform: uppercase;
-  text-align: right;
-}
-
-.utility-links .utility-links-login,
-.utility-links .utility-links-login:hover {
-  background-color: #e8d3d6;
-  border-color: #8c2131;
-  color: #8c2131;
-}
-
-.utility-links .utility-links-site-search,
-.utility-links .utility-links-site-search:hover {
+#navUtility>li>a {
   background-color: white;
-  color: black;
-  border-color: black;
+  color: #333;
+  border-color: #333;
 }
 
+#navUtility>li>a:focus,
+#navUtility>li>a:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
 
-/* END top, utility links */
+@media (max-width: 991px) {
+  #hekman-libguides-header img {
+      height: 30px;
+  }
+  .hekman-libguides-heading {
+      margin-top: 2rem;
+  }
+}
+
+.navbar-toggle {
+  background-color: white;
+}
+
+/* END libguides header */
 
 #s-lg-guide-header {
   margin-top: 1rem;
@@ -382,18 +388,14 @@ select {
 .s-lib-jqtabs div.tab-content {
   border: 1px solid #8c2131;
   border-top: none;
-  background: linear-gradient(to top, #e8d3d6, #fff 5%, #fff);
+  box-shadow: 0 8px 6px -6px #e8d3d6;
 }
 
-@media (max-width: 991px) {
-  .nav-tabs>li {
-    float: none;
-  }
+.nav-tabs {
+  border-bottom: 1px solid #8c2131;
 }
 
 .nav-tabs>li>a {
-  text-decoration: none;
-  border: 1px solid #333;
   border-bottom: none;
   color: #333;
 }
@@ -403,10 +405,6 @@ select {
   background: linear-gradient(#e8d3d6, #fff);
 }
 
-.nav-tabs {
-  border-bottom: 1px solid #8c2131;
-}
-
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
@@ -414,6 +412,25 @@ select {
   border-bottom: none;
   color: #000;
   background: linear-gradient(#e8d3d6, #fff);
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .nav-tabs {
+    border: 1px solid #8c2131;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .nav-tabs>li {
+    float: none;
+  }
+
+  .nav-tabs>li.active>a {
+    border-radius: 0;
+    text-decoration: none;
+    border: 1px solid #8c2131;
+  }
 }
 
 /*END tabbed box*/
@@ -436,7 +453,12 @@ div#s-lib-public-main {
 
 .s-lib-box {
   border-color: #ccc;
-  padding: 2rem;
+}
+
+@media (min-width: 992px) { 
+  .s-lib-box {
+    padding: 2rem;
+  }
 }
 
 .s-lib-box-container .s-lib-floating-box {
