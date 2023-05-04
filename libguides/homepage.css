@@ -48,15 +48,17 @@ body {
 }
 
 @media (max-width: 991px) {
-	.home-navbar img {
+    .home-navbar img {
         height: 30px;
     }
+
     h1#top-header {
-        margin:0;
+        margin: 0;
     }
-    h1#top-header > a,
-    h1#top-header > a:hover {
-        font-size:3.5rem;
+
+    h1#top-header>a,
+    h1#top-header>a:hover {
+        font-size: 3.5rem;
     }
 }
 
@@ -86,7 +88,7 @@ body {
     margin: -2rem;
 }
 
-/* Search Start Form */
+/* BEGIN Search Start Form */
 #search-start-form {
     margin-bottom: 3rem;
 }
@@ -116,6 +118,9 @@ body {
     position: absolute;
 }
 
+/* END Search Start Form */
+
+
 #s-lib-bc {
     border: none;
 }
@@ -132,4 +137,8 @@ body {
 /*padding for Centers*/
 div#s-lg-box-29924304 {
     padding: 0;
+}
+
+#s-lg-guide-tabs-title-bar+#s-lg-guide-main {
+    margin-top: -3rem;
 }
