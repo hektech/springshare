@@ -14,7 +14,7 @@
                         alt="Calvin University">
                 </a>
             </div>
-            <h1 id="top-header"><a href="/new"><img
+            <h1 id="top-header"><a href="/"><img
                         src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_hi-res_50x50.png">Hekman
                     Library</a></h1>
 
@@ -22,11 +22,11 @@
                 style="padding:0; margin: revert;">
                 <!-- <li class="mtop-1half"><a href="/c.php?g=1285690&p=9440554#s-lg-box-wrapper-35837920"
                     class="btn btn-link btn-default btn-block"><img src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_smaller_50x50.png" alt="Hekman Library Logo" height="18"> Contact Us</a></li> -->
-                <li class="mtop-1half"><a href="https://ulysses.calvin.edu/eg/opac/login"
+                <li><a href="https://ulysses.calvin.edu/eg/opac/login"
                         class="btn btn-link btn-default btn-block" title="Library Catalog login"><i
                             class="fa fa-sign-in" aria-hidden="true"></i>
                         Login to My Account</a></li>
-                <li class="mtop-1half"><a href="/srch.php" class="btn btn-link btn-default btn-block"><i
+                <li><a href="/srch.php" class="btn btn-link btn-default btn-block"><i
                             class="fa fa-search" aria-hidden="true"></i> Site Search</a></li>
             </ul>
 
@@ -71,6 +71,9 @@
                             //insert day of week
                             const today = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][(new Date()).getDay()];
                             $(`tr.loc19460 th.hours-col-loc`).text(today);
+
+                            //hide when multiple times in a single day
+                            $( "tr.hours-today-row" ).has( "span.s-lc-time > br" ).addClass("hide");
 
                         })();
                     </script>

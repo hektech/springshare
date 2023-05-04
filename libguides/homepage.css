@@ -1,3 +1,5 @@
+/*Styles only for homepage */
+
 body {
     background-image: url(https://libapps.s3.amazonaws.com/customers/726/images/wf-back.png);
     background-size: 8%;
@@ -43,6 +45,19 @@ body {
 .home-navbar .nav>li>a:hover {
     text-decoration: none;
     background-color: #eee;
+}
+
+@media (max-width: 991px) {
+	.home-navbar img {
+        height: 30px;
+    }
+    h1#top-header {
+        margin:0;
+    }
+    h1#top-header > a,
+    h1#top-header > a:hover {
+        font-size:3.5rem;
+    }
 }
 
 .home-header {
@@ -109,7 +124,12 @@ body {
     margin-top: 0;
 }
 
-#s-lg-guide-main {
-    border: 1px solid #8c2131;
-    border-top: none;
+.s-lib-box {
+    border: none;
+    box-shadow: none;
+}
+
+/*padding for Centers*/
+div#s-lg-box-29924304 {
+    padding: 0;
 }
