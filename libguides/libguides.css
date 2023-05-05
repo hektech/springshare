@@ -27,6 +27,14 @@ body {
   line-height: 1.5;
 }
 
+div#s-lg-side-nav-content>div.row>div.col-md-3.s-lg-tabs-side {
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: auto;
+}
+
 div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
   max-width: 633px;
   margin: 0 auto;
@@ -42,7 +50,7 @@ a {
   text-decoration: underline;
 }
 
-details > summary {
+details>summary {
   cursor: pointer;
 }
 
@@ -123,10 +131,11 @@ h1>a>img {
 
 @media (max-width: 991px) {
   #hekman-libguides-header img {
-      height: 30px;
+    height: 30px;
   }
+
   .hekman-libguides-heading {
-      margin-top: 2rem;
+    margin-top: 2rem;
   }
 }
 
@@ -459,7 +468,7 @@ div#s-lib-public-main {
   border-color: #ccc;
 }
 
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
   .s-lib-box {
     padding: 2rem;
   }
