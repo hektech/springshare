@@ -142,3 +142,8 @@ div#s-lg-box-29924304 {
 #s-lg-guide-tabs-title-bar+#s-lg-guide-main {
     margin-top: -3rem;
 }
+
+#libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online,
+#libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_offline {
+  border-radius: 0;
+}

@@ -1,0 +1,21 @@
+<script>springshare_widget_config_1670447928324 = { path: 'guides' };</script>
+<div id="s-lg-widget-1670447928324"></div>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://lgapi-us.libapps.com/widgets.php?site_id=737&widget_type=1&search_terms=&search_match=2&sort_by=name&list_format=1&drop_text=Select+a+Guide...&output_format=1&load_type=2&enable_description=1&enable_group_search_limit=0&enable_subject_search_limit=0&widget_title=Guide+List&widget_height=250&widget_width=100%25&widget_link_color=2954d1&widget_embed_type=1&num_results=0&enable_more_results=1&window_target=2&config_id=1670447928324"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "s-lg-widget-script-1670447928324");</script>
+
+<style>
+    .guide-count {
+        font-weight: normal;
+    }
+</style>
+
+<script>
+    (function () {
+        //add subject total
+        setTimeout(() => {
+            const guideCount = $("#s-lg-widget-1670447928324 > ul > li").length;
+            if (guideCount) {
+                $(".guide-count").text(guideCount);
+            }
+        }, 250);
+    })();
+</script>

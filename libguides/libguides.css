@@ -508,7 +508,9 @@ body>#s-lg-tabs-container {
 #libchat_1d73d9fc08accd85165ff98853a6f31d button.libchat_online,
 #libchat_1d73d9fc08accd85165ff98853a6f31d button.libchat_offline,
 #libchat_04810c58a27dd02278a347fadeb2fb54 button.libchat_online,
-#libchat_04810c58a27dd02278a347fadeb2fb54 button.libchat_offline {
+#libchat_04810c58a27dd02278a347fadeb2fb54 button.libchat_offline,
+#libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online,
+#libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_offline {
   border-radius: 0;
 }
 

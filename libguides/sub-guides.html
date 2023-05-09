@@ -1,0 +1,102 @@
+<style>
+    .subject-count {
+        font-weight: normal;
+    }
+
+    #s-lg-widget-1682712073326 ul {
+        list-style-type: none;
+    }
+    #s-lg-widget-1682712073326 > ul {
+        padding: 0;
+    }
+
+    #s-lg-widget-1682712073326>ul>li:before {
+        content: "\f058";
+        color: #8c2131;
+        margin: 0 1rem;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    #s-lg-widget-1682712073326>ul>li {
+        border-radius: 1rem;
+        background-color: rgba(232, 211, 214, 0.33);
+        border: 1px solid #8c2131;
+        border-left: 1rem solid #8c2131;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 6px -6px #AAAAAA;
+    }
+
+    #s-lg-widget-1682712073326>ul>li>a {
+        text-transform: uppercase;
+        color: #8c2131;
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 2.5rem;
+    }
+
+    #s-lg-widget-1682712073326>ul>li>a:after {
+        content: "Subject";
+        font-family: 'Fjalla One', sans-serif;
+        color: #666;
+        text-transform: lowercase;
+        margin-left: 0.5rem;
+    }
+
+    div.s-lg-subject-guide>a {
+        color: #8c2131;
+    }
+
+    div.s-lg-subject-guide>a:after {
+        content: "Guide";
+        font-family: 'Fjalla One', sans-serif;
+        color: #666;
+        text-transform: lowercase;
+        margin-left: 0.5rem;
+    }
+
+    #s-lg-widget-1682712073326>ul>li>div {
+        margin-top: 1.5rem;
+    }
+
+    div.s-lg-subject-guides ul {
+        list-style-type: none;
+    }
+
+    .toggle-subject-guides {
+        margin:1rem 0;
+    }
+    .toggle-subject-guides summary+ul {
+        padding: 0;
+    }
+</style>
+
+
+
+<script>springshare_widget_config_1682712073326 = { path: 'subjects', link_text: 'Subjects' };</script>
+<div id="s-lg-widget-1682712073326"></div>
+<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://lgapi-us.libapps.com/widgets.php?site_id=737&widget_type=4&load_type=2&widget_embed_type=1&output_format=1&list_format=1&drop_text=Select+a+Subject...&sort_type=0&widget_title=Subject+List&widget_height=250&widget_width=100%25&widget_link_color=2954d1&guide_published=1&show_guides=1&enable_hierarchy=0&window_target=2&config_id=1682712073326"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "s-lg-widget-script-1682712073326");</script>
+
+<script>
+    (function () {
+
+        setTimeout(() => {
+            //add subject total
+            const subCount = $("#s-lg-widget-1682712073326 > ul > li").length;
+            if (subCount) {
+                $(".subject-count").text(subCount);
+            }
+
+            //hide Subjects
+            $(".s-lg-subject-guides").each(function (){
+                $(this).hide();
+                let newToggleGuidesHtml = `<ul class="toggle-subject-guides"><li><details><summary>Guides <i class="fa fa-chevron-down" aria-hidden="true"></i></summary>${$(this).html()}</details></li></ul>`;
+                $(this).parent().append(newToggleGuidesHtml);
+            })
+
+        }, 500);
+    })();
+</script>
