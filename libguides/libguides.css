@@ -148,10 +148,6 @@ h1>a>img {
 
 /* END libguides header */
 
-#s-lg-guide-header {
-  margin-top: 1rem;
-}
-
 #s-lg-guide-header-info {
   background-color: #fff;
   padding-bottom: 3rem;
@@ -188,7 +184,6 @@ h2>a {
   font-family: 'Fjalla One', sans-serif;
   font-size: 2.5rem;
   font-weight: normal;
-  padding-left: 0;
 }
 
 /*for Database A-Z page*/
@@ -286,6 +281,10 @@ ul.hekman-nav-utility-list>li>a {
 
 form#s-lg-guide-search-form::before {
   content: "Search this Guide";
+}
+
+#s-lg-guide-search-terms::placeholder {
+  visibility:hidden;
 }
 
 /*END Guide Search Box */

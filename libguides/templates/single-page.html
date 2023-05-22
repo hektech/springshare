@@ -1,4 +1,9 @@
 <body class="s-lg-guide-body">
+    <style>
+        #s-lib-bc-page {
+            display:none;
+        }
+    </style>
     {{skip_link}}
     {{obsolete_browser_alert}}
     {{ADMIN_CMD_BAR}}
@@ -10,13 +15,6 @@
         <nav id="s-lib-bc" aria-label="breadcrumb">
             {{breadcrumbs}}
         </nav>
-        <nav class="hekman-nav">
-            <ul class="hekman-nav-utility-list text-right">
-                <li><a href="https://ulysses.calvin.edu/eg/opac/login?redirect_to=%2Feg%2Fopac%2Fmyopac%2Fmain">My
-                        Account</a></li>
-            </ul>
-        </nav>
-
         <div id="s-lg-guide-header-info">
             <h1 id="s-lg-guide-name">{{guide_title}}</h1>
             <div id="s-lg-guide-desc-container">
