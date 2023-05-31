@@ -1,0 +1,38 @@
+/* hide libguides footer */
+#s-lib-footer-public {
+    display: none;
+}
+
+/*to hide breadcrumbs*/
+#s-lib-bc-list {
+    display: none;
+}
+
+/*to make pages look nicer*/
+#s-lg-guide-header-info {
+    padding-bottom: 0;
+}
+
+#s-lg-guide-tabs-title-bar+#s-lg-guide-main {
+    padding-top: 0;
+}
+
+.input-group {
+    margin-bottom:0.5rem;
+}
+
+.input-group-addon {
+    font-size: inherit;
+    font-weight: normal;
+    color: #000;
+    border-radius: 0;
+    min-width: 131px;
+}
+
+dl {
+    margin: 3rem 0;
+}
+
+dd {
+    margin-bottom: 2rem;
+}
