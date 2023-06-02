@@ -48,6 +48,7 @@ margin: 5px -10px;
 #s-la-headerlinks .s-la-breadcrumbs a {
 color: white;
 font-size: 16px;
+text-decoration: none;
 }
 
 #s-la-headerlinks .s-la-breadcrumbs a:hover {
