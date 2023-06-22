@@ -15,7 +15,8 @@
                 </a>
             </div>
             <h1 id="top-header"><a href="/"><img
-                        src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_hi-res_50x50.png" alt="Hekman Library Logo">Hekman
+                        src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_hi-res_50x50.png"
+                        alt="Hekman Library Logo">Hekman
                     Library</a></h1>
 
             <ul class="nav navbar-right utility-links collapse navbar-collapse" id="navUtility"
@@ -37,36 +38,34 @@
 
             <div class="col-md-9">
                 <label for="search-start-input">
-                    <h2 class="search-start-header" style="margin:0">Find Articles, Books, & More...</h2>
+                    <h2 class="search-start-header" style="margin-top:0">Find Articles, Books, & More...</h2>
                 </label>
 
-                <form name="ss_form" id="search-start-form" method="get" action="https://ukeke.calvin.edu/cgi-bin/UDT/driver_2023.pl">
-                    <label for="search-start-input">
-                        <span class="sr-only">Search</span>
-                    </label>
+                <form name="ss_form" id="search-start-form" method="get"
+                    action="https://ukeke.calvin.edu/cgi-bin/UDT/driver_2023.pl">
                     <input id="search-start-input" type="text" name="query" required>
                     <input id="target_input" type="hidden" name="target" value="ebsco">
                     <button id="search-start-btn" class="btn btn-default" type="submit" aria-label="Search">
                         <i class="fa fa-search" aria-hidden="true" title="Search"></i>
                     </button>
                 </form>
-                
+
                 <script>
-                    $(document).ready(function() {
-                        $('#search-start-form').submit(function(event) {
+                    $(document).ready(function () {
+                        $('#search-start-form').submit(function (event) {
                             event.preventDefault();
-                            
+
                             // Perform custom form validation if needed
-                            
+
                             // Set the value of the hidden input field
                             $('#target_input').val('ebsco');
-                            
+
                             // Submit the form
                             this.submit();
                         });
                     });
                 </script>
-                
+
             </div>
 
             <div class="col-md-3">
