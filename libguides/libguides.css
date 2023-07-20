@@ -397,6 +397,10 @@ select {
   padding: 1rem;
 }
 
+#s-lg-guide-tabs .dropdown-menu>li>a {
+  white-space: normal;
+}
+
 /* END Side Navigation */
 
 /*BEGIN tabbed box*/
@@ -492,6 +496,11 @@ div#s-lib-public-main {
 #s-lg-side-nav-content {
   background: white;
   padding: 3rem;
+}
+@media (max-width: 992px) {
+  #s-lg-side-nav-content {
+    padding: 0.25rem;
+  }
 }
 
 #s-lg-tabs-container,
