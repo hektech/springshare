@@ -51,6 +51,7 @@
                 </form>
 
                 <script>
+                    //this is to make it so "smart punctuation" on iphones converts the quotation marks to actual quotation marks that work
                     function prepareQuery() {
                         var inputElement = document.getElementById("search-start-input");
                         var sanitizedQuery = inputElement.value.replace(/[“”]/g, '"');
