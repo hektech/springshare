@@ -42,13 +42,22 @@
                 </label>
 
                 <form name="ss_form" id="search-start-form" method="get"
-                    action="https://ukeke.calvin.edu/cgi-bin/UDT/driver_2023.pl">
+                    action="https://ukeke.calvin.edu/cgi-bin/UDT/driver_2023.pl" onsubmit="prepareQuery()">
                     <input id="search-start-input" type="text" name="query" required>
                     <input id="target_input" type="hidden" name="target" value="ebsco">
                     <button id="search-start-btn" class="btn btn-default" type="submit" aria-label="Search">
                         <i class="fa fa-search" aria-hidden="true" title="Search"></i>
                     </button>
                 </form>
+
+                <script>
+                    function prepareQuery() {
+                        var inputElement = document.getElementById("search-start-input");
+                        var sanitizedQuery = inputElement.value.replace(/[“”]/g, '"');
+                        document.forms["ss_form"].query.value = sanitizedQuery;
+                    }
+                </script>
+
 
                 <script>
                     $(document).ready(function () {
