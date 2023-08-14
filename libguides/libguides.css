@@ -82,6 +82,10 @@ a>i.fa-external-link {
   font-size: 1.33rem;
 }
 
+.btn {
+  white-space: normal;
+}
+
 a.active,
 a.label,
 a.btn {
@@ -355,6 +359,11 @@ select {
 /* END forms */
 
 /* BEGIN Side Navigation */
+@media (max-width: 991px) {
+  #s-lg-tabs-container {
+    padding:0 1rem;
+  }
+}
 #s-lg-guide-tabs>.nav-pills>li {
   margin-bottom: 1rem;
   border: 1px solid #505050;
