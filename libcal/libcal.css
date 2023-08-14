@@ -145,7 +145,7 @@ ol.breadcrumb a:hover {
 
 .container>main {
     background-color: white;
-    border-top: 2rem solid #8c2131;
+    /* border-top: 2rem solid #8c2131; */
     padding: 3rem;
 }
 
