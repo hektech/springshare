@@ -484,6 +484,10 @@ select.ui-datepicker-month {
     margin: 3rem 0;
 }
 
+.bootstrap-select>.dropdown-toggle {
+    width:auto;
+}
+
 /* END Spaces Page */
 
 #s-lc-eq-form-times .b-end-date {
