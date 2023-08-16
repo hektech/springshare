@@ -483,12 +483,18 @@ select.ui-datepicker-month {
 #eq-time-grid h2.fc-toolbar-title {
     margin: 3rem 0;
 }
+/* END Spaces Page */
 
+/* BEGIN Appointments Page */
 .bootstrap-select>.dropdown-toggle {
     width:auto;
 }
 
-/* END Spaces Page */
+.s-lc-app-location-select > .form-control {
+    box-shadow: none;
+}
+
+/* END Appointments Page */
 
 #s-lc-eq-form-times .b-end-date {
     width: auto;
