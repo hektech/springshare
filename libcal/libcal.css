@@ -483,6 +483,27 @@ select.ui-datepicker-month {
 #eq-time-grid h2.fc-toolbar-title {
     margin: 3rem 0;
 }
+
+#panel_container_desc h2.panel-title,
+#s-lc-eq-search-results h2 {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/*hide category when there is only 1*/
+div#s-lc-group_container {
+    display:none;
+}
+
+/*hide location name when there is only 1*/
+div.s-lc-eq-location-name {
+    display:none;
+}
+
+div.s-lc-search-filters>.nav>li>a {
+    padding:1.2rem;
+} 
+
 /* END Spaces Page */
 
 /* BEGIN Appointments Page */
