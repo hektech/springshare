@@ -517,6 +517,46 @@ div.s-lc-search-filters>.nav>li>a {
 
 /* END Appointments Page */
 
+/* BEGIN Appointments popup (from LibCal appointments widget) */
+body#appm-landing #s-lc-public-main {
+    padding: 0 3rem;
+    background-color: white;
+}
+body#appm-landing .form-control {
+    box-shadow: none;
+}
+body#appm-landing #s-lc-public-title {
+    margin-bottom:1rem;
+}
+body#appm-landing #s-lc-public-pd,
+body#appm-landing #s-lc-public-main {
+    padding: 0;
+}
+
+body#appm,
+body#appm-landing {
+    background:#fff;
+}
+body#appm-landing #s-lc-public-title,
+body#appm #s-lc-public-title {
+    border-top: none;
+    padding: 0;
+}
+body#appm #s-lc-public-title {
+    margin: 0 -15px;
+}
+body#appm h1, 
+body#appm h1>a {
+    color: #8c2131;
+}
+body#appm #s-lc-appm-s2-container {
+    background-color:white;
+}
+body#appm .btn-default {
+    font-size:revert;
+}
+/* END Appointments popup (from LibCal appointments widget) */
+
 #s-lc-eq-form-times .b-end-date {
     width: auto;
 }
