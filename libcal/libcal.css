@@ -496,9 +496,9 @@ div#s-lc-group_container {
 }
 
 /*hide location name when there is only 1*/
-div.s-lc-eq-location-name {
+/* div.s-lc-eq-location-name {
     display:none;
-}
+} */
 
 div.s-lc-search-filters>.nav>li>a {
     padding:1.2rem;
