@@ -27,6 +27,8 @@ body {
   line-height: 1.5;
 }
 
+/*BEGIN Side Nav */
+
 @media(min-width:992px) {
   div#s-lg-side-nav-content>div.row>div.col-md-3.s-lg-tabs-side {
     position: sticky;
@@ -43,9 +45,40 @@ div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
   margin: 0 auto;
 }
 
+@media (max-width: 991px) {
+
+  #s-lg-guide-tabs>ul.nav-stacked {
+      padding-top: 1rem;
+      border-right: 1px solid rgb(140, 33, 49);
+      border-bottom: 1px solid rgb(140, 33, 49);
+      border-left: 1px solid rgb(140, 33, 49);
+      border-image: initial;
+      border-top: none;
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color: #e6e6e6;
+      margin-bottom: 0;
+  }
+
+  #s-lg-guide-tabs>ul.nav-stacked>li.active {
+      background: #fff;
+  }
+
+  #s-lg-col-1>.s-lg-col-boxes>div {
+      margin-bottom: 0;
+  }
+
+  #s-lg-guide-main {
+      margin-top: 3rem;
+  }
+}
+
 /* div#s-lg-side-nav-content div.col-md-3.s-lg-tabs-side.pad-bottom-med {
   border-right: 1px solid lightgray;
 } */
+
+/*END Side Nav */
+
 
 a {
   transition: 0.3s;
@@ -188,7 +221,7 @@ h2>a {
   font-family: 'Fjalla One', sans-serif;
   font-size: 2.5rem;
   font-weight: normal;
-  padding:0;
+  padding:0 10px;
 }
 
 /*for Database A-Z page*/
