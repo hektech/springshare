@@ -43,9 +43,9 @@ div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
   margin: 0 auto;
 }
 
-div#s-lg-side-nav-content div.col-md-3.s-lg-tabs-side.pad-bottom-med {
+/* div#s-lg-side-nav-content div.col-md-3.s-lg-tabs-side.pad-bottom-med {
   border-right: 1px solid lightgray;
-}
+} */
 
 a {
   transition: 0.3s;
@@ -188,6 +188,7 @@ h2>a {
   font-family: 'Fjalla One', sans-serif;
   font-size: 2.5rem;
   font-weight: normal;
+  padding:0;
 }
 
 /*for Database A-Z page*/
@@ -479,9 +480,12 @@ div#s-lib-public-main {
   padding: 3rem;
 }
 
-.s-lib-box {
-  border-color: #ccc;
+ .s-lib-box {
+  /* border-color: #ccc; */
+  box-shadow:none;
 }
+
+/*
 
 @media (max-width: 991px) {
   .s-lib-box {
@@ -497,6 +501,8 @@ div#s-lib-public-main {
     padding: 2rem;
   }
 }
+
+*/
 
 .s-lib-box-container .s-lib-floating-box {
   padding: 0;
