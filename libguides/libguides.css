@@ -71,7 +71,11 @@ div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
   #s-lg-guide-main {
       margin-top: 3rem;
   }
-}
+} /* end max-width 991px */
+
+  .s-lg-tabs-side .s-lg-boxnav {
+    margin: 5px;
+  }
 
 /* div#s-lg-side-nav-content div.col-md-3.s-lg-tabs-side.pad-bottom-med {
   border-right: 1px solid lightgray;
