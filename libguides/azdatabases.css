@@ -1,0 +1,19 @@
+/*make fonts bigger on A-Z databases page */
+#col-search input::placeholder, #col-search input, .col-subjects input, 
+.col-types input, .col-vendors input,
+#s-lg-az-filters .select2-selection__choice,
+ul.select2-results__option, 
+ul.select2-results__options {
+    font-size: 1.25rem!important;
+}
+
+.select2-container--bootstrap5 .select2-selection--multiple:not(.form-select-sm):not(.form-select-lg) .select2-search__field::placeholder,
+.select2-container--bootstrap5 .select2-selection--multiple:not(.form-select-sm):not(.form-select-lg) .select2-search__field {
+height: 21px;
+font-size: inherit;
+}
+
+.s-lg-az-reset {
+font-size:1rem;
+margin-right: inherit;
+}
