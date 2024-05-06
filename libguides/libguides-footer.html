@@ -1,5 +1,5 @@
 <!--homepage and all guides footer-->
-<footer class="container hekman-footer" style="background-color: #8c2132; color : #fff; padding:3rem;">
+<footer class="container hekman-footer" style="background-color: #8c2132; background: linear-gradient(to right top, rgba(86, 20, 30, 0.933), rgba(140, 33, 49, 0.933)); color : #fff; padding:3rem;">
 
     <div class="row">
 
@@ -9,13 +9,13 @@
                 <li><i class="fa fa-book" aria-hidden="true"></i> <a
                         href="https://ulysses.calvin.edu/eg/opac/home?fromlibguidesFooter" class="link-heading">Library
                         Catalog</a></li>
-                <li><span class="badge">230+</span> <a
+                <li><span class="db-count badge">220+</span> <a
                         href="https://library.calvin.edu/az.php?fromlibguidesFooter">Databases (A-Z)</a>
                 </li>
                 <li><span class="badge">110K+</span> <a
                         href="https://sfxhosted.exlibrisgroup.com/calvin/journalsearch?lang=eng">Journals By Title</a>
                 </li>
-                <li><span class="badge">90+</span> <a href="/research-guides?fromlibguidesFooter"
+                <li><span class="guide-count badge">100+</span> <a href="/research-guides?fromlibguidesFooter"
                         class="link-heading">Research Guides</a></li>
                 <li><i class="fa fa-lightbulb-o" aria-hidden="true"></i> <a
                         href="/researchprocess?fromlibguidesFooter">Research
@@ -47,8 +47,40 @@
         <div class="col-md-3">
             <h2>About</h2>
             <ul class="list-group" style="list-style-type:none;">
-                <li><img src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_smaller_50x50.png"
-                        alt="Hekman Library Logo" height="18"> <a href="/about?fromlibguidesFooter">About Hekman
+                <li><svg id="heklogo-allwhite-Layer_2" data-name="heklogo-allwhite-Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 82.29 122.6" style="
+                    height: 22px;
+                    vertical-align: middle;
+                    margin-right: 4px;
+                ">
+                  <defs>
+                    <style>
+                      .heklogo-allwhite-cls-1 {
+                        fill: url(#heklogo-allwhite-linear-gradient);
+                      }
+                
+                      .heklogo-allwhite-cls-1, .heklogo-allwhite-cls-2 {
+                        stroke-width: 0px;
+                      }
+                
+                      .heklogo-allwhite-cls-2 {
+                        fill: #fff;
+                      }
+                    </style>
+                    <linearGradient id="heklogo-allwhite-linear-gradient" x1="1.36" y1="52.41" x2="39.69" y2="79.06" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="#f9f9fa"></stop>
+                      <stop offset=".39" stop-color="rgba(248, 248, 249, .93)" stop-opacity=".93"></stop>
+                      <stop offset="1" stop-color="#f8f7f7" stop-opacity=".8"></stop>
+                    </linearGradient>
+                  </defs>
+                  <g id="heklogo-allwhite-Layer_5" data-name="heklogo-allwhite-Layer 5">
+                    <g>
+                      <polygon class="heklogo-allwhite-cls-1" points="41.15 122.6 0 96.25 0 9.69 41.15 35.29 41.15 122.6"></polygon>
+                      <polygon class="heklogo-allwhite-cls-2" points="41.15 122.6 82.29 96.25 82.29 9.69 41.15 35.29 41.15 122.6"></polygon>
+                      <path class="heklogo-allwhite-cls-2" d="M76.06,0l-3.41,1.39c-9.66,3.95-17.84,10.83-23.37,19.69l-7.47,11.96,34.72-22.17-.49-10.86Z"></path>
+                      <path class="heklogo-allwhite-cls-2" d="M6.15,0l3.41,1.39c9.66,3.95,17.84,10.83,23.37,19.69l7.47,11.96L5.67,10.86l.49-10.86Z"></path>
+                    </g>
+                  </g>
+                </svg> <a href="/about?fromlibguidesFooter">About Hekman
                         Library</a></li>
                 <li><i class="fa fa-users" aria-hidden="true"></i> <a href="/staff?fromlibguidesFooter">Staff
                         Profiles</a></li>
@@ -80,6 +112,7 @@
                         href="sms:+16165372364">616.537.2364</a></li>
                 <li><i class="fa-li fa fa-envelope" aria-hidden="true"></i> <a
                         href="https://libanswers.calvin.edu/form?queue_id=6165">E-mail Hekman Library</a></li>
+                <li><i class="fa-li fa fa-clock-o" aria-hidden="true"></i> <a href="https://libcalendar.calvin.edu/hours">Library Hours</a></li>
                 <li><i class="fa-li fa fa-map-marker" aria-hidden="true"></i> <a
                         href="https://calvin.edu/map/?place=hekman-library">Campus Map - Hekman Library</a></li>
             </ul>
@@ -166,6 +199,47 @@
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip();
             });
+
+
+        //total guide count on homepage
+        $(document).ready(function () {
+            var url = "//lgapi-us.libapps.com/widgets.php?site_id=737&widget_type=1&search_terms=&search_match=2&sort_by=name&list_format=1&drop_text=Select+a+Guide...&output_format=1&load_type=2&enable_description=0&enable_group_search_limit=0&enable_subject_search_limit=0&widget_embed_type=2&num_results=0&enable_more_results=0&window_target=2&config_id=1714580527082";
+
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    // Parse the data to count the number of links
+                    var linkCount = $(data).find('a').length;
+
+                    // Display the link count wherever you want on the page
+                    $('.guide-count').text(linkCount);
+                },
+                error: function () {
+                    console.log("Failed to fetch guide count");
+                }
+            });
+        });
+
+
+        //total database count on homepage
+        $(document).ready(function () {
+            var url = "//lgapi-us.libapps.com/widgets.php?site_id=737&widget_type=2&search_terms=&search_match=2&subject_ids=&sort_by=name&list_format=1&drop_text=Select+a+Database...&output_format=1&load_type=2&enable_description=0&widget_embed_type=2&num_results=0&enable_more_results=0&window_target=2&config_id=1714580950610";
+
+            $.ajax({
+                url: url,
+                success: function (data) {
+                    // Parse the data to count the number of links
+                    var dbCount = $(data).find('a').length;
+
+                    // Display the link count wherever you want on the page
+                    $('.db-count').text(dbCount);
+                },
+                error: function () {
+                    console.log("Failed to fetch database count");
+                }
+            });
+        });
+
 
         })();
 </script>
