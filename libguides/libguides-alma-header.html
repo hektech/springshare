@@ -1,3 +1,238 @@
+<style>
+    .utility-links form button.active-site-search-button{
+        right: auto;
+    }
+
+    .utility-links form input.active-site-search{
+        text-align: left;
+        width: 100%;
+    }
+
+    .utility-links form input.active-site-search::placeholder{
+        color: #646464;
+    }
+
+    .site-search2::placeholder{
+        color: black;
+    }
+
+    .utility-links form{
+        background-color: white;
+        color: #333;
+        border: 1px solid #333;
+        display: block;
+        font-size: small;
+        margin-bottom: 0.33rem;
+        text-align: right;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .utility-links form button{
+        position: absolute;
+        background: transparent;
+    }
+    
+    .utility-links form button,
+    .utility-links form input {
+        color: #333;
+        border: none;
+        padding-top: 6px;
+    }
+
+    .utility-links form input{
+        padding-left: 30px;
+        padding-bottom: 6px;
+        width: 64%;
+    }
+
+    .logos-wording h1:hover{
+        text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .logos-wording h1{
+        transition: text-shadow 0s;
+    }
+
+    .hekman-libguides-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .university-logos {
+        align-self: center;
+        flex: 2;
+    }
+
+    .university-logos img {
+        vertical-align: inherit;
+    }
+
+    .university-logos.mobile svg,
+    .university-logos.mobile img {
+        width: 75px;
+        height: auto;
+    }
+
+
+    .logos-wording {
+        display: inline-block;
+        font-family: 'Fjalla One';
+        text-transform: uppercase;
+        font-size: small;
+        font-size: clamp(0.75rem, 2.5vw, 1.3rem);
+        color: white;
+    }
+
+    .logos-wording h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        letter-spacing: 2px;
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
+    }
+
+    .utility-links a {
+        background-color: white;
+        color: #333;
+        border: 1px solid #333;
+        position: relative;
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: small;
+        margin-bottom: 0.33rem;
+        text-align: right;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .utility-links a:first-child {
+        background-color: #8c2131;
+        background: linear-gradient(to right bottom, #8c2131, #360c13);
+        color: #fff;
+    }
+
+    .hamburger {
+        display: none;
+        background: radial-gradient(#fff, #eee)
+    }
+
+    .hamburger .glyphicon {
+        font-size: larger;
+    }
+
+    .primo-search-contents {
+        display: flex;
+        justify-content: center;
+        flex: 1.7;
+    }
+
+    form#simple-primo-search {
+        flex: auto;
+        max-width: 62rem;
+        position: relative;
+        padding: 0 2.2rem;
+    }
+
+    #primoQueryTemp {
+        padding: 1rem 2rem 1rem 5rem;
+        width: 100%;
+        /* max-width: 50rem; */
+        height: 2em;
+        font-size: clamp(1.5rem, 1.2vw, 2rem);
+        border-radius: 4rem;
+        border: 1px solid rgba(97, 26, 40, 0.933);
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    input#primoQueryTemp::placeholder {
+        color: #111;
+    }
+
+    #go {
+        border: none;
+        background: transparent;
+        font-size: 2.5rem;
+        font-size: clamp(1.5rem, 1.5vw, 2.15rem);
+        color: #333;
+        padding: 0.2rem 0.25rem;
+        position: absolute;
+        z-index: 10;
+        left: 4rem;
+        top: 4%;
+    }
+
+    @media (max-width: 991px) {
+        .utility-links form input{
+            width: 100%;
+            max-width: none;
+            font-size: 16px;
+            padding-left: 6.7rem;
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .utility-links form button{
+            font-size: 15px; 
+            margin-left: 3.5rem;
+            right: 13rem;
+        }
+
+
+        .utility-links,
+        .primo-search-contents {
+            display: none;
+            width: 100%;
+            text-align: right;
+        }
+
+        .utility-links a {
+            font-size: initial;
+        }
+
+        .hamburger {
+            display: inline-block;
+        }
+
+        .primo-search-contents {
+            flex:auto;
+        }
+        #primoQueryTemp {
+            margin-bottom: 0.33rem;
+            max-width:none;
+            padding-left: 6.7rem;
+            font-size: 1.7rem;
+        }
+        form#simple-primo-search {
+            max-width:none;
+            padding: 0;
+            margin-bottom: 0.15rem;
+        }
+
+        #go{
+            padding-top: 0.45rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .desktop {
+            display: none;
+        }
+
+        .mobile {
+            display: initial;
+        }
+    }
+</style>
+
+
 <nav class="hekman-libguides-header container">
     <div class="university-logos desktop">
         <a style="text-decoration: none;" href="https://calvin.edu">
@@ -178,246 +413,6 @@
 </div>
 <script src="https://libanswers.calvin.edu/load_chat.php?hash=04810c58a27dd02278a347fadeb2fb54"></script>
 
-<style>
-    .utility-links form button.active-site-search-button{
-        right: auto;
-    }
-
-    .utility-links form input.active-site-search{
-        text-align: left;
-        width: 100%;
-    }
-
-    .utility-links form input.active-site-search::placeholder{
-        color: #646464;
-    }
-
-    .site-search2::placeholder{
-        color: black;
-    }
-
-    .utility-links form{
-        background-color: white;
-        color: #333;
-        border: 1px solid #333;
-        display: block;
-        font-size: small;
-        margin-bottom: 0.33rem;
-        text-align: right;
-        text-transform: uppercase;
-        text-decoration: none;
-        position: relative;
-        cursor: pointer;
-    }
-
-    .utility-links form button{
-        position: absolute;
-        background: transparent;
-    }
-    
-    .utility-links form button,
-    .utility-links form input {
-        color: #333;
-        border: none;
-        padding-top: 6px;
-    }
-
-    .utility-links form input{
-        padding-left: 30px;
-        padding-bottom: 6px;
-        width: 64%;
-    }
-
-    .logos-wording h1:hover{
-        text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    .logos-wording h1{
-        transition: text-shadow 0s;
-    }
-
-    body {
-        background: linear-gradient(to top right,
-                rgba(0, 25, 51, 0.9),
-                rgba(0, 51, 102, 0.2)),
-            url("https://libapps.s3.amazonaws.com/customers/726/images/blue-background.png");
-    }
-
-    .hekman-libguides-header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 1rem 0;
-    }
-
-    .mobile {
-        display: none;
-    }
-
-    .university-logos {
-        align-self: center;
-        flex: 2;
-    }
-
-    .university-logos img {
-        vertical-align: inherit;
-    }
-
-    .university-logos.mobile svg,
-    .university-logos.mobile img {
-        width: 75px;
-        height: auto;
-    }
-
-
-    .logos-wording {
-        display: inline-block;
-        font-family: 'Fjalla One';
-        text-transform: uppercase;
-        font-size: small;
-        font-size: clamp(0.75rem, 2.5vw, 1.3rem);
-        color: white;
-    }
-
-    .logos-wording h1 {
-        font-size: 3.5rem;
-        margin: 0;
-        letter-spacing: 2px;
-        font-size: clamp(2.5rem, 7vw, 3.5rem);
-    }
-
-    .utility-links a {
-        background-color: white;
-        color: #333;
-        border: 1px solid #333;
-        position: relative;
-        display: block;
-        padding: 0.5rem 1rem;
-        font-size: small;
-        margin-bottom: 0.33rem;
-        text-align: right;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-
-    .utility-links a:first-child {
-        background-color: #8c2131;
-        background: linear-gradient(to right bottom, #8c2131, #360c13);
-        color: #fff;
-    }
-
-    .hamburger {
-        display: none;
-        background: radial-gradient(#fff, #eee)
-    }
-
-    .hamburger .glyphicon {
-        font-size: larger;
-    }
-
-    .primo-search-contents {
-        display: flex;
-        justify-content: center;
-        flex: 1.7;
-    }
-
-    form#simple-primo-search {
-        flex: auto;
-        max-width: 62rem;
-        position: relative;
-        padding: 0 2.2rem;
-    }
-
-    #primoQueryTemp {
-        padding: 1rem 2rem 1rem 5rem;
-        width: 100%;
-        /* max-width: 50rem; */
-        height: 2em;
-        font-size: clamp(1.5rem, 1.2vw, 2rem);
-        border-radius: 4rem;
-        border: 1px solid rgba(97, 26, 40, 0.933);
-        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    }
-
-    input#primoQueryTemp::placeholder {
-        color: #111;
-    }
-
-    #go {
-        border: none;
-        background: transparent;
-        font-size: 2.5rem;
-        font-size: clamp(1.5rem, 1.5vw, 2.15rem);
-        color: #333;
-        padding: 0.2rem 0.25rem;
-        position: absolute;
-        z-index: 10;
-        left: 4rem;
-        top: 4%;
-    }
-
-    @media (max-width: 991px) {
-        .utility-links form input{
-            width: 100%;
-            max-width: none;
-            font-size: 16px;
-            padding-left: 6.7rem;
-            padding-right: 2rem;
-            text-align: right;
-        }
-
-        .utility-links form button{
-            font-size: 15px; 
-            margin-left: 3.5rem;
-            right: 13rem;
-        }
-
-
-        .utility-links,
-        .primo-search-contents {
-            display: none;
-            width: 100%;
-            text-align: right;
-        }
-
-        .utility-links a {
-            font-size: initial;
-        }
-
-        .hamburger {
-            display: inline-block;
-        }
-
-        .primo-search-contents {
-            flex:auto;
-        }
-        #primoQueryTemp {
-            margin-bottom: 0.33rem;
-            max-width:none;
-            padding-left: 6.7rem;
-            font-size: 1.7rem;
-        }
-        form#simple-primo-search {
-            max-width:none;
-            padding: 0;
-            margin-bottom: 0.15rem;
-        }
-
-        #go{
-            padding-top: 0.45rem;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .desktop {
-            display: none;
-        }
-
-        .mobile {
-            display: initial;
-        }
-    }
-</style>
 
 <script>
     ///mobile hamburger menu
