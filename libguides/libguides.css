@@ -306,6 +306,11 @@ div#s-lib-public-header-desc,
   text-decoration: none;
 }
 
+#s-lib-bc-customer,
+#s-lib-bc-site::before {
+  display:none;
+}
+
 /*END Breadcrumbs*/
 
 /*BEGIN Hekman Library Nav */
