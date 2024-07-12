@@ -1,11 +1,11 @@
 <nav class="hekman-libguides-header container">
     <div class="university-logos desktop">
-        <a href="https://calvin.edu">
+        <a style="text-decoration: none;" href="https://calvin.edu">
             <img src="https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/univ_200x200_transparent.png"
                 alt="Calvin University" width="50">
         </a>
         <div class="logos-wording">
-            <h1><a href="/">Hekman Library</a></h1>
+            <h1><a style="text-decoration: none; font-size: 3.5rem;" href="/">Hekman Library</a></h1>
             <p>Calvin University | Calvin Theological Seminary</p>
         </div>
         <a href="https://calvinseminary.edu/">
@@ -14,10 +14,11 @@
         </a>
     </div>
 
+    
     <div class="university-logos mobile">
         
-        <div class="logos-wording"><h1><a href="/" style="font-size:3.5rem;">Hekman Library</a></h1></div>
-        <a href="https://calvin.edu" title="Calvin University">
+        <div class="logos-wording"><h1><a href="/" style="font-size:3.5rem; text-decoration: none;">Hekman Library</a></h1></div>
+        <a style="text-decoration: none;" href="https://calvin.edu" title="Calvin University">
             <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.74 48.42">
                 <defs>
                     <style>
@@ -161,7 +162,12 @@
         <a
             href="https://calvin.primo.exlibrisgroup.com/discovery/account?vid=01CALVIN_INST:01CALVIN_INST&amp;section=overview"><i
                 class="fa fa-sign-in" aria-hidden="true"></i> Login to My Account</a>
-        <a href="/srch.php"><i class="fa fa-search" aria-hidden="true"></i> Site Search</a>
+        <form action="/srch.php" method="get" class="site-search">
+            <button class="button" type="submit" aria-label="Search">
+                <i class="fa fa-search" aria-hidden="true" title="Search"></i>
+            </button>
+            <input type="text" class="site-search2" placeholder="SITE SEARCH" name="q">
+        </form>
     </div>
 
 </nav>
@@ -173,6 +179,63 @@
 <script src="https://libanswers.calvin.edu/load_chat.php?hash=04810c58a27dd02278a347fadeb2fb54"></script>
 
 <style>
+    .utility-links form button.active-site-search-button{
+        right: auto;
+    }
+
+    .utility-links form input.active-site-search{
+        text-align: left;
+        width: 100%;
+    }
+
+    .utility-links form input.active-site-search::placeholder{
+        color: #646464;
+    }
+
+    .site-search2::placeholder{
+        color: black;
+    }
+
+    .utility-links form{
+        background-color: white;
+        color: #333;
+        border: 1px solid #333;
+        display: block;
+        font-size: small;
+        margin-bottom: 0.33rem;
+        text-align: right;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .utility-links form button{
+        position: absolute;
+        background: transparent;
+    }
+    
+    .utility-links form button,
+    .utility-links form input {
+        color: #333;
+        border: none;
+        padding-top: 6px;
+    }
+
+    .utility-links form input{
+        padding-left: 30px;
+        padding-bottom: 6px;
+        width: 64%;
+    }
+
+    .logos-wording h1:hover{
+        text-shadow: 0 7px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .logos-wording h1{
+        transition: text-shadow 0s;
+    }
+
     body {
         background: linear-gradient(to top right,
                 rgba(0, 25, 51, 0.9),
@@ -282,10 +345,11 @@
 
     #go {
         border: none;
+        background: transparent;
         font-size: 2.5rem;
         font-size: clamp(1.5rem, 1.5vw, 2.15rem);
         color: #333;
-        padding: 0 0.25rem;
+        padding: 0.2rem 0.25rem;
         position: absolute;
         z-index: 10;
         left: 4rem;
@@ -293,6 +357,21 @@
     }
 
     @media (max-width: 991px) {
+        .utility-links form input{
+            width: 100%;
+            max-width: none;
+            font-size: 16px;
+            padding-left: 6.7rem;
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .utility-links form button{
+            font-size: 15px; 
+            margin-left: 3.5rem;
+            right: 13rem;
+        }
+
 
         .utility-links,
         .primo-search-contents {
@@ -313,10 +392,19 @@
             flex:auto;
         }
         #primoQueryTemp {
+            margin-bottom: 0.33rem;
             max-width:none;
+            padding-left: 6.7rem;
+            font-size: 1.7rem;
         }
         form#simple-primo-search {
             max-width:none;
+            padding: 0;
+            margin-bottom: 0.15rem;
+        }
+
+        #go{
+            padding-top: 0.45rem;
         }
     }
 
@@ -338,5 +426,12 @@
             $('.primo-search-contents').toggle();
             $('.utility-links').toggle();
         });
+    })();
+
+    (function() {
+        $('form.site-search').click(function() {
+            $('.site-search > input').addClass('active-site-search');
+            $('.site-search > button').addClass('active-site-search-button')
+            });
     })();
 </script>
