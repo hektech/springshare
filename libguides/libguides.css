@@ -21,6 +21,7 @@
 }
 
 body {
+  background: #001933; /* Fallback color */
   background: linear-gradient(to top right,
           rgba(0, 25, 51, 0.9),
           rgba(0, 51, 102, 0.2)),
