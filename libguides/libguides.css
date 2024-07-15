@@ -21,7 +21,10 @@
 }
 
 body {
-  background: #5b798c url(https://libapps.s3.amazonaws.com/customers/726/images/blue-background.png);
+  background: linear-gradient(to top right,
+          rgba(0, 25, 51, 0.9),
+          rgba(0, 51, 102, 0.2)),
+      url("https://libapps.s3.amazonaws.com/customers/726/images/blue-background.png");
   font-size: 18px;
   font-family: "Montserrat", Arial, "Helvetica Neue", Helvetica, sans-serif;
   line-height: 1.5;
