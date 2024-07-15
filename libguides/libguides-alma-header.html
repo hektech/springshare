@@ -1,4 +1,14 @@
-<style>
+<style> 
+    h1>a:focus,
+    h1>a:hover,
+    h1>a:visited,
+    h1>a:active {
+    color: rgba(255, 255, 255, 0.9);
+    }
+    
+    h1>a{
+    font-size: clamp(3.3rem, 7vw, 3.5rem);
+    }
     svg:hover{
         filter: drop-shadow(4px 5px 8px rgba(0, 0, 0, 0.9));
         cursor: pointer;
@@ -312,7 +322,7 @@
                     </svg>   
     </a>
         
-        <div class="logos-wording"><h1><a href="/" style="font-size:3.5rem; text-decoration: none;">Hekman Library</a></h1></div>
+        <div class="logos-wording"><h1><a href="/" style="text-decoration: none;">Hekman Library</a></h1></div>
         <a style="text-decoration: none;" href="https://calvin.edu" title="Calvin University">
             <svg version="1.1" id="Layer_2" class="calvin-university-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 216 108" style="enable-background:new 0 0 216 108;width: 90px;vertical-align: bottom;/* filter: drop-shadow(1px 3px 3px rgb(0 0 0 / 0.7)); */" xml:space="preserve">
 <style type="text/css">
@@ -413,7 +423,7 @@
         </a>
     </div>
 
-    <button type="button" class="hamburger navbar-toggle" style="border-color:black; height:fit-content" aria-label="Open the menu">
+    <button type="button" class="hamburger navbar-toggle" style="border-color:black;height:fit-content;/* display: block; */" aria-label="Open the menu">
         <span class="icon-bar" style="background-color:black"></span>
         <span class="icon-bar" style="background-color:black"></span>
         <span class="icon-bar" style="background-color:black"></span>
