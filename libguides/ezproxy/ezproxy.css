@@ -17,6 +17,12 @@
     padding-top: 0;
 }
 
+@media (max-width: 991px) {
+    #s-lg-guide-tabs-title-bar+#s-lg-guide-main {
+        padding: 0 1rem;
+    }
+}
+
 .input-group {
     margin-bottom:0.5rem;
 }
