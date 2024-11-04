@@ -1,0 +1,201 @@
+<body class="s-lg-guide-body"></body>
+    {{skip_link}}
+    {{obsolete_browser_alert}}
+    {{ADMIN_CMD_BAR}}
+    <!-- BEGIN: Page Header -->
+    {{public_header}}
+    <!-- END: Page Header -->
+    <!-- BEGIN: Guide Info Header -->
+    <div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+        <div id="s-lg-guide-header-info">
+            <h1 id="s-lg-guide-name">{{guide_title}}</h1>
+            <div id="s-lg-guide-desc-container">
+                <span id="s-lg-guide-description">{{guide_description}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- END: Guide Info Header -->
+
+    <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+    <!-- BEGIN: Guide Content -->
+    <div id="s-lg-guide-main" class="container s-lib-main s-lib-side-borders" tabindex="-1">
+        {{content}}
+        <style>
+            .special-collections {
+                background-color: #fff;
+                padding: 3vw;
+            }
+
+            .special-collections h2 {
+                margin-top: 0;
+                margin-bottom: 20px;
+                color: #8c2131;
+            }
+
+            .special-collections ul {
+                margin: 0;
+                list-style-type: none;
+                padding: 0;
+                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .special-collections li {
+                flex: 50%;
+                padding: 2rem 2vw;
+            }
+
+            .special-collections img {
+                border-radius: 4%;
+                border: 1px solid #8c2131;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        </style>
+        <section class="special-collections">
+            <h2>Special Collections</h2>
+            <ul>
+                <li>
+                    <a href="https://library.calvin.edu/hh"><img
+                            src="https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/hh_250x156.jpg"
+                            alt="Heritage Hall entrance" loading="lazy">
+                        <h3>Heritage Hall</h3>
+                    </a>
+                    <p>Renowned for collections in modern Reformed Christianity and Dutch American history.<br><i class="fa fa-envelope" aria-hidden="true"></i>
+                        E-mail: <a href="mailto:crcarchives@calvin.edu">crcarchives@calvin.edu</a><br><i
+                            class="fa fa-fw fa-clock-o" aria-hidden="true"></i> <span id="hh-hours"></span></p>
+                </li>
+                <li>
+                    <a href="https://calvin.edu/centers-institutes/meeter-center"><img
+                            src="https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/meeter_250x156.jpg"
+                            alt="Inside Meeter Center" loading="lazy">
+                        <h3>H. Henry Meeter Center</h3>
+                    </a>
+                    <p>Home of one of the world's largest John Calvin, Calvinism, and Reformation collections. <br><i
+                            class="fa fa-envelope" aria-hidden="true"></i> E-mail: <a
+                            href="mailto:meeter@calvin.edu">meeter@calvin.edu</a><br><i class="fa fa-fw fa-clock-o"
+                            aria-hidden="true"></i> <span id="meeter-hours"></span></p>
+                </li>
+                <li>
+                    <a href="https://digitalcommons.calvin.edu/"><img
+                            src="https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/dc_250x156.jpg"
+                            alt="Student writing inside library" loading="lazy">
+                        <h3>Digital Commons</h3>
+                    </a>
+                    <p>Calvin's online institutional repository.</p>
+                </li>
+                <li>
+                    <a href="https://library.calvin.edu/govdocs"><img
+                            src="https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/gov_250x156.png"
+                            alt="U.S. Government Documents seal" loading="lazy">
+                        <h3>Government Docs</h3>
+                    </a>
+                    <p>Guide to find Calvin's Government Documents.</p>
+                </li>
+            </ul>
+        </section>
+        {{page_prev_next_links}}
+    </div>
+    <!-- END: Guide Content -->
+
+
+    <!-- BEGIN: Page Footer -->
+    <div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+        <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+            <ul id="s-lg-guide-header-attributes" class="">
+                <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                    {{last_updated_display}} </li>
+                <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                    {{guide_url_display}}
+                </li>
+                <li id="s-lg-guide-print-url">
+                    {{print_url_display}}
+                </li>
+            </ul>
+            <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+                {{login_url_display}} </div>
+        </div>
+        <div class="pad-bottom-sm clearfix">
+            <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+                {{support_url_display}} </div>
+            <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+                {{guide_subjects}}
+            </div>
+            <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+                {{guide_tags}}
+            </div>
+        </div>
+    </div>
+    <!-- END: Page Footer -->
+    <!-- scroll_top.twig -->
+    <div id="s-lib-scroll-top">
+        <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top" aria-label="Back to Top">
+            <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+            </span>
+        </a>
+    </div>
+    <!-- !scroll_top.twig -->
+    <div id="s-lib-alert" title="">
+        <div id="s-lib-alert-content"></div>
+    </div>
+    <!-- BEGIN: Custom Footer -->
+    {{public_footer}}
+    <!-- END: Custom Footer -->
+
+    <!--homepage chat-->
+    <div class="text-right footer navbar-fixed-bottom container" style="padding:0">
+        <script src="https://libanswers.calvin.edu/load_chat.php?hash=51b0b3781b09e1ba1ddd6b9921472e75"></script>
+        <div id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
+    </div>
+
+    <!-- dynamic hours -->
+    <script>
+        (function () {
+            // Fetch JSON data
+            fetch('https://libcalendar.calvin.edu/api_hours_today.php?iid=5960&lid=0&format=json&systemTime=0')
+                .then(response => response.json())
+                .then(data => {
+                    const locations = data.locations;
+                    const today = locations[0].day; // Assuming the day is the same for all locations
+
+                    // Find the Hekman Library entry
+                    const hekmanLibrary = locations.find(location => location.name === 'Hekman Library');
+
+                    // Format today's hours for Hekman Library
+                    const hekmanLibraryText = `${today}: ${hekmanLibrary.rendered}`;
+                    document.querySelector('#today-hours').textContent = hekmanLibraryText;
+
+                    // Find the Heritage Hall entry
+                    const herHall = locations.find(location => location.name === 'Heritage Hall');
+
+                    // Format today's hours for Hekman Library
+                    const herHallText = `${today}: ${herHall.rendered}`;
+                    document.querySelector('#hh-hours').textContent = herHallText;
+
+                    // Find Meeter Center entry
+                    const meeter = locations.find(location => location.name === 'Meeter Center');
+
+                    // Format today's hours for Hekman Library
+                    const meeterText = `${today}: ${meeter.rendered}`;
+                    document.querySelector('#meeter-hours').textContent = meeterText;
+
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        })();
+
+        //homepage mobile hamburger menu
+        (function () {
+            $('.hamburger').click(function () {
+                $('.hours').toggle();
+                $('.utility-links').toggle();
+            });
+        })();
+
+    </script>
+
+
+</body>
