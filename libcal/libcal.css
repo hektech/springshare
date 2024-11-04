@@ -475,10 +475,11 @@ select.ui-datepicker-month {
 
 /* END Events Page */
 
-/* BEGIN Spaces Page */
+/* BEGIN Spaces Page 
 #s-lc-eq-navform.s-lc-spaces-setup-info {
     display: none;
 }
+*/
 
 #eq-time-grid h2.fc-toolbar-title {
     margin: 3rem 0;
