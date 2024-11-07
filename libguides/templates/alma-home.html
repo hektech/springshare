@@ -1,4 +1,4 @@
-<body class="s-lg-guide-body"></body>
+<body class="s-lg-guide-body">
     {{skip_link}}
     {{obsolete_browser_alert}}
     {{ADMIN_CMD_BAR}}
@@ -61,7 +61,8 @@
                             alt="Heritage Hall entrance" loading="lazy">
                         <h3>Heritage Hall</h3>
                     </a>
-                    <p>Renowned for collections in modern Reformed Christianity and Dutch American history.<br><i class="fa fa-envelope" aria-hidden="true"></i>
+                    <p>Renowned for collections in modern Reformed Christianity and Dutch American history.<br><i
+                            class="fa fa-envelope" aria-hidden="true"></i>
                         E-mail: <a href="mailto:crcarchives@calvin.edu">crcarchives@calvin.edu</a><br><i
                             class="fa fa-fw fa-clock-o" aria-hidden="true"></i> <span id="hh-hours"></span></p>
                 </li>
@@ -150,8 +151,10 @@
         <div id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
     </div>
 
-    <!-- dynamic hours -->
+    <!-- homepage JavaScript -->
     <script>
+
+        //Function 1: dynamic hours
         (function () {
             // Fetch JSON data
             fetch('https://libcalendar.calvin.edu/api_hours_today.php?iid=5960&lid=0&format=json&systemTime=0')
@@ -187,12 +190,25 @@
                 });
         })();
 
-        //homepage mobile hamburger menu
+        //Function 2: homepage mobile hamburger menu
         (function () {
             $('.hamburger').click(function () {
                 $('.hours').toggle();
                 $('.utility-links').toggle();
             });
+        })();
+
+        //Function 3: library catalog link searches for the term typed
+        (function () {
+            function setCatalogLink() {
+                const queryValue = document.querySelector('#primoQueryTemp').value;
+                const encodedQuery = `query=any,contains,${encodeURIComponent(queryValue)}&`;
+                const catalogLink = document.querySelector('#catalog-search');
+
+                catalogLink.href = `https://calvin.primo.exlibrisgroup.com/discovery/search?${encodedQuery}tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:01CALVIN_INST&offset=0`;
+            }
+
+            document.getElementById('catalog-search').addEventListener('click', setCatalogLink);
         })();
 
     </script>
