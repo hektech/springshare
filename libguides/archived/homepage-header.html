@@ -1,0 +1,155 @@
+<section class="home-top">
+    <nav class="navbar home-navbar">
+        <div class="container home-navbar-container">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navUtility"
+                style="border-color:black" aria-label="Open the menu">
+                <span class="icon-bar" style="background-color:black"></span>
+                <span class="icon-bar" style="background-color:black"></span>
+                <span class="icon-bar" style="background-color:black"></span>
+            </button>
+            <div class="navbar-header">
+                <a href="https://calvin.edu/" title="Calvin University" class="navbar-brand">
+                    <img src="https://libapps.s3.amazonaws.com/customers/726/images/calvin-black-transparent.png"
+                        alt="Calvin University">
+                </a>
+            </div>
+            <h1 id="top-header"><a href="/"><img
+                        src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_hi-res_50x50.png"
+                        alt="Hekman Library Logo">Hekman
+                    Library</a></h1>
+
+            <ul class="nav navbar-right utility-links collapse navbar-collapse" id="navUtility"
+                style="padding:0; margin: revert;">
+                <!-- <li class="mtop-1half"><a href="/c.php?g=1285690&p=9440554#s-lg-box-wrapper-35837920?fromhome"
+                    class="btn btn-link btn-default btn-block"><img src="https://libapps.s3.amazonaws.com/customers/726/images/hekman_logo_2019_smaller_50x50.png" alt="Hekman Library Logo" height="18"> Contact Us</a></li> -->
+                <li><a href="https://ulysses.calvin.edu/eg/opac/login?fromhome" class="btn btn-link btn-default btn-block"
+                        title="Renew and Review Checked Out Items and Fines"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Login to My Account</a></li>
+                <li><a href="/srch.php?fromhome" class="btn btn-link btn-default btn-block"><i class="fa fa-search"
+                            aria-hidden="true"></i> Site Search</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <section class="container home-header">
+        <div class="row dot-matrix">
+
+            <div class="col-md-9">
+                <label for="search-start-input">
+                    <h2 class="search-start-header" style="margin-top:0">Find Articles, Books, & More...</h2>
+                </label>
+
+                <form name="ss_form" id="search-start-form" method="get"
+                    action="https://ukeke.calvin.edu/cgi-bin/UDT/driver_2023.pl" onsubmit="prepareQuery()">
+                    <input id="search-start-input" type="text" name="query" required>
+                    <input id="target_input" type="hidden" name="target" value="ebsco">
+                    <button id="search-start-btn" class="btn btn-default" type="submit" aria-label="Search">
+                        <i class="fa fa-search" aria-hidden="true" title="Search"></i>
+                    </button>
+                </form>
+
+                <script>
+                    //this is to make it so "smart punctuation" on iphones converts the quotation marks to actual quotation marks that work
+                    function prepareQuery() {
+                        var inputElement = document.getElementById("search-start-input");
+                        var sanitizedQuery = inputElement.value.replace(/[“”]/g, '"');
+                        document.forms["ss_form"].query.value = sanitizedQuery;
+                    }
+                </script>
+
+
+                <script>
+                    $(document).ready(function () {
+                        $('#search-start-form').submit(function (event) {
+                            event.preventDefault();
+
+                            // Perform custom form validation if needed
+
+                            // Set the value of the hidden input field
+                            $('#target_input').val('ebsco');
+
+                            // Submit the form
+                            this.submit();
+                        });
+                    });
+                </script>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="hours">
+                    <div id="api_hours_today_iid5960_lid0"></div>
+                    <script
+                        src="https://libcalendar.calvin.edu/api_hours_today.php?iid=5960&lid=0&format=js&systemTime=0&context=object"></script>
+                    <p class="text-center" style="font-size:smaller; margin:0;">
+                        <a href="https://libcalendar.calvin.edu/hours?fromhome" style="font-size:initial;"><i
+                                class="fa fa-clock-o" aria-hidden="true"></i>
+                            More Library Hours</a>
+                    </p>
+                    <script>
+                        (function () {
+
+                            //remove links
+                            $('.hours-today a').contents().unwrap();
+
+                            //insert day of week
+                            const today = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][(new Date()).getDay()];
+                            $(`tr.loc19460 th.hours-col-loc`).text(today);
+
+                            //hide when multiple times in a single day
+                            $("tr.hours-today-row").has("span.s-lc-time > br").addClass("hide");
+
+                        })();
+                    </script>
+                    <style>
+                        /*Hours table*/
+                        .hours {
+                            background-color: #eee;
+                            padding: 1rem;
+                            font-size: smaller;
+                            color: #8c2131;
+                            border: 1px solid;
+                            opacity: 0.9;
+                            font-family: Arial;
+                        }
+
+                        .hours-today {
+                            margin: auto;
+                        }
+
+                        .hours-today tr.loc19460,
+                        .loc19460 th {
+                            font-weight: bold;
+                        }
+
+                        .hours-today tr.dep19470 {
+                            display: none;
+                        }
+
+                        th {
+                            font-weight: normal;
+                        }
+
+                        th.hours-col-loc {
+                            text-align: right;
+                        }
+
+                        td.hours-col-time {
+                            padding: 0 1rem;
+                        }
+                    </style>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</section>
+
+<!--homepage chat-->
+<div class="text-right footer navbar-fixed-bottom container" style="padding:0">
+    <script src="https://libanswers.calvin.edu/load_chat.php?hash=51b0b3781b09e1ba1ddd6b9921472e75"></script>
+    <div id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
+</div>
