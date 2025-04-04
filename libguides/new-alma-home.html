@@ -312,12 +312,17 @@
         flex-wrap: wrap;
         gap: 1rem;
         flex: auto;
-        max-width: 55rem;
+        max-width: 60rem;
+    }
+
+    .options-under-search i {
+        margin-right: 5px;
+        color: #fff;
     }
 
     .options-under-search a {
         color: #eee;
-        font-size: 1.1em;
+        font-size: clamp(1.75rem, 1.6vw, 2.15rem);
         text-decoration: underline;
     }
 
@@ -436,7 +441,8 @@
             margin-top:0;
         }
 
-        .options-under-search a {
+        .options-under-search a,
+        .options-under-search i {
             font-size: 1em;
             color: #333;
         }
@@ -700,12 +706,12 @@
                     </div>
                     <div class="options-under-search-wrapper">
                         <ul class="options-under-search">
-                            <li><a href="/az/databases">Databases</a></li>
-                            <li><a
+                            <li><a href="/az/databases"><i class="fa fa-database" aria-hidden="true"></i>Databases</a></li>
+                            <li><i class="fa fa-file-text" aria-hidden="true"></i><a
                                     href="https://calvin.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALVIN_INST:01CALVIN_INST">Journals
                                     By
                                     Title</a></li>
-                            <li><a
+                            <li><i class="fa fa-book" aria-hidden="true"></i><a
                                     href="https://calvin.primo.exlibrisgroup.com/discovery/search?tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:01CALVIN_INST&offset=0" id="catalog-search">Library
                                     Catalog</a></li>
                         </ul>
