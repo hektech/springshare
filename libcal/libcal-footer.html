@@ -1,25 +1,59 @@
 <div class="container">
-<footer id="library-footer">
-<a href="https://calvin.edu/">Calvin University</a> | <a href="http://www.calvinseminary.edu/">Calvin Theological Seminary</a>
-</footer>
+  <footer id="library-footer">
+    <a href="https://calvin.edu/">Calvin University</a> | <a href="http://www.calvinseminary.edu/">Calvin Theological
+      Seminary</a>
+  </footer>
 </div>
 
 <style>
-#library-footer {
-background-color: #8c2131;
-color: white;
-padding: 1vh 1vw;
-}
-#library-footer > a {
-color: white;
-}
-#library-footer > a:hover {
-color: rgba(255, 255, 255, 0.9)
-}
+  #library-footer {
+    background-color: #8c2131;
+    color: white;
+    padding: 1vh 1vw;
+  }
+
+  #library-footer>a {
+    color: white;
+  }
+
+  #library-footer>a:hover {
+    color: rgba(255, 255, 255, 0.9)
+  }
 </style>
 
 <script>
-setTimeout(() => {
-  document.querySelector(`a[href="/space/139907"]`).href="https://calvin.edu/go/reservations";
-}, 1000)
+  (function () {
+    setTimeout(() => {
+      if (document.querySelector(`a[href="/space/139907"]`)) {
+        document.querySelector(`a[href="/space/139907"]`).href = "https://calvin.edu/go/reservations"; //take reservations to Calvin system
+      }
+    }, 1000)
+
+    //to clarify Hekman Library hours
+    const hekLibraryNameObserver = new MutationObserver((mutations, obs) => {
+      const hekLibraryNameTarget = document.querySelector('td.s-lc-whw-locname');
+      const hekLibraryNameTarget2 = document.querySelector('td.s-lc-h-locname');
+
+      if (hekLibraryNameTarget) {
+        $('td.s-lc-whw-locname').html(
+          `<a href="https://library.calvin.edu">Hekman Library</a><br><small style="font-weight:normal;">3rd, 4th, 5th Floors</small>`
+        );
+        obs.disconnect(); // Stop observing once done
+      }
+
+      if (hekLibraryNameTarget2) {
+        $('td.s-lc-h-locname').html(
+          `<a href="https://library.calvin.edu">Hekman Library</a><br><small style="font-weight:normal;">3rd, 4th, 5th Floors</small>`
+        );
+        obs.disconnect(); // Stop observing once done
+      }
+    });
+
+    // Start observing the document body for additions
+    hekLibraryNameObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  })();
+
 </script>
