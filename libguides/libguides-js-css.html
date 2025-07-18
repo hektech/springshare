@@ -51,6 +51,7 @@
       max-height: 100vh;
       max-height: 100dvh;
       overflow-y: auto;
+      border-right: 1px solid;
     }
   }
 
@@ -92,6 +93,10 @@
 
   .s-lg-tabs-side .s-lg-boxnav {
     margin: 5px;
+  }
+
+  .s-lg-tabs-side .s-lg-boxnav .list-group-item {
+    background: none;
   }
 
   /* div#s-lg-side-nav-content div.col-md-3.s-lg-tabs-side.pad-bottom-med {
@@ -444,18 +449,22 @@
     }
   }
 
+  #s-lg-guide-tabs .list-group-item {
+    border: none;
+  }
+
   #s-lg-guide-tabs>.nav-pills>li {
     margin-bottom: 1rem;
-    border: 1px solid #505050;
+    /* border: 1px solid #505050; */
   }
 
   #s-lg-guide-tabs>.nav-pills>li>a {
     line-height: 1.25;
     font-size: 16px;
     font-weight: normal;
-    text-decoration: none;
     padding: 1rem;
-    color: #303030;
+    color: #8c2131;
+    text-decoration: underline;
   }
 
   #s-lg-guide-tabs .nav-pills>.active>a {
@@ -466,6 +475,11 @@
 
   #s-lg-guide-tabs>.nav-pills a {
     font-size: 15px;
+    color: #333;
+  }
+
+  #s-lg-guide-tabs>.nav-pills a:hover {
+    color: #8c2131;
   }
 
   #s-lg-tabs-container .nav-pills>li>a.s-lg-tab-top-link,
@@ -484,6 +498,18 @@
   #s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link,
   #s-lg-tabs-container .nav-pills>li>button.s-lg-tab-top-link:hover {
     padding: 1rem;
+  }
+
+  #s-lg-tabs-container .nav-pills>.active>a {
+    color: #8c2131;
+    background: none;
+    font-size: 115%;
+    padding-bottom: 0;
+    text-decoration: none;
+  }
+
+  #s-lg-tabs-container .nav-pills>.active>a:hover {
+    font-weight: normal;
   }
 
   #s-lg-guide-tabs .dropdown-menu>li>a {
@@ -627,6 +653,23 @@
   }
 
   /*END main section*/
+
+  /*libcal schedule button*/
+  .libcal-schedule-button {
+    background: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    color: #333333;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .libcal-schedule-button:hover,
+  .libcal-schedule-button:active,
+  .libcal-schedule-button:focus {
+    opacity: 0.9;
+  }
 
   /* BEGIN misc. */
 
