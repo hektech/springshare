@@ -57,7 +57,7 @@
 
 
   div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
-    max-width: 633px;
+    max-width: 767px;
     margin: 0 auto;
   }
 
@@ -232,7 +232,7 @@
 
   #s-lg-guide-header-info {
     background-color: #fff;
-    padding-bottom: 3rem;
+    /* padding-bottom: 3rem; */
   }
 
   h1#s-lib-public-header-title,
@@ -460,21 +460,33 @@
 
   #s-lg-guide-tabs>.nav-pills>li>a {
     line-height: 1.25;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     padding: 1rem;
     color: #8c2131;
     text-decoration: underline;
   }
 
+  #s-lg-guide-tabs>ul.nav-stacked>li.active {
+    background: rgba(97, 26, 40, 0.1);
+    padding-bottom: 1rem;
+  }
+
+  /*hide page title when there is only 1 page */
+  #s-lg-guide-tabs ul li:only-child.active>a {
+    display: none;
+  }
+  #s-lg-guide-tabs ul li:only-child.active>ul {
+    padding-top:0.5rem;
+  }
+
   #s-lg-guide-tabs .nav-pills>.active>a {
     line-height: 1.75;
-    font-size: 16px;
     font-weight: normal;
   }
 
   #s-lg-guide-tabs>.nav-pills a {
-    font-size: 15px;
+    font-size: 16px;
     color: #333;
   }
 
@@ -501,15 +513,16 @@
   }
 
   #s-lg-tabs-container .nav-pills>.active>a {
-    color: #8c2131;
-    background: none;
-    font-size: 115%;
+    color: #fff;
+    background-color: #8c2131;
     padding-bottom: 0;
     text-decoration: none;
   }
 
   #s-lg-tabs-container .nav-pills>.active>a:hover {
     font-weight: normal;
+    cursor:default;
+    outline:none;
   }
 
   #s-lg-guide-tabs .dropdown-menu>li>a {
