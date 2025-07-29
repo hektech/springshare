@@ -113,7 +113,7 @@
                 if (
                     h2.nodeType === Node.ELEMENT_NODE &&
                     h2.matches('h2.s-lib-box-title') &&
-                    h2.textContent.trim() === 'Recommended Databases' &&
+                    h2.textContent.trim().toLowerCase().includes('databases') &&
                     h2.parentElement
                 ) {
                     h2.parentElement.classList.add('database-box');
