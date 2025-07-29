@@ -1,0 +1,195 @@
+<body class="s-lg-guide-body">
+    {{skip_link}}
+
+    {{ADMIN_CMD_BAR}}
+
+    {{public_header}}
+
+
+    <div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
+        <nav id="s-lib-bc" aria-label="breadcrumb">
+            {{breadcrumbs}}
+
+        </nav>
+        <div class="pull-right">
+            <div id="s-lg-guide-header-search">
+                {{guide_search}}
+            </div>
+            {{ADMIN_MINI_CMD_BAR}}
+
+        </div>
+        <div id="s-lg-guide-header-info">
+            <h1 id="s-lg-guide-name">{{guide_title}}</h1>
+            <div id="s-lg-guide-desc-container">
+                <span id="s-lg-guide-description">{{guide_description}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="s-lg-guide-tabs-title-bar" class="container s-lib-side-borders"></div>
+
+    <div id="s-lg-side-nav-content" class="container s-lib-side-borders pad-top-med">
+        <div class="row">
+            <div class="col-md-3 s-lg-tabs-side pad-bottom-med">
+                <div id="s-lg-tabs-container">
+                    <div id="s-lg-guide-tabs" role="navigation" aria-label="Guide Pages">
+                        <ul class="nav nav-pills nav-stacked split-button-nav">
+                            {{guide_nav}}
+
+                        </ul>
+                        {{side_nav_boxes}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="s-lg-tab-content">
+                    <div id="s-lg-guide-main" class="tab-pane active" tabindex="-1">
+                        {{content}}
+
+                    </div>
+                </div>
+                {{page_prev_next_links}}
+
+            </div>
+        </div>
+    </div>
+
+    <div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+        <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
+            <ul id="s-lg-guide-header-attributes">
+                <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                    {{last_updated_display}}
+                </li>
+                <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                    {{guide_url_display}}
+
+                </li>
+                <li id="s-lg-guide-print-url">
+                    {{print_url_display}}
+
+                </li>
+            </ul>
+            <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
+                {{login_url_display}}
+            </div>
+        </div>
+        <div class="pad-bottom-sm clearfix">
+            <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
+                <a href="https://library.calvin.edu/about/report">Report a problem</a>
+            </div>
+            <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
+                {{guide_subjects}}
+
+            </div>
+            <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
+                {{guide_tags}}
+
+            </div>
+        </div>
+    </div>
+
+    <!-- scroll_top.twig -->
+    <div id="s-lib-scroll-top">
+        <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top" aria-label="Back to Top">
+            <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+            </span>
+        </a>
+    </div>
+    <!-- !scroll_top.twig -->
+
+    <div id="s-lib-alert" title="">
+        <div id="s-lib-alert-content"></div>
+    </div>
+
+    {{public_footer}}
+
+    <script>
+        (function () {
+            // Function to check and add the database class to parents
+            function checkAndMark(h2) {
+                if (
+                    h2.nodeType === Node.ELEMENT_NODE &&
+                    h2.matches('h2.s-lib-box-title') &&
+                    h2.textContent.trim() === 'Recommended Databases' &&
+                    h2.parentElement
+                ) {
+                    h2.parentElement.classList.add('database-box');
+                }
+            }
+
+            // Initial run for elements already present
+            document.querySelectorAll('h2.s-lib-box-title').forEach(checkAndMark);
+
+            // Set up MutationObserver to catch new elements
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        // If the added node itself is an h2, check it
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            checkAndMark(node);
+
+                            // Also check descendants if this was a larger chunk
+                            node.querySelectorAll?.('h2.s-lib-box-title').forEach(checkAndMark);
+                        }
+                    });
+                });
+            });
+
+            // Start observing the entire <body> for added elements
+            observer.observe(document.body, { childList: true, subtree: true });
+        })();
+
+    </script>
+
+    <style>
+        /* hide responsibilities box in staff profile */
+        .staff-profile>div.alert {
+            display: none;
+        }
+
+        /* style database box */
+
+        div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
+            max-width: 767px;
+        }
+
+        .database-box li.s-lg-tn-li img {
+            width: 50px;
+            height: 50px;
+            float: none !important;
+        }
+
+        .database-box li.s-lg-tn-li>div>a {
+            font-size: 2.5rem;
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        .database-box ul:has(> li.s-lg-tn-li) {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0;
+        }
+
+        .database-box li.s-lg-tn-li {
+            max-width: 240px;
+            border: 1px solid;
+            border-radius: 4px;
+            padding: 1rem;
+            box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+            background-color: rgba(243, 205, 0, 0.1);
+        }
+
+        .database-box .s-lg-tn {
+            margin: 0;
+            display: inline-block;
+        }
+
+        .database-box .s-lg-database-desc {
+            margin-top: 1rem;
+        }
+    </style>
+</body>
