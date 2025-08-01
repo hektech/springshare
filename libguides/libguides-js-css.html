@@ -308,7 +308,7 @@
   }
 
   #s-lg-guide-desc-container {
-    min-height: 1em;  
+    min-height: 1em;
   }
 
   div#s-lib-public-header-desc,
@@ -476,12 +476,13 @@
     padding-bottom: 1rem;
   }
 
-  /*hide page title when there is only 1 page */
-  #s-lg-guide-tabs ul li:only-child.active>a {
+  /*hide page title when there is only 1 page, and box-level nav is selected */
+  #s-lg-guide-tabs ul li:only-child.active>a:has(~ ul.list-group) {
     display: none;
   }
+
   #s-lg-guide-tabs ul li:only-child.active>ul {
-    padding-top:0.5rem;
+    padding-top: 0.5rem;
   }
 
   #s-lg-guide-tabs .nav-pills>.active>a {
@@ -525,8 +526,8 @@
 
   #s-lg-tabs-container .nav-pills>.active>a:hover {
     font-weight: normal;
-    cursor:default;
-    outline:none;
+    cursor: default;
+    outline: none;
   }
 
   #s-lg-guide-tabs .dropdown-menu>li>a {
