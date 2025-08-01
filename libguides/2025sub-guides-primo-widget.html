@@ -1,0 +1,45 @@
+<!--BEGIN sub guide search box-->
+<!--BEGIN: PRIMO WIDGET-->
+<script type="text/javascript">
+  function searchPrimoAll_7075346447() {
+    document.getElementById("primoQuery_7075346447").value = "any,contains," + document.getElementById("primoQueryTemp_7075346447").value;
+    document.forms["searchForm_7075346447"].submit();
+  }
+</script>
+
+<style>
+  .primo-lg-widget {
+    position: relative;
+  }
+
+  .primo-lg-widget input[type="text"]::placeholder {
+    color: #333;
+  }
+</style>
+
+<form class="primo-lg-widget" id="simple-primo-search_7075346447" name="searchForm_7075346447" method="get"
+  target="_blank" rel="noopener noreferrer" action="https://calvin.primo.exlibrisgroup.com/discovery/search"
+  enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimoAll_7075346447()">
+  <input type="hidden" name="tab" value="Everything">
+  <input type="hidden" name="search_scope" value="MyInst_and_CI">
+  <input type="hidden" name="vid" value="01CALVIN_INST:01CALVIN_INST">
+  <input type="hidden" name="lang" value="en">
+  <input type="hidden" name="mode" value="advanced">
+  <input type="hidden" name="offset" value="0">
+  <!-- <input type="hidden" name="query" value="sub,contains,technolog*,OR"> -->
+  <input type="hidden" name="query" value="sub,contains,dutch,AND">
+  <input type="hidden" name="query" id="primoQuery_7075346447">
+  <input type="text" id="primoQueryTemp_7075346447" value="" placeholder="Search Dutch Titles..." style="padding: 1rem;
+    padding-left: 4rem;
+    border-radius: 4rem;
+    border: 2px solid #555;">
+  <button id="go_7075346447" class="btn btn-default" type="submit" aria-label="Search" style="position: absolute;
+    left: 2%;
+    top: 19%;
+    border: none;
+    font-size: 2rem;
+    padding: 0;">
+    <i class="fa fa-search" aria-hidden="true" title="Search"></i>
+  </button>
+</form>
+<!--END: PRIMO WIDGET-->
