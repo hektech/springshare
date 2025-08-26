@@ -1,0 +1,30 @@
+<script>
+//FUNCTION to make homepage site search dynamic
+(function () {
+    $('form.site-search').click(function () {
+        $('.site-search > input').addClass('active-site-search');
+        $('.site-search > button').addClass('active-site-search-button');
+    });
+})();
+
+//FUNCTION to randomly show images on homepage
+(function () {
+  // List of image URLs
+  const images = [
+    "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/newhome1_1171x634.jpg",
+    "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/older-girl6.jpg",
+    "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/older-girl4.jpg",
+    "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/indoor3.jpg",
+    "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/moregirls2.jpg",
+    "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/puzzle3.jpg"
+  ];
+
+  // Randomly select one image
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+
+  // Set as background for 'main'
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("main").style.backgroundImage = `url('${randomImage}')`;
+  });
+})();
+</script>
