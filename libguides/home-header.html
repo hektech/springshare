@@ -165,24 +165,84 @@
         text-decoration: underline;
     }
 
+    .utility-links {
+        flex-direction: column;
+        align-items: flex-start;
+        place-items: flex-end end;
+    }
+
     .utility-links a {
         background-color: white;
         color: #333;
         border: 1px solid #333;
-        position: relative;
-        display: block;
-        padding: 0.5rem 1rem;
+        padding: 0.8rem 1.5rem;
         font-size: small;
         margin-bottom: 0.33rem;
-        text-align: right;
         text-transform: uppercase;
-        text-decoration: none;
     }
 
     .utility-links a:first-child {
         background-color: #8c2131;
         background: linear-gradient(to right bottom, #8c2131, #360c13);
         color: #fff;
+    }
+
+    .utility-links a i {
+        margin-right: 5px;
+        color: white;
+    }
+
+    .utility-links form {
+        margin-top: 5px;
+    }
+
+    .utility-links form div {
+        margin-left: auto;
+    }
+
+    .utility-links form input {
+        font-size: small;
+        color: black;
+    }
+
+    .utility-links form input::placeholder {
+        color: #333;
+    }
+
+    .site-search-container {
+        position: relative;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        background: white;
+        width: 209px;
+    }
+
+    .site-search-button {
+        background: none;
+        border: none;
+        padding: 0 1.5rem;
+        padding-right: 0px;
+        cursor: pointer;
+    }
+
+    .site-search-button i {
+        color: black;
+        font-size: 14px;
+        padding-left: 3px;
+    }
+
+    .site-search-input {
+        flex: 1;
+        padding: 5px;
+        color: black;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-size: small;
+        border: none;
+        outline: none;
+        background: none;
+        width: 170px;
+        text-align: left;
     }
 
     .hamburger {
@@ -203,8 +263,17 @@
             text-align: right;
         }
 
-        .utility-links a {
-            font-size: initial;
+        .utility-links form {
+            margin-top: 1rem;
+        }
+        .utility-links form > div {
+            width: 276px;
+        }
+
+        .utility-links a,
+        .utility-links form input {
+            font-size: inherit;
+
         }
 
         .hamburger {
@@ -591,7 +660,51 @@
             <a
                 href="https://calvin.primo.exlibrisgroup.com/discovery/account?vid=01CALVIN_INST:01CALVIN_INST&section=overview"><i
                     class="fa fa-sign-in" aria-hidden="true"></i> Login to My Account</a>
-            <a href="/srch.php" title="Search library guides, policies, and FAQs."><svg style="vertical-align: middle; margin-bottom: 2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.17475 14.17475" height="14.17475" width="14.17475"><defs><clipPath id="clipPath4258" clipPathUnits="userSpaceOnUse"><path d="M0 11.34h11.34V0H0v11.34z"/></clipPath></defs><g transform="matrix(1.25 0 0 -1.25 0 14.17475)"><g style="stroke:#58928a;stroke-opacity:1" transform="matrix(.97909434 .20340668 -.20340668 .97909434 1.2718042 -1.0347843)"><g style="stroke:#58928a;stroke-opacity:1" clip-path="url(#clipPath4258)"><g style="stroke:#58928a;stroke-opacity:1" transform="translate(.563 5.6699)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0c0 2.82 2.287 5.107 5.107 5.107 2.82 0 5.107-2.287 5.107-5.107 0-2.82-2.287-5.107-5.107-5.107C2.287-5.107 0-2.82 0 0z"/></g><g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(8.4111 5.6704)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0c0 2.819-1.259 5.106-2.811 5.106-1.552 0-2.811-2.287-2.811-5.106 0-2.823 1.259-5.108 2.811-5.108C-1.259-5.108 0-2.823 0 0z"/></g><g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(5.6699 10.647)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0V-9.855"/></g><g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(.563 5.6699)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0h10.214"/></g></g></g></g></svg> Site Search</a>
+
+            <form action="/srch.php" method="get" style="display: flex; align-items: center;">
+                <div class="site-search-container">
+                    <button class="site-search-button" type="submit">
+                        <svg style="vertical-align: middle;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 14.17475 14.17475" height="14.17475" width="14.17475">
+                            <defs>
+                                <clipPath id="clipPath4258" clipPathUnits="userSpaceOnUse">
+                                    <path d="M0 11.34h11.34V0H0v11.34z" />
+                                </clipPath>
+                            </defs>
+                            <g transform="matrix(1.25 0 0 -1.25 0 14.17475)">
+                                <g style="stroke:#58928a;stroke-opacity:1"
+                                    transform="matrix(.97909434 .20340668 -.20340668 .97909434 1.2718042 -1.0347843)">
+                                    <g style="stroke:#58928a;stroke-opacity:1" clip-path="url(#clipPath4258)">
+                                        <g style="stroke:#58928a;stroke-opacity:1" transform="translate(.563 5.6699)">
+                                            <path
+                                                style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                d="M0 0c0 2.82 2.287 5.107 5.107 5.107 2.82 0 5.107-2.287 5.107-5.107 0-2.82-2.287-5.107-5.107-5.107C2.287-5.107 0-2.82 0 0z" />
+                                        </g>
+                                        <g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(8.4111 5.6704)">
+                                            <path
+                                                style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                d="M0 0c0 2.819-1.259 5.106-2.811 5.106-1.552 0-2.811-2.287-2.811-5.106 0-2.823 1.259-5.108 2.811-5.108C-1.259-5.108 0-2.823 0 0z" />
+                                        </g>
+                                        <g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(5.6699 10.647)">
+                                            <path
+                                                style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                d="M0 0V-9.855" />
+                                        </g>
+                                        <g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(.563 5.6699)">
+                                            <path
+                                                style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                d="M0 0h10.214" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </button>
+                    <input class="site-search-input" type="text" id="site-search-box" name="q"
+                        placeholder="SITE SEARCH">
+                </div>
+            </form>
+
         </div>
     </nav>
 
@@ -713,9 +826,7 @@
                                     Catalog</a></li>
                         </ul>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </main>
