@@ -19,6 +19,11 @@
         right: auto;
     }
 
+    /* Chae */
+    .site-search-button {
+        padding-left: 6px;
+    }
+
     .utility-links form input.active-site-search {
         text-align: left;
         width: 100%;
@@ -44,6 +49,17 @@
         text-decoration: none;
         position: relative;
         cursor: pointer;
+
+        /* Chae */
+        max-width: 245px;
+        margin-left: auto;
+        width: 100%;
+    }
+
+    /* Chae */
+    .utility-links form .site-search2 {
+        width: 100%;
+        max-width: 245px;
     }
 
     .utility-links form button {
@@ -59,9 +75,12 @@
     }
 
     .utility-links form input {
-        padding-left: 30px;
         padding-bottom: 6px;
         width: 64%;
+
+        /* Chae */
+        padding-left: 25px;
+        padding-right: 0px;
     }
 
     .logos-wording h1:hover {
@@ -128,6 +147,12 @@
         text-align: right;
         text-transform: uppercase;
         text-decoration: none;
+
+        /* Chae : this may have to be under div.utility-links a*/
+        max-width: 245px;
+        width: 100%;
+        display: inline-block;
+        text-align: left;
     }
 
     .utility-links a:first-child {
@@ -168,21 +193,39 @@
 
         .utility-links form button {
             font-size: 15px;
-            margin-left: 1.5rem;
             right: 13rem;
         }
 
 
         .utility-links a {
             font-size: initial;
+            /* Chae */
+            width: auto;
+            padding-right: 2rem;
         }
 
         .hamburger {
             display: inline-block;
         }
+
+        /* Chae */
+        .utility-links.visible form.site-search button.site-search-button {
+            font-size: 15px;
+            right: 21.5rem;
+        }
+
+        /* Chae */
+        .utility-links.visible form.site-search input.site-search2 {
+            width: 100%;
+            font-size: 16px;
+            padding-left: 2.8rem;
+            padding-right: 2rem;
+            text-align: left;
+        }
     }
 
     @media (max-width: 767px) {
+
         .desktop,
         #s-lib-bc .breadcrumb {
             display: none;
@@ -191,9 +234,12 @@
         .mobile {
             display: initial;
         }
+    }
 
-
-
+    /* Chae */
+    .utility-links.visible {
+        margin-top: 10px;
+        place-items: flex-end end;
     }
 
     .logos-wording>.logos-wording-clickable>a {
@@ -445,8 +491,42 @@
             href="https://calvin.primo.exlibrisgroup.com/discovery/account?vid=01CALVIN_INST:01CALVIN_INST&amp;section=overview"><i
                 class="fa fa-sign-in" aria-hidden="true"></i> Login to My Account</a>
         <form action="/srch.php" method="get" class="site-search" title="Search library guides, policies, and FAQs.">
-            <button class="button" type="submit" aria-label="Search">
-                <svg style="vertical-align: middle; margin-bottom: 2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.17475 14.17475" height="14.17475" width="14.17475"><defs><clipPath id="clipPath4258" clipPathUnits="userSpaceOnUse"><path d="M0 11.34h11.34V0H0v11.34z"/></clipPath></defs><g transform="matrix(1.25 0 0 -1.25 0 14.17475)"><g style="stroke:#58928a;stroke-opacity:1" transform="matrix(.97909434 .20340668 -.20340668 .97909434 1.2718042 -1.0347843)"><g style="stroke:#58928a;stroke-opacity:1" clip-path="url(#clipPath4258)"><g style="stroke:#58928a;stroke-opacity:1" transform="translate(.563 5.6699)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0c0 2.82 2.287 5.107 5.107 5.107 2.82 0 5.107-2.287 5.107-5.107 0-2.82-2.287-5.107-5.107-5.107C2.287-5.107 0-2.82 0 0z"/></g><g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(8.4111 5.6704)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0c0 2.819-1.259 5.106-2.811 5.106-1.552 0-2.811-2.287-2.811-5.106 0-2.823 1.259-5.108 2.811-5.108C-1.259-5.108 0-2.823 0 0z"/></g><g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(5.6699 10.647)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0V-9.855"/></g><g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(.563 5.6699)"><path style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M0 0h10.214"/></g></g></g></g></svg>
+            <button class="site-search-button" type="submit" aria-label="Search">
+                <svg style="vertical-align: middle; margin-bottom: 2px;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 14.17475 14.17475" height="14.17475" width="14.17475">
+                    <defs>
+                        <clipPath id="clipPath4258" clipPathUnits="userSpaceOnUse">
+                            <path d="M0 11.34h11.34V0H0v11.34z" />
+                        </clipPath>
+                    </defs>
+                    <g transform="matrix(1.25 0 0 -1.25 0 14.17475)">
+                        <g style="stroke:#58928a;stroke-opacity:1"
+                            transform="matrix(.97909434 .20340668 -.20340668 .97909434 1.2718042 -1.0347843)">
+                            <g style="stroke:#58928a;stroke-opacity:1" clip-path="url(#clipPath4258)">
+                                <g style="stroke:#58928a;stroke-opacity:1" transform="translate(.563 5.6699)">
+                                    <path
+                                        style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                        d="M0 0c0 2.82 2.287 5.107 5.107 5.107 2.82 0 5.107-2.287 5.107-5.107 0-2.82-2.287-5.107-5.107-5.107C2.287-5.107 0-2.82 0 0z" />
+                                </g>
+                                <g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(8.4111 5.6704)">
+                                    <path
+                                        style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                        d="M0 0c0 2.819-1.259 5.106-2.811 5.106-1.552 0-2.811-2.287-2.811-5.106 0-2.823 1.259-5.108 2.811-5.108C-1.259-5.108 0-2.823 0 0z" />
+                                </g>
+                                <g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(5.6699 10.647)">
+                                    <path
+                                        style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                        d="M0 0V-9.855" />
+                                </g>
+                                <g style="stroke:#6c6c6c;stroke-opacity:1" transform="translate(.563 5.6699)">
+                                    <path
+                                        style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                        d="M0 0h10.214" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
             </button>
             <input type="text" class="site-search2" placeholder="SITE SEARCH" name="q">
         </form>
