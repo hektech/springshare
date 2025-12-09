@@ -546,9 +546,13 @@
     scroll-target-group: auto;
   }
 
-  #s-lg-guide-tabs>.nav-pills a:target-current {
+  #s-lg-guide-tabs>.nav-pills li.list-group-item:has(a:target-current) {
     background: #fff;
+  }
+
+  #s-lg-guide-tabs>.nav-pills a:target-current {
     color: #8c2131;
+    font-weight: bold;
   }
 
   /* END Side Navigation */
