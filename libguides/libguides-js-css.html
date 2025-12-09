@@ -30,10 +30,12 @@
   }
 
   :root {
-    --hek-library-primary: #8c2131; /* Red */
-    --calvin-univ-black: #222; /* Black */
+    --hek-library-primary: #8c2131;
+    /* Red */
+    --calvin-univ-black: #222;
+    /* Black */
   }
-  
+
   body {
     background-color: rgba(0, 25, 51, 0.9);
     /*fallback color*/
@@ -537,6 +539,16 @@
 
   #s-lg-guide-tabs .dropdown-menu>li>a {
     white-space: normal;
+  }
+
+  /*scrollspy added*/
+  .s-lg-boxnav {
+    scroll-target-group: auto;
+  }
+
+  #s-lg-guide-tabs>.nav-pills a:target-current {
+    background: #fff;
+    color: #8c2131;
   }
 
   /* END Side Navigation */
