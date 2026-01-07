@@ -202,10 +202,10 @@
         (function () {
             function setCatalogLink() {
                 const queryValue = document.querySelector('#primoQueryTemp').value;
-                const encodedQuery = `query=any,contains,${encodeURIComponent(queryValue)}&`;
+                const encodedQuery = `query=${encodeURIComponent(queryValue)}&`;
                 const catalogLink = document.querySelector('#catalog-search');
 
-                catalogLink.href = `https://calvin.primo.exlibrisgroup.com/discovery/search?${encodedQuery}tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:01CALVIN_INST&offset=0`;
+                catalogLink.href = `https://calvin.primo.exlibrisgroup.com/discovery/search?${encodedQuery}tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:NDE_Live&offset=0`;
             }
 
             document.getElementById('catalog-search').addEventListener('click', setCatalogLink);

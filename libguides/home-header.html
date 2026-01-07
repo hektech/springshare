@@ -684,7 +684,7 @@
         </div>
         <div class="utility-links">
             <a
-                href="https://calvin.primo.exlibrisgroup.com/discovery/account?vid=01CALVIN_INST:01CALVIN_INST&section=overview"><i
+                href="https://calvin.primo.exlibrisgroup.com/nde/login?vid=01CALVIN_INST:NDE_Live&lang=en"><i
                     class="fa fa-sign-in" aria-hidden="true"></i> Login to My Account</a>
             <search>
                 <form action="/srch.php" method="get" style="display: flex; align-items: center;">
@@ -818,7 +818,7 @@
                         <!-- Script that converts the query string into valid parameter -->
                         <script type="text/javascript">
                             function searchPrimo() {
-                                document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value;
+                                document.getElementById("primoQuery").value = document.getElementById("primoQueryTemp").value;
                                 document.forms["searchForm"].submit();
                             }
                         </script>
@@ -827,10 +827,11 @@
                             <form id="simple-primo-search" name="searchForm" method="get" target="_self"
                                 action="https://calvin.primo.exlibrisgroup.com/discovery/search"
                                 enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
-                                <input type="hidden" name="vid" value="01CALVIN_INST:01CALVIN_INST">
+                                <input type="hidden" name="vid" value="01CALVIN_INST:NDE_Live">
                                 <input type="hidden" name="tab" value="Everything">
                                 <input type="hidden" name="search_scope" value="MyInst_and_CI">
                                 <input type="hidden" name="lang" value="en">
+                                <input type="hidden" name="searchInFulltext" value="true">
                                 <!-- Fixed parameters -->
                                 <input type="hidden" name="query" id="primoQuery">
                                 <input type="text" id="primoQueryTemp" value=""
@@ -849,11 +850,11 @@
                             <li><a href="/az/databases"><i class="fa fa-database" aria-hidden="true"></i>Databases</a>
                             </li>
                             <li><i class="fa fa-file-text" aria-hidden="true"></i><a
-                                    href="https://calvin.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALVIN_INST:01CALVIN_INST">Journals
+                                    href="https://calvin.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALVIN_INST:NDE_Live">Journals
                                     By
                                     Title</a></li>
                             <li><i class="fa fa-book" aria-hidden="true"></i><a
-                                    href="https://calvin.primo.exlibrisgroup.com/discovery/search?tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:01CALVIN_INST&offset=0"
+                                    href="https://calvin.primo.exlibrisgroup.com/discovery/search?tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:NDE_Live&offset=0"
                                     id="catalog-search">Library
                                     Catalog</a></li>
                         </ul>
