@@ -221,3 +221,11 @@ body#ticketsurvey > div.container:nth-child(2) {
 body#ticketsurvey > div.container:nth-child(3) {
   background-color: #8c2131;
 }
+
+/* END Follow-Up Survey Page */
+
+/* BEGIN Systems Status Page */
+#s-la-page-49670 #s-la-public-header-title span.label {
+  font-weight: normal;
+}
+/* END Systems Status Page */
