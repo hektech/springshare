@@ -814,10 +814,10 @@
 
                     <div class="primo-search-contents">
 
-                        <!--BEGIN: PRIMO WIDGET-->
+                        <!--BEGIN: NDE WIDGET-->
                         <!-- Script that converts the query string into valid parameter -->
                         <script type="text/javascript">
-                            function searchPrimo() {
+                            function searchNde() {
                                 document.getElementById("primoQuery").value = document.getElementById("primoQueryTemp").value;
                                 document.forms["searchForm"].submit();
                             }
@@ -825,13 +825,15 @@
 
                         <search class="simple-primo-search-wrapper">
                             <form id="simple-primo-search" name="searchForm" method="get" target="_self"
-                                action="https://calvin.primo.exlibrisgroup.com/discovery/search"
-                                enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchPrimo()">
+                                action="https://calvin.primo.exlibrisgroup.com/nde/search"
+                                enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchNde()">
                                 <input type="hidden" name="vid" value="01CALVIN_INST:NDE_Live">
                                 <input type="hidden" name="tab" value="Everything">
                                 <input type="hidden" name="search_scope" value="MyInst_and_CI">
                                 <input type="hidden" name="lang" value="en">
                                 <input type="hidden" name="searchInFulltext" value="true">
+                                <!-- <input type="hidden" name="facet" value="location_code,exclude,8316–127046100008316–microform">
+                                <input type="hidden" name="facet" value="location_code,exclude,8316–127046100008316–handlon"> -->
                                 <!-- Fixed parameters -->
                                 <input type="hidden" name="query" id="primoQuery">
                                 <input type="text" id="primoQueryTemp" value=""
@@ -842,7 +844,7 @@
                                 </button>
                             </form>
                         </search>
-                        <!--END: PRIMO WIDGET-->
+                        <!--END: NDE WIDGET-->
 
                     </div>
                     <div class="options-under-search-wrapper">
@@ -850,11 +852,11 @@
                             <li><a href="/az/databases"><i class="fa fa-database" aria-hidden="true"></i>Databases</a>
                             </li>
                             <li><i class="fa fa-file-text" aria-hidden="true"></i><a
-                                    href="https://calvin.primo.exlibrisgroup.com/discovery/jsearch?vid=01CALVIN_INST:NDE_Live">Journals
+                                    href="https://calvin.primo.exlibrisgroup.com/nde/jsearch?vid=01CALVIN_INST:NDE_Live">Journals
                                     By
                                     Title</a></li>
                             <li><i class="fa fa-book" aria-hidden="true"></i><a
-                                    href="https://calvin.primo.exlibrisgroup.com/discovery/search?tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:NDE_Live&offset=0"
+                                    href="https://calvin.primo.exlibrisgroup.com/nde/search?tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:NDE_Live&offset=0"
                                     id="catalog-search">Library
                                     Catalog</a></li>
                         </ul>

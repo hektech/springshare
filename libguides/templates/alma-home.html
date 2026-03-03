@@ -205,7 +205,7 @@
                 const encodedQuery = `query=${encodeURIComponent(queryValue)}&`;
                 const catalogLink = document.querySelector('#catalog-search');
 
-                catalogLink.href = `https://calvin.primo.exlibrisgroup.com/discovery/search?${encodedQuery}tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:NDE_Live&offset=0`;
+                catalogLink.href = `https://calvin.primo.exlibrisgroup.com/nde/search?${encodedQuery}tab=LibraryCatalog&search_scope=MyInstitution&vid=01CALVIN_INST:NDE_Live&offset=0`;
             }
 
             document.getElementById('catalog-search').addEventListener('click', setCatalogLink);
