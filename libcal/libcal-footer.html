@@ -32,7 +32,7 @@
     //to clarify Hekman Library hours
     const hekLibraryNameObserver = new MutationObserver((mutations, obs) => {
       const hekLibraryNameTarget = document.querySelector('th.s-lc-whw-locname');
-      const hekLibraryNameTarget2 = document.querySelector('#s-lc-mhw-m1-69e93651651d0 .loc_19460 > div.s-lc-mhw-loc-name');
+      const hekLibraryNameTarget2 = document.querySelector('#hours_php .loc_19460 > div.s-lc-mhw-loc-name');
 
       if (hekLibraryNameTarget) {
         $('th.s-lc-whw-locname').html(
@@ -42,7 +42,7 @@
       }
 
       if (hekLibraryNameTarget2) {
-        $('#s-lc-mhw-m1-69e93651651d0 .loc_19460 > div.s-lc-mhw-loc-name').html(
+        $('#hours_php .loc_19460 > div.s-lc-mhw-loc-name').html(
           `Hekman Library<br><small style="font-weight:normal;">3rd, 4th, 5th Floors</small>`
         );
         obs.disconnect(); // Stop observing once done
