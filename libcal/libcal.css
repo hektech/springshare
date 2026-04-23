@@ -469,48 +469,43 @@ select.ui-datepicker-month {
     background-color: white;
 }
 
-/* 1. Main Hekman Library Block */
-#s-lc-mhw-m1-69e93651651d0 .loc_19460 {
+/* Main Hekman Library Block */
+#hours_php .loc_19460 {
     background-color: var(--primary-color);
     padding: 6px;
     margin-bottom: 4px;
 }
-#s-lc-mhw-m1-69e93651651d0 .loc_19460 > .s-lc-mhw-loc-name {
+#hours_php .loc_19460 > .s-lc-mhw-loc-name {
     color: #fff; 
     font-weight: bold;
     font-size: 13px;
 }
-#s-lc-mhw-m1-69e93651651d0 .loc_19460 > .s-lc-time,
-#s-lc-mhw-m1-69e93651651d0 .loc_19460 > .s-lc-closed {
+#hours_php .loc_19460 > .s-lc-time,
+#hours_php .loc_19460 > .s-lc-closed {
     color: #fff; 
     font-weight: bold;
 }
 
-/* 2. Heritage Hall, Meeter Center, Research Assistance */
-#s-lc-mhw-m1-69e93651651d0 .loc_19467, #s-lc-mhw-m1-69e93651651d0 .loc_19469, #s-lc-mhw-m1-69e93651651d0 .loc_19470 {
+/* Other Hours */
+#hours_php .loc_19467, #hours_php .loc_19469, #hours_php .loc_19470 {
     background-color: #fff;
     padding: 4px 6px;
     margin-top: 6px;
     margin-left: 0;
 }
-#s-lc-mhw-m1-69e93651651d0 .loc_19467 .s-lc-mhw-loc-name,
-#s-lc-mhw-m1-69e93651651d0 .loc_19469 .s-lc-mhw-loc-name,
-#s-lc-mhw-m1-69e93651651d0 .loc_19470 .s-lc-mhw-loc-name {
+#hours_php .loc_19467 .s-lc-mhw-loc-name,
+#hours_php .loc_19469 .s-lc-mhw-loc-name,
+#hours_php .loc_19470 .s-lc-mhw-loc-name {
     color: #000;
     font-weight: bold;
 }
-#s-lc-mhw-m1-69e93651651d0 .loc_19467 .s-lc-time,
-#s-lc-mhw-m1-69e93651651d0 .loc_19469 .s-lc-time,
-#s-lc-mhw-m1-69e93651651d0 .loc_19470 .s-lc-time,
-#s-lc-mhw-m1-69e93651651d0 .loc_19467 .s-lc-closed,
-#s-lc-mhw-m1-69e93651651d0 .loc_19469 .s-lc-closed,
-#s-lc-mhw-m1-69e93651651d0 .loc_19470 .s-lc-closed {
+#hours_php .loc_19467 .s-lc-time,
+#hours_php .loc_19469 .s-lc-time,
+#hours_php .loc_19470 .s-lc-time,
+#hours_php .loc_19467 .s-lc-closed,
+#hours_php .loc_19469 .s-lc-closed,
+#hours_php .loc_19470 .s-lc-closed {
     color: #333;
-}
-#s-lc-mhw-m1-69e93651651d0 .loc_19467 .s-lc-closed,
-#s-lc-mhw-m1-69e93651651d0 .loc_19469 .s-lc-closed,
-#s-lc-mhw-m1-69e93651651d0 .loc_19470 .s-lc-closed {
-    font-weight: bold;
 }
 
 /* END Hours Page */
