@@ -508,6 +508,10 @@ select.ui-datepicker-month {
     color: #333;
 }
 
+.s-lc-mhw-day-l {
+    color:#000 !important;
+}
+
 /* END Hours Page */
 
 /* BEGIN Events Page */
