@@ -36,14 +36,15 @@
 
       if (hekLibraryNameTarget) {
         $('th.s-lc-whw-locname').html(
-          `<a href="https://library.calvin.edu">Hekman Library</a><br><small style="font-weight:normal;">3rd, 4th, 5th Floors</small>`
+          `<a href="https://library.calvin.edu">Hekman Library</a><small style="font-weight:normal;font-size:80%;display:block;margin-top:0;">3rd, 4th, 5th Floors</small>`
         );
         obs.disconnect(); // Stop observing once done
       }
 
       if (hekLibraryNameTarget2) {
         $('#hours_php .loc_19460 > div.s-lc-mhw-loc-name').html(
-          `Hekman Library<br><small style="font-weight:normal;">3rd, 4th, 5th Floors</small>`
+          `<dfn style="font-style:normal;cursor:help;"title="3rd, 4th, and 5th floors">Hekman Library</dfn>`  
+        // `Hekman Library<br><small style="font-weight:normal;">3rd, 4th, 5th Floors</small>`
         );
         obs.disconnect(); // Stop observing once done
       }
