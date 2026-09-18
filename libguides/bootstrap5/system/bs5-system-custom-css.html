@@ -1,0 +1,96 @@
+<style>
+    /* latin-ext */
+    @font-face {
+        font-family: 'Fjalla One';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/fjallaone/v13/Yq6R-LCAWCX3-6Ky7FAFrO96kigt.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+        font-family: 'Fjalla One';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/fjallaone/v13/Yq6R-LCAWCX3-6Ky7FAFrOF6kg.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    body {
+        background-color: #f5f3ef;
+    }
+
+    /* heading */
+    h1#s-lib-public-header-title {
+        text-transform: uppercase;
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 3.5rem;
+        font-weight: normal;
+    }
+
+    /*make fonts bigger on A-Z databases page */
+    #col-search input::placeholder,
+    #col-search input,
+    .col-subjects input,
+    .col-types input,
+    .col-vendors input,
+    #s-lg-az-filters .select2-selection__choice,
+    ul.select2-results__option,
+    ul.select2-results__options {
+        font-size: 1.25rem !important;
+    }
+
+    .select2-container--bootstrap5 .select2-selection--multiple:not(.form-select-sm):not(.form-select-lg) .select2-search__field::placeholder,
+    .select2-container--bootstrap5 .select2-selection--multiple:not(.form-select-sm):not(.form-select-lg) .select2-search__field {
+        height: 21px;
+        font-size: inherit;
+    }
+
+    .s-lg-az-reset {
+        font-size: 1rem;
+        margin-right: inherit;
+    }
+
+    /*make search filters more evident */
+    #az-search-col-1>nav {
+        background: linear-gradient(to right, #ccc, #eee);
+    }
+
+    #s-lg-az-filters {
+        padding: 0.5rem 1rem;
+    }
+
+    div#col-search:before {
+        content: "\f002";
+        font-family: FontAwesome;
+        margin: auto;
+    }
+
+    div#s-lg-az-filter-cols button.btn-primary {
+        max-width: none !important;
+    }
+
+    div#s-lg-az-filter-cols button.btn-primary:before {
+        content: "\f002";
+        font-family: FontAwesome;
+        margin: auto;
+    }
+
+    #s-lg-az-filter-cols button {
+        font-size: 1.33rem;
+    }
+
+    /* hide featured and trial descriptions */
+    #s-lg-az-popular-body>.accordion-body>p,
+    #s-lg-az-trials-body>.accordion-body>p {
+        display: none;
+    }
+
+    /* subject resources sub-headings */
+    #s-lg-az-subject-resources-body h2.mb-4 {
+        font-size: 1.325rem;
+    }
+</style>
