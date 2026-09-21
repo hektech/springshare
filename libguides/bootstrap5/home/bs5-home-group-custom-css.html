@@ -45,10 +45,6 @@
         color: var(--calvin-black);
     }
 
-    body {
-        font-family: 'Montserrat', Arial, "Helvetica Neue", Helvetica, sans-serif;
-    }
-
     .calvin-red,
     .calvin-red a,
     .calvin-red a:hover,
@@ -59,78 +55,32 @@
         color: var(--calvin-red);
     }
 
-    #s-lg-guide-main>.row:nth-child(even) {
+    body {
+        font-family: 'Montserrat', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    .s-lib-box-container {
+        margin: 2rem;
+    }
+
+    /* #s-lg-guide-main>.row:nth-child(odd) {
+        background: linear-gradient(45deg, rgba(128, 128, 128, .2) 37%, rgba(128, 128, 128, .15) 37%, transparent 100%), url("https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png") repeat;
         margin: 0 -20px;
         padding: 0 10px;
     }
 
-    #s-lg-guide-main>.row:nth-child(odd) {
-        position: relative;
-        background-color: var(--hekman-light-grey-fallback);
-        background-color: var(--hekman-light-grey);
-        background-image: url(https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png);
-        margin: 0 -20px;
-        padding: 0 10px;
-    }
+    #s-lg-guide-main>.row:first-child {
+        background: none;
+    } */
 
-    #s-lg-guide-main>.row:nth-child(6n+3)::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        background: gray;
-        -webkit-clip-path: polygon(0% 0%, 15% 0%, 45% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 15% 0%, 45% 100%, 0% 100%);
-        margin: 0 -20px;
-        padding: 0 10px;
-    }
-
-    #s-lg-guide-main>.row:nth-child(6n+5)::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        background: gray;
-        -webkit-clip-path: polygon(0% 0%, 45% 0%, 75% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 45% 0%, 75% 100%, 0% 100%);
-        margin: 0 -20px;
-        padding: 0 10px;
-    }
-
-    #s-lg-guide-main>.row:nth-child(6n+7)::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        background: gray;
-        -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
-        margin: 0 -20px;
-        padding: 0 10px;
-    }
+    /* #s-lg-guide-main>.row:nth-child(6n+3) {} */
 
     a:hover>img {
         filter: drop-shadow(0px 0px 10px var(--calvin-black));
     }
 
-    header>nav::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        opacity: 0.1;
-        background: gray;
-        -webkit-clip-path: polygon(0% 0%, 30% 0%, 40% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 30% 0%, 40% 100%, 0% 100%);
-    }
-
     header>nav {
-        background-color: var(--hekman-light-grey-fallback);
-        background-color: var(--hekman-light-grey);
-        background-image: url(https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png);
+        background: linear-gradient(45deg, rgba(128, 128, 128, .2) 370px, rgba(128, 128, 128, .15) 370px 100%), url("https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png") repeat;
     }
 
     .hek-brand {
@@ -295,7 +245,63 @@
     .options-under-search a:visited,
     .options-under-search a:visited:hover {
         color: #eee;
-        font-size: clamp(1.6rem, 1.6vw, 2rem);
+        font-size: 1.5rem;
         text-decoration: underline;
+    }
+
+    #s-lg-col-1>.s-lg-col-boxes>div:nth-child(even) {
+        background: linear-gradient(45deg, rgba(128, 128, 128, .2) 37%, rgba(128, 128, 128, .15) 37% 100%), url("https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png") repeat;
+        margin: 0 -20px;
+        padding: 20px;
+    }
+
+    .home-quick-links h2 {
+        font-family: var(--fjalla);
+        font-size: clamp(1.75rem, 1.75vw, 2.5rem);
+        color: var(--calvin-black-fallback);
+        color: var(--calvin-black);
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 2rem auto;
+    }
+
+    .home-quick-links ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .home-quick-links a:hover>img {
+        filter: none;
+    }
+
+    .special-collections {
+        background-color: #fff;
+        padding: 3vw;
+    }
+
+    .special-collections h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        color: #8c2131;
+    }
+
+    .special-collections ul {
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .special-collections li {
+        flex: 50%;
+        padding: 2rem 2vw;
+    }
+
+    .special-collections img {
+        border-radius: 4%;
+        border: 1px solid #8c2131;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 </style>
