@@ -1,37 +1,81 @@
 <script>
-       //get and set libcal hours
-        (function () {
-            // Fetch JSON data
-            fetch('https://libcalendar.calvin.edu/api_hours_today.php?iid=5960&lid=0&format=json&systemTime=0')
-                .then(response => response.json())
-                .then(data => {
-                    const locations = data.locations;
-                    const today = locations[0].day; // Assuming the day is the same for all locations
 
-                    // Find the Hekman Library entry
-                    const hekmanLibrary = locations.find(location => location.name === 'Hekman Library');
+    //FUNCTION for copyright year
+    (function () {
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    })();
 
-                    // Format today's hours for Hekman Library
-                    const hekmanLibraryText = `${today}: ${hekmanLibrary.rendered}`;
-                    document.querySelector('#today-hours').textContent = hekmanLibraryText;
+    //FUNCTION to randomly show images on homepage
+    (function () {
 
-                    // Find the Heritage Hall entry
-                    const herHall = locations.find(location => location.name === 'Heritage Hall');
+        // List of homepage image URLs
+        const mainImages = [
+            "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/newhome1_1171x634.jpg",
+            "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/older-girl6.jpg",
+            "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/older-girl4.jpg",
+            "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/indoor3.jpg",
+            "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/moregirls2.jpg",
+            //   "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/Library_sketch_1960s_colorized-small3.jpg",
+            //   "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/FranklinLibraryPHOTOS_1170x650_LOGO.jpg",
+            //   "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/LibrarySketch1960s_1170x650_LOGO.jpg",
+            //   "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/LibrarySketch_2_1170x650_LOGO.jpg",
+            "https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/puzzle3.jpg"
+        ];
 
-                    // Format today's hours for Heritage Hall
-                    const herHallText = `${today}: ${herHall.rendered}`;
-                    document.querySelector('#hh-hours').textContent = herHallText;
+        // Randomly select homepage image
+        const randomImage = mainImages[Math.floor(Math.random() * mainImages.length)];
 
-                    // Find Meeter Center entry
-                    const meeter = locations.find(location => location.name === 'Meeter Center');
+        // Set as background for 'main'
+        const homeImgStyle = document.createElement('style');
+        homeImgStyle.textContent = `
+                /* random homepage main background image */
+                main {
+                    background-image: url(${randomImage});
+                }
 
-                    // Format today's hours for Meeter Center
-                    const meeterText = `${today}: ${meeter.rendered}`;
-                    document.querySelector('#meeter-hours').textContent = meeterText;
+                @media (max-width: 767px) {
+                    main {
+                        background-image: none;
+                    }
+                }
+            `;
+        document.body.appendChild(homeImgStyle);
 
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                });
-        })();
+    })();
+
+    //get and set libcal hours
+    (function () {
+        // Fetch JSON data
+        fetch('https://libcalendar.calvin.edu/api_hours_today.php?iid=5960&lid=0&format=json&systemTime=0')
+            .then(response => response.json())
+            .then(data => {
+                const locations = data.locations;
+                const today = locations[0].day; // Assuming the day is the same for all locations
+
+                // Find the Hekman Library entry
+                const hekmanLibrary = locations.find(location => location.name === 'Hekman Library');
+
+                // Format today's hours for Hekman Library
+                const hekmanLibraryText = `${today}: ${hekmanLibrary.rendered}`;
+                document.querySelector('#today-hours').textContent = hekmanLibraryText;
+
+                // Find the Heritage Hall entry
+                const herHall = locations.find(location => location.name === 'Heritage Hall');
+
+                // Format today's hours for Heritage Hall
+                const herHallText = `${today}: ${herHall.rendered}`;
+                document.querySelector('#hh-hours').textContent = herHallText;
+
+                // Find Meeter Center entry
+                const meeter = locations.find(location => location.name === 'Meeter Center');
+
+                // Format today's hours for Meeter Center
+                const meeterText = `${today}: ${meeter.rendered}`;
+                document.querySelector('#meeter-hours').textContent = meeterText;
+
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    })();
 </script>
