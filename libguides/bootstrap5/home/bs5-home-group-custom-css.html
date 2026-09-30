@@ -107,6 +107,10 @@
         letter-spacing: 3px;
     }
 
+    .hours {
+        text-align: right;
+    }
+
     header>nav .utilities>a {
         background-color: var(--calvin-red-fallback);
         background-color: var(--calvin-red);
@@ -160,7 +164,6 @@
         background-color: #770721DF;
         background-color: oklch(0.3647 0.1406 17.56 / 0.85);
         background: radial-gradient(circle, oklch(0.3647 0.1406 17.56 / 1), oklch(0.3647 0.1406 17.56 / 0.95), oklch(0.3647 0.1406 17.56 / 0.85))
-        
     }
 
     .search-header {
@@ -173,13 +176,13 @@
         color: whitesmoke;
         color: var(--hekman-light-grey);
         font-family: 'Fjalla One', sans-serif;
-        font-size: 4.5rem;
+        font-size: clamp(2.66rem, 6vw, 4.5rem);
         margin: 0;
         text-align: center;
     }
 
     .search-header-title>svg {
-        height: 5rem;
+        height: 4.5rem;
     }
 
     .primo-search-contents {
@@ -194,14 +197,13 @@
 
     form#simple-primo-search {
         position: relative;
-        padding: 1.5rem;
     }
 
     #primoQueryTemp {
         padding: 0 1rem 0 4.5rem;
         width: 100%;
         height: 2.5em;
-        font-size: clamp(1.65rem, 1.6vw, 2.05rem);
+        font-size: clamp(1.25rem, 4vw, 1.65rem);
         border-radius: 4rem;
         border: 1px solid #333;
         border: 1px solid var(--calvin-black);
@@ -214,14 +216,14 @@
 
     #go {
         border: none;
-        font-size: 2.5rem;
-        font-size: clamp(1.75rem, 1.6vw, 2.5rem);
+        font-size: 1.5rem;
+        font-size: clamp(1.4rem, 2vw, 1.75rem);
         color: black;
         color: var(--calvin-black);
         padding: 0;
         position: absolute;
         z-index: 10;
-        left: 3.5rem;
+        left: 2rem;
         top: 32%;
     }
 
@@ -337,7 +339,8 @@
 
     footer.hekman-footer {
         background: var(--calvin-red-fallback);
-        background: var(--calvin-red)
+        background: var(--calvin-red);
+        background: linear-gradient(45deg, oklch(0.3541 0.1253 23), var(--calvin-red), oklch(0.4806 0.1771 23));
     }
 
     footer.hekman-footer,
@@ -365,11 +368,24 @@
         height: 2em;
     }
 
-    footer.hekman-footer .hek-socials > li {
+    footer.hekman-footer .hek-socials>li {
         display: inline-block;
     }
 
+    @media (max-width: 991px) {
+
+        .hours {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+
     @media (max-width: 767px) {
+        .navbar-collapse.collapse.show {
+            margin-top: 1rem;
+        }
+
+
         header>nav {
             background: none;
         }
@@ -389,8 +405,60 @@
             height: auto;
         }
 
-        main {
-            background:none;
+        main,
+        .main-img-shading {
+            background: none;
+        }
+
+        .search-header {
+            padding-top: 0;
+        }
+
+        .search-header svg {
+            width: 25px;
+            margin-right: 0.75rem;
+            height: auto;
+        }
+
+        .search-header-title {
+            margin-top: 5rem;
+            color: initial;
+            text-shadow: none;
+        }
+
+        #primoQueryTemp {
+            padding-left: 3rem;
+        }
+
+        #go {
+            left: 1rem;
+        }
+
+        .options-under-search-wrapper {
+            margin-top: 0;
+            padding-bottom: 1rem;
+        }
+
+        .options-under-search a,
+        .options-under-search a:visited,
+        .options-under-search a:visited:hover {
+            color: #333;
+            color: oklch(0.3211 0 0);
+            font-size: 1.2em;
+        }
+
+        .home-quick-links {
+            font-size: 1.2em;
+        }
+
+        .home-quick-links a {
+            padding-bottom: 0.5em;
+        }
+
+        footer.hekman-footer {
+            text-align: center;
         }
     }
+
+    /* end mobile styling */
 </style>
