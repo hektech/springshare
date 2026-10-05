@@ -1,10 +1,6 @@
 <script>
 
-    //FUNCTION for copyright year
-    (function () {
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-    })();
-
+    
     //FUNCTION to randomly show images on homepage
     (function () {
 
@@ -43,7 +39,7 @@
 
     })();
 
-    //get and set libcal hours
+    //FUNCTION get and set libcal hours
     (function () {
         // Fetch JSON data
         fetch('https://libcalendar.calvin.edu/api_hours_today.php?iid=5960&lid=0&format=json&systemTime=0')
@@ -78,4 +74,23 @@
                 console.error('Error fetching data:', error);
             });
     })();
+
+    //FUNCTION: library catalog link searches for the term typed
+        (function () {
+            function setCatalogLink() {
+                const queryValue = document.querySelector('#primoQueryTemp').value;
+                const encodedQuery = `query=${encodeURIComponent(queryValue)}&`;
+                const catalogLink = document.querySelector('.catalog-link');
+
+                catalogLink.href = `https://calvin.primo.exlibrisgroup.com/nde/search?${encodedQuery}tab=LibraryCatalog&search_scope=MyInstitution&classify=true&lang=en&vid=01CALVIN_INST:NDE_Live`;
+            }
+
+            document.querySelector('.catalog-link').addEventListener('click', setCatalogLink);
+        })();
+
+    //FUNCTION for copyright year
+    (function () {
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    })();
+
 </script>
