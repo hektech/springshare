@@ -1,3 +1,48 @@
+<style>
+    .hekman-footer li.site-search-li form:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .site-search-container {
+        border: 1px solid #333;
+        background-color: #faf9f7;
+        background-color: var(--hekman-light-grey);
+    }
+
+    .site-search-button,
+    .site-search-input {
+        border: none;
+        background: none;
+    }
+
+    .site-search-button {
+        padding: 0 0 0 .66rem;
+        position: absolute;
+    }
+
+    .site-search-input {
+        padding-left: 1.85rem;
+    }
+
+    .site-search-input::placeholder {
+        color: #333 !important;
+    }
+
+    .footer-login a { 
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .footer-login a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 767px) {
+        .hekman-footer li.site-search-li {
+            margin: auto;
+        }
+    }
+</style>
+
 <footer class="hekman-footer container pb-5">
     <div class="row">
         <div class="col-md pt-5">
@@ -188,7 +233,7 @@
                                 d="M16 .5a.5.5 0 0 0-.598-.49L10.5.99 5.598.01a.5.5 0 0 0-.196 0l-5 1A.5.5 0 0 0 0 1.5v14a.5.5 0 0 0 .598.49l4.902-.98 4.902.98a.5.5 0 0 0 .196 0l5-1A.5.5 0 0 0 16 14.5zM5 14.09V1.11l.5-.1.5.1v12.98l-.402-.08a.5.5 0 0 0-.196 0zm5 .8V1.91l.402.08a.5.5 0 0 0 .196 0L11 1.91v12.98l-.5.1z">
                             </path>
                         </svg>Floor Maps</a></li>
-                <li><a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
+                <!-- <li><a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
                         href="/policies?fromlibguidesFooter"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                             height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16"
                             aria-hidden="true">
@@ -197,7 +242,7 @@
                             <path
                                 d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
                         </svg>Policies</a>
-                </li>
+                </li> -->
                 <li>
                     <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
                         title="A-Z index of all public pages" href="/index?fromlibguidesFooter">
@@ -208,6 +253,64 @@
                         </svg>Site Index
                     </a>
                 </li>
+
+                <li class="site-search-li my-2" style="max-width:15rem;">
+                    <search>
+                        <form action="/srch.php" method="get" style="display: flex; align-items: center;">
+                            <div class="site-search-container w-100 p-1">
+                                <button class="site-search-button" type="submit" aria-label="Search">
+                                    <svg style="vertical-align: middle; margin-bottom:2px;"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.17475 14.17475"
+                                        height="14.17475" width="14.17475" aria-hidden="true">
+                                        <defs>
+                                            <clipPath id="clipPath4258" clipPathUnits="userSpaceOnUse">
+                                                <path d="M0 11.34h11.34V0H0v11.34z"></path>
+                                            </clipPath>
+                                        </defs>
+                                        <g transform="matrix(1.25 0 0 -1.25 0 14.17475)">
+                                            <g style="stroke:#58928a;stroke-opacity:1"
+                                                transform="matrix(.97909434 .20340668 -.20340668 .97909434 1.2718042 -1.0347843)">
+                                                <g style="stroke:#58928a;stroke-opacity:1"
+                                                    clip-path="url(#clipPath4258)">
+                                                    <g style="stroke:#58928a;stroke-opacity:1"
+                                                        transform="translate(.563 5.6699)">
+                                                        <path
+                                                            style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                            d="M0 0c0 2.82 2.287 5.107 5.107 5.107 2.82 0 5.107-2.287 5.107-5.107 0-2.82-2.287-5.107-5.107-5.107C2.287-5.107 0-2.82 0 0z">
+                                                        </path>
+                                                    </g>
+                                                    <g style="stroke:#6c6c6c;stroke-opacity:1"
+                                                        transform="translate(8.4111 5.6704)">
+                                                        <path
+                                                            style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                            d="M0 0c0 2.819-1.259 5.106-2.811 5.106-1.552 0-2.811-2.287-2.811-5.106 0-2.823 1.259-5.108 2.811-5.108C-1.259-5.108 0-2.823 0 0z">
+                                                        </path>
+                                                    </g>
+                                                    <g style="stroke:#6c6c6c;stroke-opacity:1"
+                                                        transform="translate(5.6699 10.647)">
+                                                        <path
+                                                            style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                            d="M0 0V-9.855"></path>
+                                                    </g>
+                                                    <g style="stroke:#6c6c6c;stroke-opacity:1"
+                                                        transform="translate(.563 5.6699)">
+                                                        <path
+                                                            style="fill:none;stroke:#6c6c6c;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+                                                            d="M0 0h10.214"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <label class="visually-hidden" for="site-search-input">Search this Site</label>
+                                <input class="site-search-input w-100" type="text" name="q"
+                                    placeholder="Search this Site" aria-label="Search this Site">
+                            </div>
+                        </form>
+                    </search>
+                </li>
+
             </ul>
         </div>
         <div class="col-md pt-5">
@@ -252,12 +355,27 @@
                             <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z">
                             </path>
                             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"></path>
-                        </svg> More Hours</a></li>
+                        </svg> Hours</a></li>
+                <li class="footer-login mt-2">
+                    <a class="icon-link icon-link-hover py-1 px-3"
+                        href="https://calvin.primo.exlibrisgroup.com/nde/account/overview?vid=01CALVIN_INST:NDE_Live&amp;lang=en"
+                        style="
+    border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
+                            viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z">
+                            </path>
+                            <path fill-rule="evenodd"
+                                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z">
+                            </path>
+                        </svg> Login
+                        to My Account</a>
+                </li>
             </ul>
         </div>
     </div>
-    <div class="row mt-3">
-        <div class="col py-5">
+    <div class="row">
+        <div class="col pt-5">
             <ul class="hek-socials">
                 <li class="me-3"><a href="http://www.facebook.com/HekmanLibrary" aria-label="Hekman Library on Facebook"
                         title="Hekman Library, Calvin University on Facebook"><svg xmlns="http://www.w3.org/2000/svg"
@@ -282,13 +400,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col fs-6 text-center">&copy; <span id="copyright-year"></span> Calvin University | <a
+        <div class="col pt-5 fs-6 text-center">&copy; <span id="copyright-year"></span> Calvin University | <a
                 href="/privacy?fromlibguidesFooter">Hekman Privacy Policy</a> | <a
                 href="/privacy?fromlibguidesFooter">Hekman Disability Assistance</a></div>
     </div>
 
     <!-- Homepage chat -->
-    <div class="text-end fixed-bottom">
+    <div class="text-end fixed-bottom" style="padding:0; pointer-events:none;">
         <script src="https://libanswers.calvin.edu/load_chat.php?hash=51b0b3781b09e1ba1ddd6b9921472e75"></script>
         <style>
             #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online {

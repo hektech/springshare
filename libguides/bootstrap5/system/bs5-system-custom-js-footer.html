@@ -1,7 +1,10 @@
 <script>
     //make "Database by Title" autofocus
     (function () {
-        document.querySelector('#col-search input.s-lg-az-search').focus()
+        dbInput = document.querySelector('#col-search input.s-lg-az-search');
+        if (dbInput) {
+            dbInput.focus();
+        }
     })();
 
 </script>

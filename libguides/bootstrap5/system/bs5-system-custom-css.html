@@ -19,17 +19,349 @@
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
+    :root {
+        --calvin-black-fallback: #000;
+        --calvin-black: oklch(15% 0.05 270);
+        --calvin-red-fallback: #8c2131;
+        --calvin-red: oklch(0.42 0.15 23);
+        --calvin-light-red-fallback: #b71c1c;
+        --calvin-light-red: oklch(0.5 0.15 23);
+        --hekman-light-grey-fallback: #f5f3ef;
+        --hekman-light-grey: oklch(0.9646 0.0057 84.57);
+        --fjalla: "Fjalla One", sans-serif;
+    }
+
+    .calvin-black,
+    .calvin-black a,
+    .calvin-black a:hover,
+    .calvin-black a:focus,
+    .calvin-black a:active,
+    .calvin-black a:visited {
+        color: var(--calvin-black-fallback);
+        color: var(--calvin-black);
+    }
+
+    .calvin-red,
+    .calvin-red a,
+    .calvin-red a:hover,
+    .calvin-red a:focus,
+    .calvin-red a:active,
+    .calvin-red a:visited {
+        color: var(--calvin-red-fallback);
+        color: var(--calvin-red);
+    }
+
+    .calvin-red a,
+    .calvin-red a:hover,
+    .calvin-red a:focus,
+    .calvin-red a:active,
+    .calvin-red a:visited {
+        text-decoration: underline;
+        text-decoration-color: var(--calvin-red-fallback);
+        text-decoration-color: var(--calvin-red);
+    }
+
     body {
-        background-color: #f5f3ef;
+        background-color: var(--hekman-light-grey-fallback);
+        background-color: var(--hekman-light-grey);
+    }
+
+    a,
+    a>img,
+    a>svg {
+        transition: 0.3s;
+    }
+
+    a:hover>img,
+    a:hover>svg {
+        filter: drop-shadow(0px 0px 10px var(--calvin-black));
+    }
+
+    .icon-link {
+        display: inline-flex;
+        gap: .375rem;
+        align-items: center;
+        text-decoration-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, .5));
+        text-underline-offset: .25em;
+        backface-visibility: hidden;
+    }
+
+    .icon-link>.bi {
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+        fill: currentcolor;
+        transition: .2s ease-in-out transform;
+    }
+
+    .icon-link-hover:hover>.bi,
+    .icon-link-hover:focus-visible>.bi {
+        transform: var(--bs-icon-link-transform, translate3d(.25em, 0, 0));
+    }
+
+    .icon-link {
+        text-underline-offset: inherit;
+    }
+
+    /* BEGIN header */
+    header>nav {
+        background: url(https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png) repeat;
+    }
+
+    .hek-brand {
+        font-family: var(--fjalla);
+        display: flex;
+    }
+
+    .hek-brand-mobile {
+        display: none;
+    }
+
+    .hek-brand p,
+    .hek-brand p a {
+        text-decoration: none;
+        font-size: 0.85rem;
+    }
+
+    .hek-brand p a:hover {
+        text-decoration: underline;
+    }
+
+    .hek-brand h1 {
+        font-family: var(--fjalla);
+        font-size: clamp(1.2rem, 7vw, 2.2rem);
+        letter-spacing: 3px;
+    }
+
+    .hek-brand h1 a {
+        text-decoration: none;
+    }
+
+    .hek-brand h1 a:hover {
+        text-decoration: underline;
+    }
+
+
+    #header-primo-form label>h2 {
+        font-family: 'Fjalla One', sans-serif;
+    }
+
+    #header-primo-input {
+        padding: 0 1rem 0 2.5rem;
+        height: 2.5em;
+        font-size: clamp(1rem, 4vw, 1.15rem);
+        border-radius: 4rem;
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        width: 22rem;
+        border: 1px solid #333;
+        background-color: #fff;
+    }
+
+    #header-primo-go {
+        position: absolute;
+        left: 0.5rem;
+        top: 7.5%;
+        color: var(--calvin-red);
+    }
+
+    @media (max-width: 767px) {
+
+        #header-primo-input,
+        .header-primo-input-wrapper {
+            width: 100%;
+        }
+
+        .hek-brand h1 {
+            letter-spacing: normal;
+        }
+    }
+
+    /* END header */
+
+    body.s-lg-guide-body div.s-lib-main {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    #s-lib-public-header,
+    #s-lg-guide-header {
+        margin-top: 0;
     }
 
     /* heading */
-    h1#s-lib-public-header-title {
+    h1#s-lib-public-header-title,
+    #s-lg-guide-header-info h1,
+    .s-lib-header h1 {
         text-transform: uppercase;
         font-family: 'Fjalla One', sans-serif;
         font-size: 3.5rem;
         font-weight: normal;
+        margin-top: 3rem;
     }
+
+    /* boxes */
+    .s-lib-box .s-lib-box-title,
+    .s-lib-box {
+        border: none;
+        box-shadow: none;
+        background: none;
+    }
+
+    .s-lib-box-container .s-lib-floating-box-content {
+        padding: 10px;
+    }
+
+    /* side nav bar */
+
+    @media(min-width:992px) {
+        div#s-lg-side-nav-content>div.row>div.col-md-3.s-lg-tabs-side {
+            position: sticky;
+            top: 0;
+            max-height: 100vh;
+            max-height: 100dvh;
+            overflow-y: auto;
+        }
+    }
+
+    .s-lg-tabs-side .s-lg-boxnav {
+        margin-right: 20px;
+    }
+
+    .s-lg-tabs-side .s-lg-boxnav .list-group-item {
+        background: none;
+    }
+
+    #s-lg-guide-tabs a {
+        display: block;
+    }
+
+    #s-lg-guide-tabs .list-group-item {
+        border: none;
+    }
+
+    /*hide page title when there is only 1 page, and box-level nav is selected */
+    #s-lg-guide-tabs ul li:only-child.active>a:has(~ ul.list-group) {
+        display: none;
+    }
+
+    #s-lg-guide-tabs .nav-pills>.active>a.active,
+    #s-lg-guide-tabs .nav-pills>.active>a.active:hover,
+    #s-lg-tabs-container .nav-pills>li>a:hover {
+        font-weight: 600;
+        text-decoration: none;
+        background: none;
+        color: #000;
+        color: var(--calvin-black);
+    }
+
+    #s-lg-tabs-container .nav-pills>li>a:hover {
+        text-decoration: underline;
+    }
+
+    #s-lg-guide-tabs>.nav-pills>.active ul a:hover {
+        color: #000;
+        color: var(--calvin-black);
+        font-weight: 600;
+    }
+
+    #s-lg-tabs-container .nav-pills>.active>a:hover {
+        font-weight: normal;
+        cursor: default;
+    }
+
+
+    #s-lg-guide-tabs>.nav-pills>li>a {
+        line-height: 1.25;
+        font-weight: normal;
+        padding: 1rem;
+        color: #8c2131;
+        text-decoration: underline;
+        background: none;
+    }
+
+    #s-lg-guide-tabs .dropdown-menu>li>a {
+        white-space: normal;
+    }
+
+    /*scrollspy added*/
+    .s-lg-boxnav {
+        scroll-target-group: auto;
+    }
+
+    #s-lg-guide-tabs>.nav-pills a:target-current {
+        text-decoration: none;
+        font-weight: 600;
+        color: #000;
+        color: var(--calvin-black);
+    }
+
+    #s-lg-guide-tabs>.nav-pills a:target-current:hover {
+        cursor: default;
+    }
+
+    #s-lg-guide-tabs>.nav-pills a:target-current:before {
+        content: "\f101";
+        font-family: "FontAwesome";
+        font-size: 0.8em;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* END side nav bar */
+
+    /*BEGIN tabbed box*/
+    .s-lib-jqtabs div.tab-content {
+        border: 1px solid #8c2131;
+        border-top: none;
+        box-shadow: 0 8px 6px -6px #e8d3d6;
+    }
+
+    ul.nav-tabs {
+        border-bottom: 1px solid #8c2131;
+    }
+
+    ul.nav-tabs > li.nav-item > a.nav-link {
+    border-bottom: none;
+    }
+
+    ul.nav-tabs>li>a:hover,
+    ul.nav-tabs>li>a:focus {
+        background: linear-gradient(#e8c8cd, transparent);
+    }
+
+    ul.nav-tabs>li.nav-item>a.active,
+    ul.nav-tabs>li.nav-item>a:focus,
+    ul.nav-tabs>li.nav-item>a:hover {
+        border: 1px solid #8c2131;
+        border-bottom: none;
+        color: #000;
+        background: linear-gradient(#e8d3d6, transparent);
+        text-decoration: none;
+    }
+
+    @media (max-width: 991px) {
+        ul.nav-tabs {
+            border: 1px solid #8c2131;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        ul.nav-tabs>li {
+            float: none;
+        }
+
+        ul.nav-tabs>li.nav-item>a.active {
+            border-radius: 0;
+            text-decoration: none;
+            border: 1px solid #8c2131;
+        }
+    }
+
+    /*END tabbed box*/
+
+    /* BEGIN A-Z DATABASES */
 
     /*make fonts bigger on A-Z databases page */
     #col-search input::placeholder,
@@ -49,14 +381,58 @@
         font-size: inherit;
     }
 
+    /* Base: every option gets an empty checkbox box */
+    .select2-container--bootstrap5 .select2-dropdown .select2-results__option::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 1.25rem;
+        transform: translateY(-50%);
+        height: .9rem;
+        width: .9rem;
+        box-sizing: border-box;
+        border: 2px solid var(--bs-border-color, #ced4da);
+        /* outline of box */
+        border-radius: 0.15rem;
+        /* make it slightly rounded or remove for square */
+        background-color: transparent;
+    }
+
+    /* Keep options positioned correctly so absolute elements align */
+    .select2-container--bootstrap5 .select2-dropdown .select2-results__option {
+        position: relative;
+        padding-right: 2.25rem;
+        /* make room for checkbox */
+    }
+
+    /* Selected: draw the checkmark inside */
+    .select2-container--bootstrap5 .select2-dropdown .select2-results__option.select2-results__option--selected::after {
+        top: 50%;
+        display: block;
+        position: absolute;
+        transform: translateY(-50%);
+        height: .75rem;
+        width: .75rem;
+        content: "";
+        mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        background-color: var(--bs-component-hover-color);
+        -webkit-mask-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 11'%3e%3cpath fill='var%28--bs-component-hover-color%29' d='M4.89557 6.49823L2.79487 4.26513C2.26967 3.70683 1.38251 3.70683 0.857309 4.26513C0.375593 4.77721 0.375593 5.57574 0.857309 6.08781L4.74989 10.2257C5.14476 10.6455 5.81176 10.6455 6.20663 10.2257L13.1427 2.85252C13.6244 2.34044 13.6244 1.54191 13.1427 1.02984C12.6175 0.471537 11.7303 0.471536 11.2051 1.02984L6.06096 6.49823C5.74506 6.83403 5.21146 6.83403 4.89557 6.49823Z'/%3e%3c/svg%3e);
+        mask-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 11'%3e%3cpath fill='var%28--bs-component-hover-color%29' d='M4.89557 6.49823L2.79487 4.26513C2.26967 3.70683 1.38251 3.70683 0.857309 4.26513C0.375593 4.77721 0.375593 5.57574 0.857309 6.08781L4.74989 10.2257C5.14476 10.6455 5.81176 10.6455 6.20663 10.2257L13.1427 2.85252C13.6244 2.34044 13.6244 1.54191 13.1427 1.02984C12.6175 0.471537 11.7303 0.471536 11.2051 1.02984L6.06096 6.49823C5.74506 6.83403 5.21146 6.83403 4.89557 6.49823Z'/%3e%3c/svg%3e);
+        right: 1.25rem;
+    }
+
     .s-lg-az-reset {
         font-size: 1rem;
         margin-right: inherit;
     }
 
-    /*make search filters more evident */
+    /*make search filters more evident on A-Z databases page */
     #az-search-col-1>nav {
         background: linear-gradient(to right, #ccc, #eee);
+        background: linear-gradient(to right, var(--calvin-red), #eee);
     }
 
     #s-lg-az-filters {
@@ -71,6 +447,11 @@
 
     div#s-lg-az-filter-cols button.btn-primary {
         max-width: none !important;
+        background-color: var(--calvin-red);
+        border: 1px solid;
+        padding: 0;
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
     }
 
     div#s-lg-az-filter-cols button.btn-primary:before {
@@ -92,5 +473,69 @@
     /* subject resources sub-headings */
     #s-lg-az-subject-resources-body h2.mb-4 {
         font-size: 1.325rem;
+    }
+
+    /* END A-Z DATABASES */
+
+    /* BEGIN Footer */
+    .s-lib-footer {
+        background: linear-gradient(45deg, rgba(128, 128, 128, .2) 50%, rgba(128, 128, 128, .15) 50% 100%), url("https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png") repeat;
+    }
+
+    footer.hekman-footer {
+        background: var(--calvin-red-fallback);
+        background: var(--calvin-red);
+        background: linear-gradient(45deg, oklch(0.3541 0.1253 23), var(--calvin-red), oklch(0.4806 0.1771 23));
+    }
+
+    footer.hekman-footer,
+    footer.hekman-footer a,
+    footer.hekman-footer a:hover,
+    footer.hekman-footer h2,
+    footer.hekman-footer p,
+    footer.hekman-footer address {
+        color: white;
+        text-decoration-color: white;
+    }
+
+    footer.hekman-footer svg,
+    footer.hekman-footer img {
+        vertical-align: inherit;
+    }
+
+    footer.hekman-footer .hek-socials {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    footer.hekman-footer .hek-socials svg {
+        width: 2em;
+        height: 2em;
+    }
+
+    footer.hekman-footer .hek-socials>li {
+        display: inline-block;
+    }
+
+    /* END Footer */
+
+    /* Add smoother transitions */
+    @view-transition {
+        navigation: auto;
+    }
+
+    nav#hekman-page-header {
+        view-transition-name: --persist-nav;
+    }
+
+    div#s-lg-tabs-container {
+        view-transition-name: --persist-side-nav;
+    }
+
+
+    @media (max-width: 767px) {
+        footer.hekman-footer {
+            text-align: center;
+        }
     }
 </style>
