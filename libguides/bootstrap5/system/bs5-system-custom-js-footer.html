@@ -1,9 +1,33 @@
 <script>
+    //add button to side navigation on mobile
+    (function () {
+        const SIDE_NAV = $("#s-lg-tabs-container > #s-lg-guide-tabs");
+        if (SIDE_NAV.length) {
+            //add menu btn
+            $("#s-lg-tabs-container").prepend(`<button type="button" data-bs-toggle="collapse" data-bs-target="#s-lg-guide-tabs" aria-expanded="false" aria-controls="s-lg-guide-tabs" id="side-nav-button" class="btn btn-outline-dark btn-lg w-100">Contents <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+</svg></button>`);
+
+            //add collapse class to side nav
+            SIDE_NAV.addClass("collapse");
+        }
+
+
+    })();
+
     //make "Database by Title" autofocus
     (function () {
-        dbInput = document.querySelector('#col-search input.s-lg-az-search');
+        const dbInput = document.querySelector('#col-search input.s-lg-az-search');
         if (dbInput) {
             dbInput.focus();
+        }
+    })();
+  
+    //make "Enter Search Words" (Guides Search) autofocus
+    (function () {
+        const guideSearchInput = document.querySelector('#s-lg-srch-input-q');
+        if (guideSearchInput) {
+            guideSearchInput.focus();
         }
     })();
 

@@ -66,6 +66,64 @@
         background-color: var(--hekman-light-grey);
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--fjalla);
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.625rem, 5vw, 2.5rem);
+    }
+
+    h3 {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+    }
+
+    h4 {
+        font-size: clamp(1.25rem, 5vw, 1.625rem);
+    }
+
+    h5 {
+        font-size: clamp(1.125rem, 5vw, 1.4rem);
+    }
+
+    h6 {
+        font-size: clamp(1rem, 5vw, 1.25rem);
+    }
+
+    details>summary {
+        cursor: pointer;
+    }
+
+    a[target="_blank"]::after {
+        content: "\f08e";
+        margin: 0 5px;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale
+    }
+
+    /* remove all manual entries of external-link icon since we are now auto-generating them */
+    a>i.fa-external-link {
+        display: none;
+    }
+
+    a.nav-link {
+        color: #8c2131;
+        color: var(--calvin-red);
+    }
+
     a,
     a>img,
     a>svg {
@@ -120,7 +178,7 @@
     .hek-brand p,
     .hek-brand p a {
         text-decoration: none;
-        font-size: 0.85rem;
+        font-size: clamp(0.55rem, 1.75vw, 0.85rem);
     }
 
     .hek-brand p a:hover {
@@ -141,6 +199,14 @@
         text-decoration: underline;
     }
 
+    .hek-brand>a>img.univ-logo {
+        width: clamp(23px, 3vw, 35px)
+    }
+
+    .hek-brand>a>img.sem-logo {
+        width: clamp(37px, 3vw, 52.5px)
+    }
+
 
     #header-primo-form label>h2 {
         font-family: 'Fjalla One', sans-serif;
@@ -154,13 +220,17 @@
         box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         width: 22rem;
         border: 1px solid #333;
-        background-color: #fff;
+        background-color: whitesmoke;
+    }
+
+    #header-primo-input:focus {
+        background-color: white;
     }
 
     #header-primo-go {
         position: absolute;
         left: 0.5rem;
-        top: 7.5%;
+        top: 10%;
         color: var(--calvin-red);
     }
 
@@ -189,14 +259,33 @@
     }
 
     /* heading */
+    #s-lg-guide-header-info {
+        margin: 3rem 0 1rem;
+    }
+
     h1#s-lib-public-header-title,
     #s-lg-guide-header-info h1,
     .s-lib-header h1 {
         text-transform: uppercase;
         font-family: 'Fjalla One', sans-serif;
-        font-size: 3.5rem;
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
         font-weight: normal;
         margin-top: 3rem;
+    }
+
+    .s-lg-tab-content {
+        border: 3px solid #8c2131;
+        border: 3px solid var(--calvin-red);
+        border-radius: 1rem;
+        padding: 3rem 1rem;
+        background: whitesmoke;
+        background: linear-gradient(to right, white, whitesmoke);
+    }
+
+    .s-lg-tab-content>#s-lg-guide-main,
+    .s-lg-tab-content>#s-lg-guide-main #s-lg-col-2.col-md-9 {
+        max-width: 75ch;
+        margin: 0 auto;
     }
 
     /* boxes */
@@ -211,17 +300,12 @@
         padding: 10px;
     }
 
-    /* side nav bar */
-
-    @media(min-width:992px) {
-        div#s-lg-side-nav-content>div.row>div.col-md-3.s-lg-tabs-side {
-            position: sticky;
-            top: 0;
-            max-height: 100vh;
-            max-height: 100dvh;
-            overflow-y: auto;
-        }
+    /* hide search box */
+    #s-lg-guide-header-search {
+        display: none;
     }
+
+    /* side nav bar */
 
     .s-lg-tabs-side .s-lg-boxnav {
         margin-right: 20px;
@@ -231,7 +315,7 @@
         background: none;
     }
 
-    #s-lg-guide-tabs a {
+    #s-lg-guide-tabs li.nav-item a {
         display: block;
     }
 
@@ -244,14 +328,23 @@
         display: none;
     }
 
+    #s-lg-tabs-container .nav-pills>li>a,
     #s-lg-guide-tabs .nav-pills>.active>a.active,
+    #s-lg-tabs-container .nav-pills>.active>a,
+    #s-lg-tabs-container .nav-pills>.active>a:hover,
     #s-lg-guide-tabs .nav-pills>.active>a.active:hover,
+    #s-lg-tabs-container .dropdown-item.active,
+    #s-lg-tabs-container .dropdown-item.active:hover,
     #s-lg-tabs-container .nav-pills>li>a:hover {
         font-weight: 600;
         text-decoration: none;
         background: none;
         color: #000;
         color: var(--calvin-black);
+    }
+
+    #s-lg-tabs-container .nav-pills>li>a {
+        background: none;
     }
 
     #s-lg-tabs-container .nav-pills>li>a:hover {
@@ -271,9 +364,7 @@
 
 
     #s-lg-guide-tabs>.nav-pills>li>a {
-        line-height: 1.25;
         font-weight: normal;
-        padding: 1rem;
         color: #8c2131;
         text-decoration: underline;
         background: none;
@@ -305,8 +396,22 @@
         font-size: 0.8em;
         position: absolute;
         left: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 5px;
+    }
+
+    /*mobile side nav button*/
+    #side-nav-button {
+        margin-bottom: 1rem;
+        border: 2px solid;
+
+    }
+
+    #side-nav-button .bi-caret-down-fill {
+        transition: transform 0.2s ease;
+    }
+
+    #side-nav-button[aria-expanded="true"] .bi-caret-down-fill {
+        transform: rotate(180deg);
     }
 
     /* END side nav bar */
@@ -322,8 +427,8 @@
         border-bottom: 1px solid #8c2131;
     }
 
-    ul.nav-tabs > li.nav-item > a.nav-link {
-    border-bottom: none;
+    ul.nav-tabs>li.nav-item>a.nav-link {
+        border-bottom: none;
     }
 
     ul.nav-tabs>li>a:hover,
@@ -337,29 +442,39 @@
         border: 1px solid #8c2131;
         border-bottom: none;
         color: #000;
-        background: linear-gradient(#e8d3d6, transparent);
+        background: linear-gradient(#e8d3d6, var(--hekman-light-grey));
         text-decoration: none;
     }
 
-    @media (max-width: 991px) {
-        ul.nav-tabs {
-            border: 1px solid #8c2131;
-            border-top: none;
-            border-bottom: none;
-        }
+    /*END tabbed box*/
 
-        ul.nav-tabs>li {
-            float: none;
-        }
-
-        ul.nav-tabs>li.nav-item>a.active {
-            border-radius: 0;
-            text-decoration: none;
-            border: 1px solid #8c2131;
-        }
+    /* BEGIN Profile Box */
+    .s-lib-profile-container a.fw-bold {
+        font-weight: normal !important;
     }
 
-    /*END tabbed box*/
+    .s-lib-profile-container .s-lib-profile-email a {
+        font-size: 1.5rem;
+    }
+
+    .s-lib-profile-container .s-lib-profile-widget button {
+        background: #FFFFFF !important;
+        border: 1px solid #333333 !important;
+        border-radius: 6px !important;
+        color: #333333 !important;
+        padding: 1rem !important;
+        margin-top: 1rem;
+        transition: 0.3s;
+        font-size: 1.25rem !important;
+        margin: 0;
+    }
+
+    .s-lib-profile-container .s-lib-profile-widget button:hover {
+        background-color: #eee !important;
+        ;
+    }
+
+    /* END Profile Box */
 
     /* BEGIN A-Z DATABASES */
 
@@ -379,6 +494,16 @@
     .select2-container--bootstrap5 .select2-selection--multiple:not(.form-select-sm):not(.form-select-lg) .select2-search__field {
         height: 21px;
         font-size: inherit;
+    }
+
+    #s-lg-az-cols {
+        margin: 0;
+    }
+
+    #s-lg-az-cols>#col1 {
+        border: 3px solid var(--calvin-red);
+        padding: 3rem 2rem;
+        border-radius: 1rem;
     }
 
     /* Base: every option gets an empty checkbox box */
@@ -519,6 +644,37 @@
 
     /* END Footer */
 
+    /* subject guides */
+
+    .primo-lg-widget input[type="text"] {
+        width: 100%;
+        max-width: 40rem;
+    }
+
+    div.database-box li.s-lg-tn-li>div>a {
+        font-size: 1.5rem;
+    }
+
+    /*libcal schedule button*/
+    .libcal-schedule-button {
+        background: #FFFFFF;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        color: #333333;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: 0.3s;
+    }
+
+    .libcal-schedule-button:hover,
+    .libcal-schedule-button:active,
+    .libcal-schedule-button:focus {
+        background-color: #eee;
+    }
+
+    /* Miscellaneous */
+
     /* Add smoother transitions */
     @view-transition {
         navigation: auto;
@@ -532,10 +688,162 @@
         view-transition-name: --persist-side-nav;
     }
 
+    /*scrollbar */
+    html {
+        scrollbar-color: var(--calvin-univ-black) transparent;
+    }
 
+    /* BEGIN desktop */
+    @media(min-width:992px) {
+
+        /* side nav panel */
+        div#s-lg-side-nav-content>div.row>div.col-md-3.s-lg-tabs-side {
+            position: sticky;
+            top: 0;
+            max-height: 100vh;
+            max-height: 100dvh;
+            overflow-y: auto;
+        }
+
+    }
+
+    /* END desktop */
+
+    /* BEGIN tablet and bigger */
+
+    @media (min-width:768px) {
+        #s-lg-guide-tabs {
+            display: block;
+        }
+
+        #side-nav-button {
+            display: none;
+        }
+
+        #s-lg-az-cols {
+            /* margin: 0 1.5rem; */
+        }
+    }
+
+    /* END tablet and bigger */
+
+    /* BEGIN tablet and smaller */
+
+    @media (max-width: 991px) {
+        ul.nav-tabs {
+            border: 1px solid #8c2131;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        ul.nav-tabs>li {
+            float: none;
+        }
+
+        ul.nav-tabs>li.nav-item>a.active {
+            border-radius: 0;
+            text-decoration: none;
+            border: 1px solid #8c2131;
+        }
+
+        #s-lg-az-cols {
+            margin: 0 1.5rem;
+        }
+    }
+
+    /* END tablet and smaller */
+
+    /* BEGIN mobile */
     @media (max-width: 767px) {
+
         footer.hekman-footer {
             text-align: center;
         }
+    }
+
+    /* END mobile */
+
+
+
+
+
+    /* temp place for search page css */
+
+
+    #s-lg-srch-local>nav {
+        background: linear-gradient(to right, #ccc, #eee);
+        background: linear-gradient(to right, var(--calvin-red), #eee);
+    }
+
+    input#s-lg-srch-input-q {
+        max-width: 35rem;
+        font-size: 1.25rem;
+    }
+
+    #s-lg-srch-input-q~button {
+        background-color: var(--calvin-red);
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    div#s-lg-srch-content>div#s-srch-tabs {
+        margin-bottom: -1rem;
+    }
+
+    #s-srch-tabs .active button.active {
+        border: 1px solid var(--calvin-red);
+        border-bottom: none;
+        color: #000;
+        background: linear-gradient(#e8d3d6, var(--hekman-light-grey));
+        font-size: 1.15rem;
+        font-weight: 500;
+        padding-bottom: 5px;
+        border-radius: 0.25rem 0.25rem 0 0;
+    }
+
+    #s-srch-tabs>ul.nav-tabs {
+        border-bottom: 1px solid #8c2131 !important;
+    }
+
+    #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active) {
+        border: none;
+        color: #8C2131;
+    }
+
+    #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active):hover {
+        border: 1px solid;
+    }
+
+
+    #s-lg-srch-content>div.tab-pane {
+        border: 1px solid var(--calvin-red);
+        border-top: none;
+        /* padding: clamp(1rem, 3vw, 3rem); */
+        padding: 1rem;
+    }
+
+    #s-lg-srch-content>div.tab-pane div.s-srch-resultlist > div.fw-bold {
+        font-weight: normal !important;
+        font-size: 90%;
+    }
+
+
+    div.s-srch-result-title>a {
+    font-weight: 600;
+    font-size:133%;
+}
+
+
+
+
+    /*undo template code */
+    /* search page */
+    #s-lg-srch-nav-1 #s-lg-srch-form .input-group {
+        display: flex;
+    }
+
+    /* subject guide */
+    body.s-lg-guide-body div#s-lg-side-nav-content>div.row>div.col-md-9>div.s-lg-tab-content {
+        max-width: none;
     }
 </style>
