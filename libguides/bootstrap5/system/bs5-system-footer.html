@@ -406,14 +406,19 @@
     </div>
 
     <!-- Homepage chat -->
-    <div class="text-end fixed-bottom" style="padding:0; pointer-events:none;">
         <script src="https://libanswers.calvin.edu/load_chat.php?hash=51b0b3781b09e1ba1ddd6b9921472e75"></script>
         <style>
             #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online {
                 background-color: oklch(0.535078 0.175681 143.5956);
                 border-radius: 0;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                transition: 0;
+            }
+            #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online:hover {
+                background-color: darkgreen;
             }
         </style>
-        <div id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
-    </div>
+        <div class="chat-btn" id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
 </footer>

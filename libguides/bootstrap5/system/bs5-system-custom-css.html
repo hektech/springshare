@@ -161,6 +161,14 @@
         text-underline-offset: inherit;
     }
 
+    .img-responsive,
+    .thumbnail>img,
+    .thumbnail a>img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
     /* BEGIN header */
     header>nav {
         background: url(https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png) repeat;
@@ -205,6 +213,11 @@
 
     .hek-brand>a>img.sem-logo {
         width: clamp(37px, 3vw, 52.5px)
+    }
+
+    /* hide primo header on heritage hall pages */
+    header:has(+ div#s-lg-guide-header li#s-lib-bc-guide > a[href="https://library.calvin.edu/hh"]) #homeNavbarToggler {
+        display: none !important;
     }
 
 
@@ -305,98 +318,84 @@
         display: none;
     }
 
-    /* side nav bar */
+    /* begin side nav bar */
 
-    .s-lg-tabs-side .s-lg-boxnav {
-        margin-right: 20px;
+    /* ensure list of pages stacks as a column */
+    div#s-lg-guide-tabs>ul.nav {
+        flex-flow: column;
     }
 
-    .s-lg-tabs-side .s-lg-boxnav .list-group-item {
-        background: none;
-    }
-
-    #s-lg-guide-tabs li.nav-item a {
-        display: block;
-    }
-
-    #s-lg-guide-tabs .list-group-item {
-        border: none;
-    }
-
-    /*hide page title when there is only 1 page, and box-level nav is selected */
-    #s-lg-guide-tabs ul li:only-child.active>a:has(~ ul.list-group) {
+    /* hide page title when there is only 1 page [li:only-child], and box-level nav is selected [a:has(~ ul.list-group]) */
+    div#s-lg-guide-tabs>ul.nav>li:only-child.active>a:has(~ ul.list-group) {
         display: none;
     }
 
-    #s-lg-tabs-container .nav-pills>li>a,
-    #s-lg-guide-tabs .nav-pills>.active>a.active,
-    #s-lg-tabs-container .nav-pills>.active>a,
-    #s-lg-tabs-container .nav-pills>.active>a:hover,
-    #s-lg-guide-tabs .nav-pills>.active>a.active:hover,
-    #s-lg-tabs-container .dropdown-item.active,
-    #s-lg-tabs-container .dropdown-item.active:hover,
-    #s-lg-tabs-container .nav-pills>li>a:hover {
-        font-weight: 600;
-        text-decoration: none;
-        background: none;
-        color: #000;
-        color: var(--calvin-black);
-    }
-
-    #s-lg-tabs-container .nav-pills>li>a {
-        background: none;
-    }
-
-    #s-lg-tabs-container .nav-pills>li>a:hover {
-        text-decoration: underline;
-    }
-
-    #s-lg-guide-tabs>.nav-pills>.active ul a:hover {
-        color: #000;
-        color: var(--calvin-black);
-        font-weight: 600;
-    }
-
-    #s-lg-tabs-container .nav-pills>.active>a:hover {
-        font-weight: normal;
-        cursor: default;
-    }
-
-
-    #s-lg-guide-tabs>.nav-pills>li>a {
+    /* all page, sub-page links */
+    div#s-lg-guide-tabs>ul.nav-pills>li.nav-item>a.nav-link,
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.dropdown-item>a {
         font-weight: normal;
         color: #8c2131;
         text-decoration: underline;
         background: none;
+        text-transform: uppercase;
     }
 
-    #s-lg-guide-tabs .dropdown-menu>li>a {
-        white-space: normal;
+    /* subpages */
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.dropdown-item {
+        background: none;
     }
 
-    /*scrollspy added*/
-    .s-lg-boxnav {
-        scroll-target-group: auto;
-    }
-
-    #s-lg-guide-tabs>.nav-pills a:target-current {
+    /* active page, sub-page, box */
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item.active>a.active,
+    div#s-lg-guide-tabs>ul.nav-pills>li.nav-item:has(>ul.s-lg-subtab-ul>li.active)>a.nav-link,
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.active > a,
+    div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item>a:target-current {
         text-decoration: none;
         font-weight: 600;
         color: #000;
         color: var(--calvin-black);
     }
 
-    #s-lg-guide-tabs>.nav-pills a:target-current:hover {
+    /* active page, box on hover */
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item.active>a.active:hover,
+    div#s-lg-guide-tabs ul.s-lg-boxnav a:target-current:hover {
         cursor: default;
     }
 
-    #s-lg-guide-tabs>.nav-pills a:target-current:before {
+    /* parent page of active sub-page on hover */
+    div#s-lg-guide-tabs>ul.nav-pills>li.nav-item:has(>ul.s-lg-subtab-ul>li.active)>a.nav-link:hover {
+        text-decoration: underline;
+    }
+
+    /* all boxes */
+    div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item {
+        background: none;
+        border: none;
+    }
+
+    /* all box links */
+    div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item>a {
+        text-decoration: underline;
+    }
+
+    /* hover over each box */
+    div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item>a:hover {
+        color: #000;
+        color: var(--calvin-black);
+        font-weight: 600;
+    }
+
+    /*scrollspy added to box navigation*/
+    div#s-lg-guide-tabs ul.s-lg-boxnav {
+        scroll-target-group: auto;
+    }
+
+    /* active box, before */
+    div#s-lg-guide-tabs ul.s-lg-boxnav a:target-current:before {
         content: "\f101";
         font-family: "FontAwesome";
-        font-size: 0.8em;
         position: absolute;
         left: 0;
-        top: 5px;
     }
 
     /*mobile side nav button*/
@@ -415,6 +414,7 @@
     }
 
     /* END side nav bar */
+
 
     /*BEGIN tabbed box*/
     .s-lib-jqtabs div.tab-content {
@@ -693,7 +693,7 @@
         scrollbar-color: var(--calvin-univ-black) transparent;
     }
 
-    /* BEGIN desktop */
+    /* BEGIN desktop only */
     @media(min-width:992px) {
 
         /* side nav panel */
@@ -707,7 +707,7 @@
 
     }
 
-    /* END desktop */
+    /* END desktop only */
 
     /* BEGIN tablet and bigger */
 
@@ -728,6 +728,14 @@
     /* END tablet and bigger */
 
     /* BEGIN tablet and smaller */
+
+    @media (max-width: 991.98px) {
+
+        nav#hekman-page-header>div.container,
+        #s-lib-public-main:has(#s-lg-srch-nav-col) {
+            padding: 0 1.5rem;
+        }
+    }
 
     @media (max-width: 991px) {
         ul.nav-tabs {
@@ -769,15 +777,24 @@
 
     /* temp place for search page css */
 
-
     #s-lg-srch-local>nav {
         background: linear-gradient(to right, #ccc, #eee);
         background: linear-gradient(to right, var(--calvin-red), #eee);
     }
 
+    div#s-lg-srch-nav-1 {
+        display: block;
+    }
+
+    div#s-lg-srch-local div.navbar-header {
+        display: none;
+    }
+
     input#s-lg-srch-input-q {
         max-width: 35rem;
         font-size: 1.25rem;
+        border: 3px solid var(--calvin-red);
+        border-right: none;
     }
 
     #s-lg-srch-input-q~button {
@@ -791,18 +808,13 @@
     }
 
     #s-srch-tabs .active button.active {
-        border: 1px solid var(--calvin-red);
         border-bottom: none;
-        color: #000;
-        background: linear-gradient(#e8d3d6, var(--hekman-light-grey));
-        font-size: 1.15rem;
+        color: white;
+        background-color: #8C2131;
+        background: linear-gradient(to right, var(--calvin-red), oklch(0.6341 0.15 23));
+        font-size: 1.2rem;
         font-weight: 500;
-        padding-bottom: 5px;
-        border-radius: 0.25rem 0.25rem 0 0;
-    }
-
-    #s-srch-tabs>ul.nav-tabs {
-        border-bottom: 1px solid #8c2131 !important;
+        padding: 0.5rem 1rem;
     }
 
     #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active) {
@@ -816,28 +828,66 @@
 
 
     #s-lg-srch-content>div.tab-pane {
-        border: 1px solid var(--calvin-red);
-        border-top: none;
-        /* padding: clamp(1rem, 3vw, 3rem); */
+        border: 3px solid var(--calvin-red);
         padding: 1rem;
+        background-color: white;
     }
 
-    #s-lg-srch-content>div.tab-pane div.s-srch-resultlist > div.fw-bold {
+    #s-lg-srch-content>div.tab-pane div.s-srch-resultlist>div.fw-bold {
         font-weight: normal !important;
         font-size: 90%;
     }
 
 
     div.s-srch-result-title>a {
-    font-weight: 600;
-    font-size:133%;
-}
+        font-weight: 600;
+        font-size: 133%;
+    }
+
+    #az-public-mobile-filters-default {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+    }
+
+    #az-public-mobile-filters-default .s-lg-az-search form-control {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+    }
+
+    #az-public-mobile-filters-default input.s-lg-az-search[type="text"] {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+        font-size: 1rem;
+    }
+
+    #az-public-mobile-filters-default button {
+        background-color: var(--calvin-red);
+        border: 1px solid;
+    }
+
+    #az-public-mobile-filters-default input.s-lg-az-search[type="text"]::placeholder {
+        font-size: 1rem;
+    }
+
+    .az-public-mobile-filters a.collapsible {
+        font-size: 0.9rem;
+    }
+
+    .az-public-mobile-filters .select2-container--bootstrap5 {
+        border: 1px solid;
+    }
+
 
 
 
 
     /*undo template code */
     /* search page */
+
+    div#s-lib-public-header>h1#s-lib-public-header-title {
+        text-transform: uppercase;
+    }
+
     #s-lg-srch-nav-1 #s-lg-srch-form .input-group {
         display: flex;
     }

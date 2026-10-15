@@ -22,13 +22,26 @@
             dbInput.focus();
         }
     })();
-  
-    //make "Enter Search Words" (Guides Search) autofocus
+
+    //Search Page
+
     (function () {
+
+        //make "Enter Search Words" (Guides Search) autofocus
         const guideSearchInput = document.querySelector('#s-lg-srch-input-q');
         if (guideSearchInput) {
             guideSearchInput.focus();
         }
+
+        //clean up libguides bug (class mismatches)
+        const extraRow = document.querySelector("div#s-lg-srch-cols.row > div.row");
+        const wrongColMd12 = document.querySelector("div#s-lg-srch-content.col-md-12");
+        if (extraRow && wrongColMd12) {
+            extraRow.classList.add('col-md-12');
+            wrongColMd12.classList.remove('col-md-12');
+            extraRow.classList.remove('row');
+        }
+
     })();
 
 </script>
