@@ -169,6 +169,11 @@
         height: auto;
     }
 
+    input[type="text"] {
+        max-width: 400px;
+        width: 100%;
+    }
+
     /* BEGIN header */
     header>nav {
         background: url(https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png) repeat;
@@ -218,6 +223,10 @@
     /* hide primo header on heritage hall pages */
     header:has(+ div#s-lg-guide-header li#s-lib-bc-guide > a[href="https://library.calvin.edu/hh"]) #homeNavbarToggler {
         display: none !important;
+    }
+
+    #homeNavbarToggler {
+        padding: 0.75rem 0px;
     }
 
 
@@ -290,9 +299,10 @@
         border: 3px solid #8c2131;
         border: 3px solid var(--calvin-red);
         border-radius: 1rem;
-        padding: 3rem 1rem;
+        padding: clamp(1rem, 5vw, 3rem);
         background: whitesmoke;
         background: linear-gradient(to right, white, whitesmoke);
+        margin-bottom: 1rem;
     }
 
     .s-lg-tab-content>#s-lg-guide-main,
@@ -348,7 +358,7 @@
     /* active page, sub-page, box */
     div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item.active>a.active,
     div#s-lg-guide-tabs>ul.nav-pills>li.nav-item:has(>ul.s-lg-subtab-ul>li.active)>a.nav-link,
-    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.active > a,
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.active>a,
     div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item>a:target-current {
         text-decoration: none;
         font-weight: 600;
@@ -504,6 +514,11 @@
         border: 3px solid var(--calvin-red);
         padding: 3rem 2rem;
         border-radius: 1rem;
+        background-color: white;
+    }
+
+    #s-lg-az-cols>#col1 h3.s-lg-db-panel-title {
+        font-weight: normal;
     }
 
     /* Base: every option gets an empty checkbox box */
@@ -673,6 +688,146 @@
         background-color: #eee;
     }
 
+    /* BEGIN search page */
+
+    #s-lg-srch-local>nav {
+        background: linear-gradient(to right, #ccc, #eee);
+        background: linear-gradient(to right, var(--calvin-red), #eee);
+    }
+
+    div#s-lg-srch-nav-1 {
+        display: block;
+    }
+
+    div#s-lg-srch-local div.navbar-header {
+        display: none;
+    }
+
+    input#s-lg-srch-input-q {
+        max-width: 35rem;
+        font-size: 1.25rem;
+        border: 3px solid var(--calvin-red);
+        border-right: none;
+    }
+
+    #s-lg-srch-input-q~button {
+        background-color: var(--calvin-red);
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    div#s-lg-srch-content>div#s-srch-tabs {
+        margin-bottom: -1rem;
+    }
+
+    #s-srch-tabs .active button.active {
+        border-bottom: none;
+        color: #8C2131;
+        color: var(--calvin-red);
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border: 3px solid;
+        border-bottom: white;
+        margin-bottom: -3px;
+    }
+
+    #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active) {
+        border: none;
+        color: #8C2131;
+    }
+
+    #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active):hover {
+        border: 1px solid;
+    }
+
+
+    #s-lg-srch-content>div.tab-pane {
+        padding: 1rem;
+        background-color: white;
+        border: 3px solid var(--calvin-red);
+    }
+
+    #s-lg-srch-content>div.tab-pane div.s-srch-resultlist>div.fw-bold {
+        font-weight: normal !important;
+        font-size: 90%;
+    }
+
+
+    div.s-srch-result-title>a {
+        font-weight: 600;
+    }
+
+    #az-public-mobile-filters-default {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+    }
+
+    #az-public-mobile-filters-default .s-lg-az-search form-control {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+    }
+
+    #az-public-mobile-filters-default input.s-lg-az-search[type="text"] {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+        font-size: 1rem;
+    }
+
+    #az-public-mobile-filters-default button {
+        background-color: var(--calvin-red);
+        border: 1px solid;
+    }
+
+    #az-public-mobile-filters-default input.s-lg-az-search[type="text"]::placeholder {
+        font-size: 1rem;
+    }
+
+    .az-public-mobile-filters a.collapsible {
+        font-size: 0.9rem;
+    }
+
+    .az-public-mobile-filters .select2-container--bootstrap5 {
+        border: 1px solid;
+    }
+
+    /* END search page */
+
+    /* BEGIN Individual Subject Landing Page */
+
+    /* div#s-lib-public-main > section[aria-label='Subject Search Bar'] */
+    /* div#s-lib-public-main > section[aria-label='Content by Subject'] > div#s-lg-sb-cols > div#col1 */
+
+    /* remove subject search bar */
+    div#s-lib-public-main>section[aria-label='Subject Search Bar']:has(~ section[aria-label='Content by Subject'] > div#s-lg-sb-cols > div#col1 > ul.nav),
+
+    /* remove all but librarian */
+    div#s-lib-public-main>section[aria-label='Content by Subject']:has(> div#s-lg-sb-cols > div#col1 > ul.nav)>div#s-lg-sb-cols>div#col2>div:not(#s-lg-sb-experts-div),
+
+    /* remove blog tab */
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button#s-lg-sb-blog-posts-tab {
+        display: none;
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav {
+        margin-bottom: 0 !important;
+    }
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>div.tab-content {
+        background-color: white;
+        padding: clamp(1rem, 5vw, 3rem);
+    }
+
+    /* put "Databases First"*/
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li:has(> button#s-lg-sb-databases-tab) {
+        order: -1;
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button {
+        font-size: 125%;
+    }
+
+    /* END Individual Subject Landing Page */
+
     /* Miscellaneous */
 
     /* Add smoother transitions */
@@ -770,114 +925,6 @@
     }
 
     /* END mobile */
-
-
-
-
-
-    /* temp place for search page css */
-
-    #s-lg-srch-local>nav {
-        background: linear-gradient(to right, #ccc, #eee);
-        background: linear-gradient(to right, var(--calvin-red), #eee);
-    }
-
-    div#s-lg-srch-nav-1 {
-        display: block;
-    }
-
-    div#s-lg-srch-local div.navbar-header {
-        display: none;
-    }
-
-    input#s-lg-srch-input-q {
-        max-width: 35rem;
-        font-size: 1.25rem;
-        border: 3px solid var(--calvin-red);
-        border-right: none;
-    }
-
-    #s-lg-srch-input-q~button {
-        background-color: var(--calvin-red);
-        color: white;
-        font-size: 1.25rem;
-    }
-
-    div#s-lg-srch-content>div#s-srch-tabs {
-        margin-bottom: -1rem;
-    }
-
-    #s-srch-tabs .active button.active {
-        border-bottom: none;
-        color: white;
-        background-color: #8C2131;
-        background: linear-gradient(to right, var(--calvin-red), oklch(0.6341 0.15 23));
-        font-size: 1.2rem;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-    }
-
-    #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active) {
-        border: none;
-        color: #8C2131;
-    }
-
-    #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active):hover {
-        border: 1px solid;
-    }
-
-
-    #s-lg-srch-content>div.tab-pane {
-        border: 3px solid var(--calvin-red);
-        padding: 1rem;
-        background-color: white;
-    }
-
-    #s-lg-srch-content>div.tab-pane div.s-srch-resultlist>div.fw-bold {
-        font-weight: normal !important;
-        font-size: 90%;
-    }
-
-
-    div.s-srch-result-title>a {
-        font-weight: 600;
-        font-size: 133%;
-    }
-
-    #az-public-mobile-filters-default {
-        border: 3px solid #8C2131;
-        border: 3px solid var(--calvin-red);
-    }
-
-    #az-public-mobile-filters-default .s-lg-az-search form-control {
-        border: 3px solid #8C2131;
-        border: 3px solid var(--calvin-red);
-    }
-
-    #az-public-mobile-filters-default input.s-lg-az-search[type="text"] {
-        border: 3px solid #8C2131;
-        border: 3px solid var(--calvin-red);
-        font-size: 1rem;
-    }
-
-    #az-public-mobile-filters-default button {
-        background-color: var(--calvin-red);
-        border: 1px solid;
-    }
-
-    #az-public-mobile-filters-default input.s-lg-az-search[type="text"]::placeholder {
-        font-size: 1rem;
-    }
-
-    .az-public-mobile-filters a.collapsible {
-        font-size: 0.9rem;
-    }
-
-    .az-public-mobile-filters .select2-container--bootstrap5 {
-        border: 1px solid;
-    }
-
-
 
 
 
