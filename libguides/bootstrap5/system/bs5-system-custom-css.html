@@ -729,7 +729,7 @@
         padding: 0.5rem 1rem;
         border: 3px solid;
         border-bottom: white;
-        margin-bottom: -3px;
+        margin-bottom: -2px;
     }
 
     #s-srch-tabs>ul.nav-tabs>li.nav-item>button.btn:not(.active) {
@@ -812,9 +812,15 @@
     div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav {
         margin-bottom: 0 !important;
     }
+
     div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>div.tab-content {
         background-color: white;
         padding: clamp(1rem, 5vw, 3rem);
+        margin-top: -1px;
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav.nav-tabs {
+        border-bottom: none;
     }
 
     /* put "Databases First"*/
@@ -822,8 +828,36 @@
         order: -1;
     }
 
-    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button {
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav.nav-tabs>li>button {
         font-size: 125%;
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button:hover {
+        border-color: inherit;
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button {
+        border-radius: 0;
+        color: #8C2131;
+        color: var(--calvin-red);
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button.active {
+        border: 3px solid;
+        border-bottom: white;
+        margin-bottom: -3px;
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>div.tab-content {
+        border: 3px solid #8C2131;
+        border: 3px solid var(--calvin-red);
+    }
+
+    div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>div.tab-content>div.tab-pane h2.muted {
+        font-family: inherit;
+        color: #000;
+        color: var(--calvin-black);
+        font-weight: normal;
     }
 
     /* END Individual Subject Landing Page */
@@ -911,6 +945,11 @@
 
         #s-lg-az-cols {
             margin: 0 1.5rem;
+        }
+
+        /* site search */
+        #s-srch-tabs .active button.active {
+            border: none;
         }
     }
 
