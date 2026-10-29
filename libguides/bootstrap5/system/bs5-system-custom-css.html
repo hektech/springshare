@@ -64,6 +64,9 @@
     body {
         background-color: var(--hekman-light-grey-fallback);
         background-color: var(--hekman-light-grey);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='112' viewBox='0 0 96 112' fill='none' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='%2319aff3' stroke-width='1' stroke-opacity='.1' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M0 0V112M48 0V112M96 0V112'/%3E%3Cpath d='M0 12L24 28L48 12'/%3E%3Cpath d='M0 24L24 40L48 24'/%3E%3Cpath d='M24 28V40'/%3E%3Cpath d='M48 68L72 84L96 68'/%3E%3Cpath d='M48 80L72 96L96 80'/%3E%3Cpath d='M72 84V96'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 96px 112px;
     }
 
     h1,
@@ -175,8 +178,8 @@
     }
 
     /* BEGIN header */
-    header>nav {
-        background: url(https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/bg-wayfinder-pattern-blue-1per.png) repeat;
+    #hekman-page-header {
+        background: linear-gradient(white, transparent);
     }
 
     .hek-brand {
@@ -223,6 +226,12 @@
     /* hide primo header on heritage hall pages */
     header:has(+ div#s-lg-guide-header li#s-lib-bc-guide > a[href="https://library.calvin.edu/hh"]) #homeNavbarToggler {
         display: none !important;
+    }
+
+    /* hide Calvin University breadcrumb */
+    li#s-lib-bc-customer,
+    li#s-lib-bc-site::before {
+        display: none;
     }
 
     #homeNavbarToggler {
@@ -282,7 +291,7 @@
 
     /* heading */
     #s-lg-guide-header-info {
-        margin: 3rem 0 1rem;
+        margin: 1rem 0 1rem;
     }
 
     h1#s-lib-public-header-title,
@@ -290,14 +299,50 @@
     .s-lib-header h1 {
         text-transform: uppercase;
         font-family: 'Fjalla One', sans-serif;
-        font-size: clamp(2.25rem, 5vw, 3.5rem);
+        font-size: clamp(2.33rem, 5vw, 3.75rem);
         font-weight: normal;
-        margin-top: 3rem;
+        margin-top: 1rem;
     }
+
+    /* BEGIN change headings */
+    h1#s-lg-guide-name>span.guide {
+        transform: skewY(0deg);
+        transform-origin: bottom left;
+        text-transform: capitalize;
+        font-size: 2rem;
+        position: relative;
+        display: inline-block;
+        padding: 1.25rem 2.5rem 1.25rem 2rem;
+        color: #222;
+        z-index: 0;
+        vertical-align: top;
+    }
+
+    h1#s-lg-guide-name>span.guide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        transform-origin: bottom left;
+        background-color: whitesmoke;
+        transform: skewX(-7deg);
+        border: 3px solid #f3cd00;
+        margin-right: 1rem;
+    }
+
+    h1#s-lg-guide-name>span.page {
+        /* display: block; */
+        font-size: clamp(3rem, 6vw, 4rem);
+        margin-top: 0.5rem;
+    }
+
+    /* END change headings */
+
 
     .s-lg-tab-content {
         border: 3px solid #8c2131;
         border: 3px solid var(--calvin-red);
+        border: 3px solid #333;
         border-radius: 1rem;
         padding: clamp(1rem, 5vw, 3rem);
         background: whitesmoke;
@@ -330,6 +375,14 @@
 
     /* begin side nav bar */
 
+    /* style entire navigation */
+    div#s-lg-guide-tabs {
+        padding: 1rem;
+        border: 1px solid #5b798c;
+        border-radius: 1rem;
+        background-color: whitesmoke;
+    }
+
     /* ensure list of pages stacks as a column */
     div#s-lg-guide-tabs>ul.nav {
         flex-flow: column;
@@ -339,6 +392,10 @@
     div#s-lg-guide-tabs>ul.nav>li:only-child.active>a:has(~ ul.list-group) {
         display: none;
     }
+
+    /* all pages */
+    /* div#s-lg-guide-tabs>ul.nav-pills>li.nav-item {
+    } */
 
     /* all page, sub-page links */
     div#s-lg-guide-tabs>ul.nav-pills>li.nav-item>a.nav-link,
@@ -350,25 +407,39 @@
         text-transform: uppercase;
     }
 
+    /* hover over each page, sub-page */
+    div#s-lg-guide-tabs>ul.nav-pills>li.nav-item>a.nav-link:hover,
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.dropdown-item>a:hover {
+        color: #000;
+        color: var(--calvin-black);
+        font-weight: 600;
+    }
+
+
     /* subpages */
     div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.dropdown-item {
         background: none;
     }
 
-    /* active page, sub-page, box */
+    /* active page, sub-page (works everywhere) */
     div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item.active>a.active,
     div#s-lg-guide-tabs>ul.nav-pills>li.nav-item:has(>ul.s-lg-subtab-ul>li.active)>a.nav-link,
-    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.active>a,
-    div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item>a:target-current {
+    div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item>ul.s-lg-subtab-ul>li.active>a {
         text-decoration: none;
         font-weight: 600;
-        color: #000;
+        color: var(--calvin-black);
+    }
+
+    /* Active box link via ScrollSpy fallback or native :target-current */
+    div#s-lg-guide-tabs ul.s-lg-boxnav li.list-group-item>a.active {
+        text-decoration: none;
+        font-weight: 600;
         color: var(--calvin-black);
     }
 
     /* active page, box on hover */
     div#s-lg-guide-tabs>ul.nav.nav-pills>li.nav-item.active>a.active:hover,
-    div#s-lg-guide-tabs ul.s-lg-boxnav a:target-current:hover {
+    div#s-lg-guide-tabs ul.s-lg-boxnav a.active:hover {
         cursor: default;
     }
 
@@ -401,18 +472,32 @@
     }
 
     /* active box, before */
-    div#s-lg-guide-tabs ul.s-lg-boxnav a:target-current:before {
+    /* div#s-lg-guide-tabs ul.s-lg-boxnav a:target-current:before {
+        content: "\f101";
+        font-family: "FontAwesome";
+        position: absolute;
+        left: 0;
+    } */
+
+    /* Active indicator icon */
+    div#s-lg-guide-tabs ul.s-lg-boxnav a.active::before {
         content: "\f101";
         font-family: "FontAwesome";
         position: absolute;
         left: 0;
     }
 
+
     /*mobile side nav button*/
     #side-nav-button {
         margin-bottom: 1rem;
         border: 2px solid;
+        background-color: white;
+    }
 
+    #side-nav-button:hover {
+        color: var(--bs-btn-hover-color);
+        background-color: var(--bs-btn-hover-bg);
     }
 
     #side-nav-button .bi-caret-down-fill {

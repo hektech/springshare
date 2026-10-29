@@ -1,4 +1,15 @@
 <script>
+    // modify header
+    (function () {
+        const guidePageH1 = document.querySelector(`h1#s-lg-guide-name`);
+        const guideTitle = document.querySelector(`li#s-lib-bc-guide`).textContent;
+        const pageTitle = document.querySelector(`li#s-lib-bc-page`).textContent;
+
+        if (guidePageH1 && pageTitle != 'Home') {
+            guidePageH1.innerHTML = `<span class="guide">${guideTitle}</span> <span class="page">${pageTitle}</span>`;
+        }
+    })();
+
     //add button to side navigation on mobile
     (function () {
         const SIDE_NAV = $("#s-lg-tabs-container > #s-lg-guide-tabs");
@@ -43,6 +54,8 @@
         }
 
     })();
+
+
 
     // Subject Pages
     (function () {
