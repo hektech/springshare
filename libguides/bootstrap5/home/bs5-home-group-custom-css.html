@@ -5,6 +5,7 @@
 <style>
     body {
         font-family: 'Montserrat', Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-image: none;
     }
 
     .hek-brand {
@@ -85,13 +86,17 @@
     main {
         background-size: cover;
         background-repeat: no-repeat;
+        background-color: #8c2131;
     }
 
     .main-img-shading {
-        /* background-color: oklch(0.3647 0.1406 17.56 / 0.85); */
-        /* background: radial-gradient(circle, oklch(0.3647 0.1406 17.56 / 1), oklch(0.3647 0.1406 17.56 / 0.95), oklch(0.3647 0.1406 17.56 / 0.85)) */
         background-color: #770721DF;
-        background-color: oklch(0.3647 0.1406 17.56 / 0.75);
+    }
+
+    @supports (color: oklch(0.3647 0.1406 17.56 / 0.75)) {
+        .main-img-shading {
+            background-color: oklch(0.3647 0.1406 17.56 / 0.75);
+        }
     }
 
     .search-header {
@@ -186,6 +191,9 @@
         color: #eee;
         font-size: 1.5rem;
         text-decoration: underline;
+        text-decoration-color: currentColor;
+        /* background-color: #8c2131;
+        padding: 0 0.5rem; */
 
     }
 
@@ -326,9 +334,18 @@
         .options-under-search a:visited,
         .options-under-search a:visited:hover {
             color: #333;
-            color: oklch(0.3211 0 0);
             font-size: 1.2em;
         }
+
+        @supports (color: oklch(0.3211 0 0)) {
+
+            .options-under-search a,
+            .options-under-search a:visited,
+            .options-under-search a:visited:hover {
+                color: oklch(0.3211 0 0);
+            }
+        }
+
 
         .home-quick-links {
             font-size: 1.2em;

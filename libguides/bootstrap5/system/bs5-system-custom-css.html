@@ -20,15 +20,20 @@
     }
 
     :root {
-        --calvin-black-fallback: #000;
-        --calvin-black: oklch(15% 0.05 270);
-        --calvin-red-fallback: #8c2131;
-        --calvin-red: oklch(0.42 0.15 23);
-        --calvin-light-red-fallback: #b71c1c;
-        --calvin-light-red: oklch(0.5 0.15 23);
-        --hekman-light-grey-fallback: #f5f3ef;
-        --hekman-light-grey: oklch(0.9646 0.0057 84.57);
+        --calvin-black: #000;
+        --calvin-red: #8c2131;
+        --calvin-light-red: #b71c1c;
+        --hekman-light-grey: #f5f3ef;
         --fjalla: "Fjalla One", sans-serif;
+    }
+
+    @supports (color: oklch(96.46% 0.0057 84.57)) {
+        :root {
+            --calvin-black: oklch(15% 0.05 270);
+            --calvin-red: oklch(42% 0.15 23);
+            --calvin-light-red: oklch(50% 0.15 23);
+            --hekman-light-grey: oklch(96.46% 0.0057 84.57);
+        }
     }
 
     .calvin-black,
@@ -37,7 +42,6 @@
     .calvin-black a:focus,
     .calvin-black a:active,
     .calvin-black a:visited {
-        color: var(--calvin-black-fallback);
         color: var(--calvin-black);
     }
 
@@ -47,7 +51,6 @@
     .calvin-red a:focus,
     .calvin-red a:active,
     .calvin-red a:visited {
-        color: var(--calvin-red-fallback);
         color: var(--calvin-red);
     }
 
@@ -57,12 +60,10 @@
     .calvin-red a:active,
     .calvin-red a:visited {
         text-decoration: underline;
-        text-decoration-color: var(--calvin-red-fallback);
         text-decoration-color: var(--calvin-red);
     }
 
     body {
-        background-color: var(--hekman-light-grey-fallback);
         background-color: var(--hekman-light-grey);
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='112' viewBox='0 0 96 112' fill='none' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg stroke='%2319aff3' stroke-width='1' stroke-opacity='.1' stroke-linecap='square' stroke-linejoin='miter'%3E%3Cpath d='M0 0V112M48 0V112M96 0V112'/%3E%3Cpath d='M0 12L24 28L48 12'/%3E%3Cpath d='M0 24L24 40L48 24'/%3E%3Cpath d='M24 28V40'/%3E%3Cpath d='M48 68L72 84L96 68'/%3E%3Cpath d='M48 80L72 96L96 80'/%3E%3Cpath d='M72 84V96'/%3E%3C/g%3E%3C/svg%3E");
         background-repeat: repeat;
@@ -228,6 +229,10 @@
         display: none !important;
     }
 
+    li.breadcrumb-item {
+        margin: 0;
+    }
+
     /* hide Calvin University breadcrumb */
     li#s-lib-bc-customer,
     li#s-lib-bc-site::before {
@@ -302,6 +307,7 @@
         font-size: clamp(2.33rem, 5vw, 3.75rem);
         font-weight: normal;
         margin-top: 1rem;
+        margin-bottom: 0;
     }
 
     /* BEGIN change headings */
@@ -344,16 +350,31 @@
         border: 3px solid var(--calvin-red);
         border: 3px solid #333;
         border-radius: 1rem;
-        padding: clamp(1rem, 5vw, 3rem);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         background: whitesmoke;
         background: linear-gradient(to right, white, whitesmoke);
         margin-bottom: 1rem;
     }
 
-    .s-lg-tab-content>#s-lg-guide-main,
+    .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div,
     .s-lg-tab-content>#s-lg-guide-main #s-lg-col-2.col-md-9 {
-        max-width: 75ch;
-        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding-inline: max(1rem, calc((100% - 75ch) / 2));
+    }
+
+    .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div:nth-child(even) {
+        background-color: rgba(0, 0, 0, 0.066);
+    }
+
+    .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div:last-child {
+        margin-bottom: -1rem;
+        padding-bottom: 1rem;
+    }
+
+    .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div>div.s-lib-box-container {
+        padding: clamp(0px, 2vw, 2rem);
     }
 
     /* boxes */
@@ -377,7 +398,7 @@
 
     /* style entire navigation */
     div#s-lg-guide-tabs {
-        padding: 1rem;
+        padding: clamp(0px, 1vw, 1rem);
         border: 1px solid #5b798c;
         border-radius: 1rem;
         background-color: whitesmoke;
@@ -708,9 +729,16 @@
     }
 
     footer.hekman-footer {
-        background: var(--calvin-red-fallback);
         background: var(--calvin-red);
-        background: linear-gradient(45deg, oklch(0.3541 0.1253 23), var(--calvin-red), oklch(0.4806 0.1771 23));
+    }
+
+    @supports (background: linear-gradient(45deg, oklch(35.41% 0.1253 23), oklch(48.06% 0.1771 23))) {
+        footer.hekman-footer {
+            background: linear-gradient(45deg,
+                    oklch(35.41% 0.1253 23),
+                    var(--calvin-red),
+                    oklch(48.06% 0.1771 23));
+        }
     }
 
     footer.hekman-footer,
@@ -919,6 +947,7 @@
 
     div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button:hover {
         border-color: inherit;
+        background-color: white;
     }
 
     div#s-lib-public-main>section[aria-label='Content by Subject']>div#s-lg-sb-cols>div#col1>ul.nav>li>button {
