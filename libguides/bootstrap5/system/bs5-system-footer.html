@@ -27,10 +27,11 @@
         color: #333 !important;
     }
 
-    .footer-login a { 
+    .footer-login a {
         text-decoration: none;
         transition: 0.3s;
     }
+
     .footer-login a:hover {
         text-decoration: underline;
     }
@@ -254,10 +255,11 @@
                 </li>
 
                 <li class="site-search-li my-2" style="max-width:15rem;">
-                    <search>
+                    <search aria-label="Hekman Library Site search">
                         <form action="/srch.php" method="get" style="display: flex; align-items: center;">
                             <div class="site-search-container w-100 p-1">
-                                <button class="site-search-button" type="submit" aria-label="Search">
+                                <button class="site-search-button" type="submit">
+                                    <span class="sr-only">Search the Hekman Library Website</span>
                                     <svg style="vertical-align: middle; margin-bottom:2px;"
                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.17475 14.17475"
                                         height="14.17475" width="14.17475" aria-hidden="true">
@@ -303,8 +305,8 @@
                                     </svg>
                                 </button>
                                 <label class="visually-hidden" for="site-search-input">Search this Site</label>
-                                <input class="site-search-input w-100" type="text" name="q"
-                                    placeholder="Search this Site" aria-label="Search this Site">
+                                <input id="site-search-input" class="site-search-input w-100" type="search" name="q"
+                                    placeholder="Search this Site">
                             </div>
                         </form>
                     </search>
@@ -359,8 +361,8 @@
                     <a class="icon-link icon-link-hover py-1 px-3"
                         href="https://calvin.primo.exlibrisgroup.com/nde/account/overview?vid=01CALVIN_INST:NDE_Live&amp;lang=en"
                         style="
-    border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
-                            viewBox="0 0 16 16" aria-hidden="true">
+    border: 1px solid;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-box-arrow-in-right" viewBox="0 0 16 16" aria-hidden="true">
                             <path fill-rule="evenodd"
                                 d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z">
                             </path>
@@ -404,19 +406,20 @@
     </div>
 
     <!-- Homepage chat -->
-        <script src="https://libanswers.calvin.edu/load_chat.php?hash=51b0b3781b09e1ba1ddd6b9921472e75"></script>
-        <style>
-            #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online {
-                background-color: oklch(0.535078 0.175681 143.5956);
-                border-radius: 0;
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                transition: 0;
-            }
-            #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online:hover {
-                background-color: darkgreen;
-            }
-        </style>
-        <div class="chat-btn" id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
+    <script src="https://libanswers.calvin.edu/load_chat.php?hash=51b0b3781b09e1ba1ddd6b9921472e75"></script>
+    <style>
+        #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online {
+            background-color: oklch(0.535078 0.175681 143.5956);
+            border-radius: 0;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            transition: 0;
+        }
+
+        #libchat_51b0b3781b09e1ba1ddd6b9921472e75 button.libchat_online:hover {
+            background-color: darkgreen;
+        }
+    </style>
+    <div class="chat-btn" id="libchat_51b0b3781b09e1ba1ddd6b9921472e75"></div>
 </footer>

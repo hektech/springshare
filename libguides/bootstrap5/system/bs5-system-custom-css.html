@@ -178,7 +178,13 @@
         width: 100%;
     }
 
-    .s-lg-small, .s-lib-small {
+    .form-floating>.form-control-plaintext::placeholder,
+    .form-floating>.form-control::placeholder {
+        color: transparent !important;
+    }
+
+    .s-lg-small,
+    .s-lib-small {
         font-size: 1rem;
     }
 
@@ -361,15 +367,11 @@
         margin-top: 0.5rem;
     }
 
-    body.s-lg-guide-body>div#s-lg-guide-main>div.row>div#s-lg-col-1>div.s-lg-col-boxes h2.s-lib-box-title {
-        font-size: 1.5rem;
-    }
-
     /* END change headings */
 
 
     .s-lg-tab-content,
-    div#s-lg-guide-main>div.row>div#s-lg-col-2 {
+    div#s-lg-guide-main>div.row>div#s-lg-col-2.col-md-9{
         border: 3px solid #8c2131;
         border: 3px solid var(--calvin-red);
         border: 3px solid #333;
@@ -381,21 +383,21 @@
         margin-bottom: 1rem;
     }
 
-    body.s-lg-guide-body>div#s-lg-guide-main>div.row>div#s-lg-col-2>div.s-lg-col-boxes {
+    body.s-lg-guide-body>div#s-lg-guide-main>div.row>div#s-lg-col-2.col-md-9>div.s-lg-col-boxes {
         margin-right: calc(-1 * (var(--bs-gutter-x) * .5));
         margin-left: calc(-1 * (var(--bs-gutter-x) * .5));
     }
 
     .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div,
     .s-lg-tab-content>#s-lg-guide-main #s-lg-col-2.col-md-9,
-    div#s-lg-guide-main>div.row>div#s-lg-col-2>div.s-lg-col-boxes>div {
+    div#s-lg-guide-main>div.row>div#s-lg-col-2.col-md-9>div.s-lg-col-boxes>div {
         width: 100%;
         box-sizing: border-box;
         padding-inline: max(1rem, calc((100% - 75ch) / 2));
     }
 
     .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div:nth-child(even),
-    div#s-lg-guide-main>div.row>div#s-lg-col-2>div.s-lg-col-boxes>div:nth-child(even) {
+    div#s-lg-guide-main>div.row>div#s-lg-col-2.col-md-9>div.s-lg-col-boxes>div:nth-child(even) {
         background-color: rgba(0, 0, 0, 0.066);
     }
 
@@ -405,7 +407,7 @@
     }
 
     .s-lg-tab-content>#s-lg-guide-main div#s-lg-col-1>div.s-lg-col-boxes>div>div.s-lib-box-container,
-    div#s-lg-guide-main>div.row>div#s-lg-col-2>div.s-lg-col-boxes>div>div.s-lib-box-container {
+    div#s-lg-guide-main>div.row>div#s-lg-col-2.col-md-9>div.s-lg-col-boxes>div>div.s-lib-box-container {
         padding: clamp(0px, 2vw, 2rem);
     }
 
@@ -429,7 +431,8 @@
     /* begin side nav bar */
 
     /* style entire navigation */
-    div#s-lg-guide-tabs {
+    div#s-lg-guide-tabs,
+    div#s-lg-guide-main > div.row > div#s-lg-col-1.col-md-3 > div.s-lg-col-boxes{
         padding: clamp(0px, 1vw, 1rem);
         border: 1px solid #5b798c;
         border-radius: 1rem;
@@ -601,7 +604,8 @@
         font-weight: normal !important;
     }
 
-    .s-lib-profile-container .s-lib-profile-email a {
+    .s-lib-profile-container .s-lib-profile-email a,
+    div#s-lg-guide-main>div.row>div#s-lg-col-1.col-md-3 h2.s-lib-box-title {
         font-size: 1.5rem;
     }
 
@@ -624,15 +628,22 @@
 
     /* END Profile Box */
 
-    /* Primo Simple Search Box */
-    #simple-primo-search > input[type="text"] {
+    /* Primo Search Box on guides */
+    form.guide-primo-search {
+        position: relative;
+    }
+
+    .guide-primo-search>input[type="text"] {
         padding: 0.33rem 0;
         padding-left: 5%;
         font-size: 1.25rem;
+        border-radius: 2rem;
+        border: 1px solid;
     }
-    #simple-primo-search > button#go {
+
+    .guide-primo-search>button#go {
         position: absolute;
-        left: 1%;
+        left: 0;
         font-size: 1.25rem;
     }
 
@@ -1106,6 +1117,11 @@
 
         #s-lg-az-cols {
             margin: 0 1.5rem;
+        }
+
+        /* Guide Header Everything Primo Search */
+        form#header-primo-form svg {
+            display:none;
         }
 
         /* site search */

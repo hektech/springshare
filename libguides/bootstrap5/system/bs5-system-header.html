@@ -12,7 +12,8 @@
             </div>
             <a href="https://calvinseminary.edu" class="calvin-black"><img
                     src="https://d2jv02qf7xgjwx.cloudfront.net/customers/726/images/sem_200x200_transparent.png"
-                    alt="Calvin Theological Seminary" title="Calvin Theological Seminary" class="sem-logo img-fluid" /></a>
+                    alt="Calvin Theological Seminary" title="Calvin Theological Seminary"
+                    class="sem-logo img-fluid" /></a>
         </div>
 
         <div class="hek-brand-mobile align-items-center">
@@ -125,95 +126,85 @@
         <div class="collapse navbar-collapse" id="homeNavbarToggler">
 
             <!-- BEGIN: NDE HEADER WIDGET -->
-            <!-- Script that converts the query string into valid parameter -->
-            <script type="text/javascript">
-                function searchNde() {
-                    document.getElementById("primoQuery").value = document.getElementById("header-primo-input").value;
-                    document.forms["searchForm"].submit();
-                }
-            </script>
-            <search id="header-primo-wrapper" class="ms-auto">
-                <form id="header-primo-form" name="searchForm" method="get" target="_self"
-                    action="https://calvin.primo.exlibrisgroup.com/nde/search"
-                    enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchNde()">
-                    <label for="header-primo-input" class="mx-1 visually-hidden">
-                        <!-- <svg class="bi align-baseline mx-2" data-name="hekman-logo"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 123.07 183.34" height="23" role="img"
-                            aria-labelledby="hekman-library-logo-title">
-                            <title id="hekman-library-logo-title">Hekman Library logo</title>
+            <search id="header-primo-wrapper" class="ms-auto" aria-label="Hekman Library Everything search">
+                <form id="header-primo-form" name="searchForm" method="get"
+                    action="https://calvin.primo.exlibrisgroup.com/nde/search">
+                    <label for="header-primo-input" class="mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            id="white-book-yellow-pages" data-name="White Book Yellow Pages" width="82.29px"
+                            height="122.6px" viewBox="0 0 82.29 122.6"
+                            style="overflow: visible; width:30px; height:auto" aria-hidden="true">
 
                             <defs>
                                 <style>
-                                    .hekman-library-logo__panel-left,
-                                    .hekman-library-logo__panel-right,
-                                    .hekman-library-logo__accent-right,
-                                    .hekman-library-logo__accent-left {
-                                        stroke-width: 0;
+                                    .book-cover-left {
+                                        fill: url(#book-cover-gradient);
                                     }
 
-                                    .hekman-library-logo__panel-left {
-                                        fill: url(#hekman-library-logo-gradient-panel-left);
+                                    .book-cover-right {
+                                        fill: #ffffff;
                                     }
 
-                                    .hekman-library-logo__panel-right {
-                                        fill: url(#hekman-library-logo-gradient-panel-right);
+                                    .book-page-right {
+                                        fill: url(#book-yellow-gradient-right);
                                     }
 
-                                    .hekman-library-logo__accent-right {
-                                        fill: url(#hekman-library-logo-gradient-accent-right);
+                                    .book-page-left {
+                                        fill: url(#book-yellow-gradient-left);
                                     }
 
-                                    .hekman-library-logo__accent-left {
-                                        fill: url(#hekman-library-logo-gradient-accent-left);
+                                    .book-element {
+                                        stroke: #000000;
+                                        stroke-width: 1px;
+                                        stroke-linejoin: round;
+                                        stroke-linecap: round;
                                     }
                                 </style>
 
-                                <linearGradient id="hekman-library-logo-gradient-panel-left" x1="2.03" y1="78.38"
-                                    x2="59.36" y2="118.23" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#971a31"></stop>
-                                    <stop offset=".28" stop-color="#841729"></stop>
-                                    <stop offset=".86" stop-color="#541216"></stop>
-                                    <stop offset="1" stop-color="#481111"></stop>
+                                <!-- Left Cover Gradient -->
+                                <linearGradient id="book-cover-gradient" x1="1.36" y1="52.41" x2="39.69" y2="79.06"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#f9f9fa"></stop>
+                                    <stop offset=".39" stop-color="rgba(248, 248, 249, .93)" stop-opacity=".93"></stop>
+                                    <stop offset="1" stop-color="#f8f7f7" stop-opacity=".8"></stop>
                                 </linearGradient>
 
-                                <linearGradient id="hekman-library-logo-gradient-panel-right" x1="108.75" y1="46.05"
-                                    x2="73.79" y2="157.21" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#c22032"></stop>
-                                    <stop offset=".06" stop-color="#bc2032"></stop>
-                                    <stop offset=".45" stop-color="#9b2032"></stop>
-                                    <stop offset=".78" stop-color="#882032"></stop>
-                                    <stop offset="1" stop-color="#812132"></stop>
-                                </linearGradient>
-
-                                <linearGradient id="hekman-library-logo-gradient-accent-right" x1="121.88" y1="-1.96"
-                                    x2="65.05" y2="46.13" gradientUnits="userSpaceOnUse">
+                                <!-- Yellow Page Gradient Right -->
+                                <linearGradient id="book-yellow-gradient-right" x1="81.5" y1="-1.31" x2="43.5"
+                                    y2="30.84" gradientUnits="userSpaceOnUse">
                                     <stop offset="0" stop-color="#f3cd13"></stop>
                                     <stop offset="1" stop-color="#ddb326"></stop>
                                 </linearGradient>
 
-                                <linearGradient id="hekman-library-logo-gradient-accent-left" x1="-6569.72" y1="-1.96"
-                                    x2="-6626.55" y2="46.13"
-                                    gradientTransform="translate(-6568.66) rotate(-180) scale(1 -1)"
-                                    href="#hekman-library-logo-gradient-accent-right"></linearGradient>
+                                <!-- Yellow Page Gradient Left -->
+                                <linearGradient id="book-yellow-gradient-left" x1="-7178.51" x2="-7216.52" y2="30.84"
+                                    gradientTransform="translate(-7177.81) rotate(-180) scale(1 -1)"
+                                    xlink:href="#book-yellow-gradient-right"></linearGradient>
                             </defs>
 
-                            <g class="hekman-library-logo__mark" data-name="Hekman Library logo mark">
-                                <polygon class="hekman-library-logo__panel-left"
-                                    points="61.53 183.34 0 143.95 0 14.5 61.53 52.77 61.53 183.34"></polygon>
+                            <g id="book-icon-mark" data-name="Book Icon Mark">
+                                <!-- Left book cover -->
+                                <polygon class="book-cover-left book-element"
+                                    points="41.15 122.6 0 96.25 0 9.69 41.15 35.29 41.15 122.6">
+                                </polygon>
 
-                                <polygon class="hekman-library-logo__panel-right"
-                                    points="61.53 183.34 123.07 143.95 123.07 14.5 61.53 52.77 61.53 183.34"></polygon>
+                                <!-- Right book cover -->
+                                <polygon class="book-cover-right book-element"
+                                    points="41.15 122.6 82.29 96.25 82.29 9.69 41.15 35.29 41.15 122.6"></polygon>
 
-                                <path class="hekman-library-logo__accent-right"
-                                    d="M113.74,0l-5.09,2.08c-14.45,5.9-26.68,16.2-34.94,29.44l-11.16,17.88,51.93-33.16-.73-16.25Z">
+                                <!-- Right curved yellow page -->
+                                <path class="book-page-right book-element"
+                                    d="M76.06,0l-3.41,1.39c-9.66,3.95-17.84,10.83-23.37,19.69l-7.47,11.96,34.72-22.17-.49-10.86Z">
                                 </path>
 
-                                <path class="hekman-library-logo__accent-left"
-                                    d="M9.2,0l5.09,2.08c14.45,5.9,26.68,16.2,34.94,29.44l11.16,17.88L8.47,16.25,9.2,0Z">
+                                <!-- Left curved yellow page -->
+                                <path class="book-page-left book-element"
+                                    d="M6.15,0l3.41,1.39c9.66,3.95,17.84,10.83,23.37,19.69l7.47,11.96L5.67,10.86l.49-10.86Z">
                                 </path>
                             </g>
-                        </svg> -->
-                        <h2 class="fw-normal d-inline-block">Hekman Search - Find Books, Articles, & More</h2>
+                        </svg>
+                        <h2 class="d-sm-inline d-md-inline d-lg-none">Hekman Search <small
+                                class="text-body-secondary" style="color: var(--calvin-black)">Find Books, Articles, &amp; More</small></h2>
                     </label>
                     <input type="hidden" name="vid" value="01CALVIN_INST:NDE_Live">
                     <input type="hidden" name="tab" value="Everything">
@@ -221,12 +212,13 @@
                     <input type="hidden" name="lang" value="en">
                     <input type="hidden" name="facet" value="location_code,exclude,8316–127046100008316–microform">
                     <input type="hidden" name="facet" value="location_code,exclude,8316–127046100008316–handlon">
-                    <input type="hidden" name="query" id="primoQuery">
+
                     <div class="header-primo-input-wrapper position-relative d-inline-block">
-                        <input id="header-primo-input" type="search" placeholder="Find Books, Articles, & More..."
-                            value="">
-                        <button id="header-primo-go" class="btn btn-default" type="submit" aria-label="Search">
-                            <i class="fa fa-search" aria-hidden="true" title="Search"></i>
+                        <input id="header-primo-input" type="search" name="query"
+                            placeholder="Find Books, Articles, &amp; More..." title="Hekman (Everything) Search">
+                        <button id="header-primo-go" class="btn btn-default" type="submit">
+                            <span class="sr-only">Search the Hekman Library Everything Search</span>
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </div>
                 </form>

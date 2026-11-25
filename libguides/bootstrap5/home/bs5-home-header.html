@@ -303,18 +303,10 @@
                 <div class="primo-search-contents">
 
                     <!--BEGIN: NDE WIDGET-->
-                    <!-- Script that converts the query string into valid parameter -->
-                    <script type="text/javascript">
-                        function searchNde() {
-                            document.getElementById("primoQuery").value = document.getElementById("primoQueryTemp").value;
-                            document.forms["searchForm"].submit();
-                        }
-                    </script>
 
-                    <search class="simple-primo-search-wrapper">
-                        <form id="simple-primo-search" class="py-4" name="searchForm" method="get" target="_self"
-                            action="https://calvin.primo.exlibrisgroup.com/nde/search"
-                            enctype="application/x-www-form-urlencoded; charset=utf-8" onsubmit="searchNde()">
+                    <search class="simple-primo-search-wrapper" aria-label="Hekman Library Everything search">
+                        <form id="simple-primo-search" class="py-4" method="get"
+                            action="https://calvin.primo.exlibrisgroup.com/nde/search">
                             <input type="hidden" name="vid" value="01CALVIN_INST:NDE_Live">
                             <input type="hidden" name="tab" value="Everything">
                             <input type="hidden" name="search_scope" value="MyInst_and_CI">
@@ -329,11 +321,11 @@
                             <label for="primoQueryTemp" class="visually-hidden" style="color:#fff;">
                                 Search for Hekman Library books, articles, and more
                             </label>
-                            <input type="hidden" name="query" id="primoQuery">
-                            <input type="search" id="primoQueryTemp" value=""
+                            <input type="search" id="primoQueryTemp" name="query"
                                 placeholder="Find Books, Articles, &amp; More..." autofocus="">
                             <!-- Search Button -->
-                            <button id="go" class="btn btn-default" type="submit" aria-label="Search">
+                            <button id="go" class="btn btn-default" type="submit">
+                                <span class="sr-only">Search the Hekman Library Everything Search</span>
                                 <i class="fa fa-search" aria-hidden="true" title="Search"></i>
                             </button>
                         </form>

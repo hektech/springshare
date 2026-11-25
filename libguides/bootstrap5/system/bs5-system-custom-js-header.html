@@ -2,7 +2,7 @@
       // add BS5 scrollspy
     (function () {
         document.addEventListener('DOMContentLoaded', () => {
-            const main = document.getElementById('s-lg-guide-main');
+            const main = document.querySelector('#s-lg-side-nav-content #s-lg-guide-main');
             if (main) {
                 main.setAttribute('data-bs-spy', 'scroll');
                 main.setAttribute('data-bs-target', '#s-lg-guide-tabs');
